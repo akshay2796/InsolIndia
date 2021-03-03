@@ -1,0 +1,635 @@
+@charset "utf-8";
+/*--------------------------------------COMMENT CSS START-----------------------------------------------*/
+
+#commentContainer
+{
+	width:100%;
+	float:left;
+	/*margin-bottom:25px;*/
+	position:relative;
+}
+
+.uploadMsg
+{
+	font-style:italic;
+	margin-bottom:5px;
+	font-size:12px;
+	color:#3a5999;
+	float:right;
+	position:absolute;
+	top:0px;
+	right:5px;
+}
+
+#externalPage .detailDividerFull:last-child
+{
+	 
+}
+
+#commentContainer h2, .reviewStatus h2
+{
+    color: #3c579c;
+	font-weight:bold;
+	text-transform:uppercase;
+    font-size: 16px;
+    font-weight: normal;
+	margin-bottom:10px;
+}
+
+.commentarea
+{  
+    border: 1px solid #E0E0E0;
+    color: #7b7b7b;
+    font-size: 12px;
+    margin-bottom: 6px;
+    max-width: 675px;
+    min-height: 100px;
+    padding: 6px;
+    width: 675px;
+}
+
+.commentBtn
+{
+	font-weight:bold;
+	color:#fff;
+	text-transform:uppercase;
+	padding:4px 10px;
+	background:#333;
+	border:1px solid #333;
+	font-size:12px;
+	cursor:pointer;
+}
+
+.commentCounter
+{
+	font-size:16px;
+	font-weight:normal !important;
+	color:#3b589a;
+	text-transform:uppercase;
+	background:#ededed;
+	width:670px;
+	padding:0px 0px 0px 10px;
+	float:left;
+	margin-bottom:20px;
+}
+
+#direction_display .commentCounter
+{
+	margin-bottom: 0;
+	padding: 8px 2%;
+	width: 96%;
+}
+
+
+.commentCounter h3{
+	float:left;
+	margin:0;
+	line-height:33px;
+	padding:0;
+}
+.commentCounter #placeFilterBox{
+	font-weight:normal !important;
+	width:210px;
+	margin:5px 5px 0 0;
+}
+
+.commentedList
+{
+	list-style-type:none;
+	width:100%;
+	float:left;
+}
+
+.commentedList ul
+{
+	list-style-type:none;	
+	float:left;
+	width:100%;
+}
+
+.commentedList li
+{
+	width:100%;
+	float:left;
+	
+}
+
+.commentUser
+{
+	width:45px;
+	height:45px;
+	float:left;
+	background:#f5f5f5;
+	margin-right:13px;
+	margin-top:4px;
+}
+
+
+.commentUserInfo a, .commentUserInfo span
+{
+	color:#3c579a;
+}
+
+.commentUserInfo .postedName
+{
+color:#777;
+}
+
+.ratingValue
+{
+	float:right;
+	margin-top:-7px;
+	color:#B7392E;
+}
+
+.ratingValueCircle
+{
+	background:url(../images/reviewCircle.jpg) no-repeat center center;
+    float: right;
+    font-size: 14px;
+    font-weight: bold;
+    height:32px;
+    line-height:32px;
+    text-align: center;
+    width:32px;
+	color:#fff;
+}
+
+.ratingValueTxt
+{
+	color:#B7392E;
+	height:32px;
+	line-height:32px;
+	float:left;
+	text-transform:uppercase;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.commentUserInfo .ratingValueTxt
+{
+	color:#B7392E;
+	padding-right:5px;
+}
+
+.ratingList
+{
+	width:100%;
+	float:left;
+	margin-bottom:2px;
+	/*padding-bottom:5px;*/
+
+}
+
+.ratingBox
+{
+	float:left;
+}
+
+.ratingComments {
+    color: #777777;
+    float: left;
+    font-weight: bold;
+    margin: -2px 0 0 7px;
+}
+
+.doesItHaveWrap
+{
+	width:50%;
+	float:left;
+	margin-bottom:7px;
+}
+
+.doesItHaveLabel
+{
+	color: #666666;
+	float: left;
+	min-width: 150px;
+}
+
+.doesItHaveWrap input
+{
+	float:left;
+	margin-top:2px;
+}
+
+ol.doesItHaveView
+{
+	list-style-type:none;
+	margin-bottom:10px;
+	float:left;
+}
+
+ol.doesItHaveView li
+{
+	display:block;
+	float:left;
+	background:url(../images/ckd.png) no-repeat 0px 2px;
+	padding-left:11px;
+	width:auto;
+	padding-right:30px;
+}
+
+.commentedTxt
+{
+	float:left;
+	position:relative;
+}
+
+.commentedTxt p
+{
+	margin:10px 0px;
+}
+
+/*.ratingList
+{
+	width:100%;
+	float:left;
+	margin-bottom:2px;
+}
+
+.ratingBox {
+    float: left;
+}
+
+.ratingLabel {
+    color: #404040;
+    float: left;
+    font-family: 'calibribold',Calibri,Verdana,Arial,Helvetica,sans-serif;
+    font-weight: bold;
+    min-width:105px;
+    padding-top: 11px;
+	margin-right:5px;
+}*/
+
+.commentedTxt .doesItHave
+{
+	width:100%;
+	float:left;
+}
+
+.commentClick
+{
+	color:#000;
+	font-size:12px;
+	font-weight:bold;
+	text-decoration:none;
+	float:left;
+	background:url(../images/commentIcon.jpg) no-repeat 0px 0px;
+	padding-left:22px;
+	line-height:16px;
+	opacity:0.4;
+}
+
+.shareClick
+{
+	color:#000;
+	font-size:12px;
+	font-weight:bold;
+	text-decoration:none;
+	float:left;
+	background:url(../images/shareIcon.jpg) no-repeat 0px 0px;
+	padding-left:22px;
+	line-height:16px;
+	opacity:0.4;
+}
+
+
+.haveReply
+{
+	color:#282828;
+	font-size:12px;
+	cursor:pointer;
+	float:left;
+}
+
+.haveReply:hover
+{
+	color:#000;
+}
+.ithaveReply{
+	float:right; margin:-7px 0 0 8px; border-left:1px solid #cccccc; padding-left:8px;
+}
+.showReply
+{
+	background:url(../images/commentShow.png) no-repeat center center #ffffff;
+	border:1px solid #cccccc;
+	width:27px;
+	height:27px;
+	border-radius:100%;
+}
+
+.hideReply
+{
+	background:url(../images/commentHide.png) no-repeat center center #ffffff;
+	border:1px solid #cccccc;
+	width:27px;
+	height:27px;
+	border-radius:100%;
+	border:1px solid #cccccc;
+}
+
+
+
+.reviewBtnGroup
+{
+	width:100%;
+	float:left;
+	position:relative;
+}
+
+ol.reviewBtnList
+{
+	list-style-type:none;
+	float:left;
+}
+
+ol.reviewBtnList li
+{
+	display:block;
+	float:left;
+	width:auto;
+}
+
+ol.reviewBtnList li.reviewShare
+{
+	position:relative;
+	margin-left:15px;
+}
+
+
+.commentHere
+{
+	width:96%;
+	padding:2%;
+	position:absolute;
+	top:30px;
+	left:0px;
+	background:#f5f5f5;
+	border:1px solid #eee;
+	z-index:9;
+	display:block;
+}
+
+.commentarea_inner
+{
+	border: 1px solid #E0E0E0;
+	color: #7B7B7B;
+	font-size: 12px;
+	margin-bottom:2%;
+	height:48px;
+	padding: 2%;
+	width: 95.2%;
+	resize: none;
+	float:left;
+}
+.redhead{
+	font-size:14px;
+	font-weight:bold;
+	color:#000;
+	margin-bottom:10px;
+}
+
+.shareHere
+{
+	position:absolute;
+	top:-1px;
+	left:0px;
+	width:65px;
+	height:20px;
+	padding-left:10px;
+}
+
+.shareHere img
+{
+	float:left;
+	opacity:0.7;
+	margin-right:3px;
+}
+
+.shareHere img:hover
+{
+	opacity:1;
+}
+
+.helpfullReview
+{
+	color: #000;
+    font-size: 14px;
+	margin:0px;
+    font-weight: normal;
+	float:right;
+	position:relative;
+	height:14px;
+}
+
+.helpfullTxt
+{
+	position:relative;
+	width:200px !important;
+	text-align:right;
+}
+.helpfullReview ul li.helpfullTxt
+{
+color:#777;
+}
+
+.helpfullReview ul li.helpfullThumb
+{
+opacity:0.6;
+}
+
+.absMsg
+{
+	position:absolute;
+	font-weight:normal;
+	left:0px;
+	color:#B7392E;
+	font-size:13px;
+	z-index:999;
+}
+
+.review_Msg
+{
+	background: none repeat scroll 0 0 #FFFFFF;
+	color: #B7392E;
+	font-size: 14px;
+	font-weight: bold;
+	right: 0px;
+	padding: 5px 5px 5px 50px;
+	position: absolute;
+	top: -5px;
+	z-index: 99;
+	display:none;
+}
+
+
+.helpfullThumb
+{
+	width:22px !important;
+	text-align:center;
+}
+
+.helpfullcountwidth{
+	width:30px;
+}
+
+.helpfullcount{
+	border:1px solid #ccc;
+	font-size:13px;
+	color:#000;
+	width:28px;
+	text-align:center;
+	font-weight:normal;
+	display:block;
+}
+	
+
+.helpfullThumb img
+{
+	margin-top:2px;
+}
+
+.helpfullThumb span
+{
+	border:1px solid #ccc;
+	font-size:13px;
+	color:#000;
+	margin-left:5px;
+	float:right;
+	width:28px;
+	text-align:center;
+	font-weight:normal;
+}
+
+.reviewStatus
+{
+	width:100%;
+	float:left;
+}
+
+.reviewStatusBox
+{
+	width:46%;
+	float:left;
+	margin-bottom:25px;
+}
+
+.reviewStatusBox.border
+{
+	border-right:1px solid #EDEDED;
+	margin:0 2%;
+}
+
+.statusWrap
+{
+	width:100%;
+	float:left;
+	margin:3px 0px;
+}
+
+.statusWrap label
+{
+	float:left;
+	/*width:28%;
+	height:18px;
+	line-height:18px;*/
+	width:36%;
+	line-height:14px;
+	font-size:14px;
+	color:#777;
+}
+
+.statusWrap label a
+{
+	text-decoration:none;
+	color:#3B589A;
+}
+
+.statusBar
+{
+	float:left;
+	width:50%;
+	/*border:1px solid #f5f5f5;*/
+	height:15px;
+	margin-right:2%;
+	margin-top:3px;
+}
+
+.statusbarwidth{
+	position: relative; height:10px; background:#f3f3f3;
+}
+
+.statusbarValue{
+	position:absolute; top:0px; background-color:#88C126; height:10px;
+}
+
+.fl{
+	float:left;
+	font-weight:normal;
+	color:#666666;
+}
+.helpfullReview ul{
+	list-style-type:none;
+	padding:0;
+	margin:0;
+}
+.helpfullReview ul li{
+	float:left;
+	width:auto;
+}
+
+/* IE7 only */
+*+html #frmReview .ratingList, *+html #frmReview .doesItHaveWrap, .storiesContainer .ratingList
+{
+	max-width:300px;	
+}
+
+*+html #review_title
+{
+	max-width:350px;
+	float:left;
+}
+
+*+html .isThereLabel input
+{
+	margin-top:-3px;
+}
+
+*+html #commentContainer .detailDividerFull
+{
+padding-bottom:20px;
+border-top:1px solid #ededed;
+border-bottom:0px;
+}
+
+*+html .placeRatingRed
+{
+	float:left;
+}
+
+*+html #frmReview .feeWrap, *+html #commentContainer
+{
+	padding-bottom:20px;
+}
+
+*+html .commentBtn, *+html #uploadTabContainer .browseUploadBtn
+{
+	border:0px;
+}
+
+*+html .commentarea_inner
+{
+	height:35px;
+	padding:5px 8px;
+}
+
+*+html .reviewStatus
+{
+	background:#fff;
+}
+
+
+
+
+/*--------------------------------------COMMENT CSS END-----------------------------------------------*/

@@ -1,0 +1,2 @@
+[30-Jun-2019 22:55:09 Etc/GMT] PHP Warning:  mysqli_connect(): (28000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home2/insolindia/public_html/event/conference-registration.php on line 3
+[30-Jun-2019 22:58:37 Etc/GMT] PHP Warning:  mysqli_connect(): (28000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home2/insolindia/public_html/event/conference-registration.php on line 3

@@ -1,0 +1,69 @@
+@charset "utf-8";
+/* CSS Document */
+.addWrapper.master .width2, .addWrapper.master .sbumitLoaderBox{ width:100%; margin-bottom:0px}
+.addWrapper.assetMaster .width2, .addWrapper.assetMaster .sbumitLoaderBox{ width:100%;}
+.logo{ width:30%; margin-left:15px; max-width:250px;}
+.logo img{ max-width:100%;}
+.menuWrapper { left:-250px; }
+.menuWrapper.slideMe { left:0px; }
+.mainWrapper, .mainWrapper.slideMe { margin-left:0px; }
+.smallScreenClickDisable.slideMe{ display:block;}
+.navHover {display:none;}
+.menuWrapper.slideMe .navHover{	right:0px; display:none; }
+.titleTxt { width:90%; }
+.width2, .width3, .width4{ width:45%; margin-right:5%; }
+.width5 { width:32%; }
+.mainLabel small i, .hintIconTop{ display:none; }
+.txt2Box .txtBox { width:29%; width:calc(48% - 35px);}
+.txt3Box .txtBox { width:17%; padding:0px 4%; }
+.customizeCol td .txtBox { width:76%; }
+.smallListBox, .productListBox{ width: 29%; width:calc(33% - 20px); min-width:100px; }
+.sListBtnWrap td img, .pListBtnWrap td img{ margin:0px 2px; }
+.txtHintLoader{ max-width:30px;}
+.hintIconList.top, .noSmall{ display:none;}
+.onlySmall{ display:block;}
+.deleteSlelectedBox, .orderOtherInfo{ width:100%; margin-bottom:5px;}
+.hintIconList{max-width:100%; float:left;}
+.hintIconList li{ float:left;}
+.productListBox.hrView .pListSku, .productListBox.hrView .pStock, .productListBox.hrView .pDiscount, .productListBox.hrView .pPrice,
+.productListBox.hrView .ptListDate span, .productListBox.hrView .otherInfo span{ width:33%;}
+.productListBox.hrView .pListCat{width:67%; margin-right:0px;}
+.productListBox.hrView .pListStockPrice{ width:100%;}
+.productListBox.hrView .updateInline{ margin-bottom:-17px;}
+.productListBox.hrView .pDiscount .updateInline{ right:auto; left:}
+.productListBox.hrView .ptListDate, .productListBox.hrView .otherInfo{ width:96%;}
+.productListBox.hrView .pListTitle{ font-size:13px;}
+#headerRight ul.topLink li.alertBoxLi, #headerRight ul.topLink li.loginBoxLi{ display:none;}
+#headerRight .productBox{ border-left:0px;}
+.productListBox.hrView .pListImg{ margin:5px 2%;}
+.productListBox.hrView .pListPad{ width:80%;}
+.addCoupons, .listCouponsRight{ width:90%; float:left;}
+.userInfoWrap{ width:100%; margin-bottom:10px; padding-bottom:10px; border-bottom:1px solid #eee;}
+.userInfoWrapR{ width:100%; padding-left:0%;}
+.userInfo50{ width:48%;}
+.activityCount{ margin-right:12px; padding-right:12px;}
+.reviewOrderCount i{ display:none;}
+.reviewBoxLeft, .reviewBoxRight{ width:100%; margin:0px 0px 4px 0px;}
+.reviewProductImg{ float:left; border:0px;}
+.orderListInfo .reviewInfoLeft{ width:100%; border-bottom:1px solid #fff; padding-bottom:7px;}
+.recOrderStatus{margin:2px 10px 0px 0px; border:0px; padding:0px;}
+
+.orderPName{ margin-top:3px;}
+.returnEditLeft{ width:100%;}
+.returnEditRight{ width:auto; float:right;}
+@media all and (min-width: 500px) and (max-width: 600px)
+{
+.pListStockPrice .pStock, .pListStockPrice .pPrice{ width:100%; margin:2px 0px;}
+.mobileClear{ display:block;}
+.extraSpace{ height:1px;}
+.userInfo50{ width:auto; margin-right:5%;}
+.smallSizeClear{ display:block;}
+.activityCount{ border-right:0px; margin:0px 0px 0px 15px; padding:0px 0px 0px 15px;}
+.activityCount span{ border:0px; min-width:10px;}
+.activityCount span.tOrder{ min-width:32px;}
+/*.mainWrapper.slideMe .titleTxt { width:80%; }
+.mainWrapper.slideMe .width2, .mainWrapper.slideMe .width3, .mainWrapper.slideMe .width4{ width:90%;}
+.mainWrapper.slideMe .customizeCol td .txtBox{ width:34%;}*/
+.orderListTbl td.orderTd1, .orderListTbl td.orderTd3{ width:100%; display:block; float:left;}
+.orderTd2Heading{ min-width:100px;}
+}

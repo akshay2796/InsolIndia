@@ -1,0 +1,25 @@
+
+.gall_outer{width:100%;float:left;background-color:#ebf0ea;}
+
+.gall_h1{width:98%;
+float:left;
+font-size:15px;
+color:white;;
+padding:10px;
+font-weight: bold;
+font-family:Calibri;}
+
+.gall_img{width:98%;
+float:left;
+
+padding:5px 5px 5px 5px;
+border-radius:5px;
+height:160px;}
+
+@media only screen and (min-width :320px) and (max-width : 599px) {
+
+.gall_outer{width:100%;
+
+background-color:#ebf0ea;}
+
+}

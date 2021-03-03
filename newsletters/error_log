@@ -1,0 +1,21 @@
+[08-Sep-2020 15:38:15 Etc/GMT] PHP Notice:  A session had already been started - ignoring session_start() in /home2/insolindia/public_html/library_insol/class.pdo.php on line 2
+[08-Sep-2020 21:08:15 Asia/Kolkata] PHP Notice:  A session had already been started - ignoring session_start() in /home2/insolindia/public_html/library_insol/class.pdo.php on line 7
+[08-Sep-2020 21:08:15 Asia/Kolkata] PHP Warning:  Missing argument 3 for newsletterFormat(), called in /home2/insolindia/public_html/newsletter/view.php on line 27 and defined in /home2/insolindia/public_html/global_functions.php on line 5306
+[08-Sep-2020 21:08:15 Asia/Kolkata] PHP Notice:  Undefined variable: person_name in /home2/insolindia/public_html/global_functions.php on line 5464
+[08-Sep-2020 21:08:15 Asia/Kolkata] PHP Notice:  Undefined variable: greetings in /home2/insolindia/public_html/global_functions.php on line 5510
+[08-Sep-2020 21:08:15 Asia/Kolkata] PHP Notice:  Undefined variable: seperator in /home2/insolindia/public_html/global_functions.php on line 5510
+[08-Sep-2020 21:08:15 Asia/Kolkata] PHP Notice:  Undefined variable: person_name in /home2/insolindia/public_html/global_functions.php on line 5510
+[08-Sep-2020 21:08:44 Asia/Kolkata] PHP Notice:  A session had already been started - ignoring session_start() in /home2/insolindia/public_html/library_insol/class.pdo.php on line 7
+[08-Sep-2020 21:08:44 Asia/Kolkata] PHP Warning:  Missing argument 3 for newsletterFormat(), called in /home2/insolindia/public_html/newsletter/view.php on line 25 and defined in /home2/insolindia/public_html/global_functions.php on line 5306
+[08-Sep-2020 21:08:44 Asia/Kolkata] PHP Notice:  Undefined variable: person_name in /home2/insolindia/public_html/global_functions.php on line 5464
+[08-Sep-2020 21:08:44 Asia/Kolkata] PHP Notice:  Undefined variable: greetings in /home2/insolindia/public_html/global_functions.php on line 5510
+[08-Sep-2020 21:08:44 Asia/Kolkata] PHP Notice:  Undefined variable: seperator in /home2/insolindia/public_html/global_functions.php on line 5510
+[08-Sep-2020 21:08:44 Asia/Kolkata] PHP Notice:  Undefined variable: person_name in /home2/insolindia/public_html/global_functions.php on line 5510
+[08-Sep-2020 21:09:04 Asia/Kolkata] PHP Notice:  A session had already been started - ignoring session_start() in /home2/insolindia/public_html/library_insol/class.pdo.php on line 7
+[08-Sep-2020 21:09:04 Asia/Kolkata] PHP Notice:  Undefined variable: greetings in /home2/insolindia/public_html/global_functions.php on line 5510
+[08-Sep-2020 21:09:04 Asia/Kolkata] PHP Notice:  Undefined variable: seperator in /home2/insolindia/public_html/global_functions.php on line 5510
+[08-Sep-2020 21:09:29 Asia/Kolkata] PHP Notice:  A session had already been started - ignoring session_start() in /home2/insolindia/public_html/library_insol/class.pdo.php on line 7
+[08-Sep-2020 21:09:29 Asia/Kolkata] PHP Fatal error:  Call to undefined function newsletterFormat() in /home2/insolindia/public_html/newsletter/view.php on line 25
+[08-Sep-2020 21:09:38 Asia/Kolkata] PHP Notice:  A session had already been started - ignoring session_start() in /home2/insolindia/public_html/library_insol/class.pdo.php on line 7
+[08-Sep-2020 21:09:38 Asia/Kolkata] PHP Notice:  Undefined variable: greetings in /home2/insolindia/public_html/global_functions.php on line 5510
+[08-Sep-2020 21:09:38 Asia/Kolkata] PHP Notice:  Undefined variable: seperator in /home2/insolindia/public_html/global_functions.php on line 5510

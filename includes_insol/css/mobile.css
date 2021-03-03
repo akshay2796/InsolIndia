@@ -1,0 +1,115 @@
+ @charset "utf-8";
+/* CSS Document */
+#mainWrapper{ width:100%; float:left; overflow-x:hidden;}
+.mainWrapper, .searchBoxWrap, .fixedWrapBox, .listPageWrapGap{ padding:15px;}
+.loginTable { max-width: 330px; width: 60%;}
+.logo{ width:30%; margin-left:15px; max-width:250px;}
+.logo img{ max-width:100%; margin-top:13px;}
+.addWrapper.master .width2, .addWrapper.master .sbumitLoaderBox{ width:100%; margin-bottom:0px}
+.addWrapper.assetMaster .width2, .addWrapper.assetMaster .sbumitLoaderBox{ width:100%;}
+#headerRight ul.topLink li.alertBoxLi, #headerRight ul.topLink li.loginBoxLi{ display:none; }
+#headerRight .productBox{ border-left:0px;}
+.menuWrapper { left:-250px; }
+.menuWrapper.slideMe { left:0px; }
+.mainWrapper, .mainWrapper.slideMe { margin-left:0px; min-width:220px; }
+.smallScreenClickDisable.slideMe{ display:block;}
+.navHover {display:none;}
+.menuWrapper.slideMe .navHover{	right:0px; display:none; }
+.extraSpace{ height:1px;}
+.titleTxt { width:90%; }
+.mainWrapper.slideMe .titleTxt { width:80%; }
+.width2, .width3, .width4{ width:45%; margin-right:5%; }
+.mainWrapper.slideMe .width2, .mainWrapper.slideMe .width3, .mainWrapper.slideMe .width4{ width:90%;}
+.width5 { width:49%; }
+.mainLabel small i, .hintIconTop{ display:none; }
+.txt2Box .txtBox { width:29%; width:calc(48% - 35px);}
+.txt3Box .txtBox { width:17%; padding:0px 4%; }
+.customizeCol td .txtBox { width:65%; }
+.mainWrapper.slideMe .customizeCol td .txtBox{ width:34%;}
+#boxFixedWrap .submitBtn, #boxFixedWrap .saveAsDraftBtn, #boxFixedWrap .previewBtn, #boxFixedWrap .cancelBtn{ padding:0px 12px; font-size:12px;}
+.smallListBox, .productListBox{ width: 44%; width:calc(48% - 20px); }
+.productListBox{ min-width:130px; width:calc(50% - 10px); margin:0px 6px 6px 0px;}
+.sListBtnWrap td img, .pListBtnWrap td img{ margin:0px 2px; }
+.txtHintLoader{ max-width:20px;}
+#boxFixedWrap .submitBtn{ margin-right:20px;}
+#boxFixedWrap .cancelBtn{ margin-left:20px;}
+.hintIconList.top, .noSmall{ display:none;}
+.deleteSlelectedBox, .removeOnFixed, .orderOtherInfo{ width:100%; margin-bottom:5px;}
+.hintIconList{max-width:100%; float:left;}
+.hintIconList li{ float:left;}
+.mobileClear, .onlySmall{ display:block;}
+.productListBox.hrView .pListSku{ width:100%; margin-bottom:0px;}
+.productListBox.hrView .pListCat{ width:100%; margin-top:0px; margin-right:0px;}
+.productListBox.hrView .pStock, .productListBox.hrView .pDiscount, .productListBox.hrView .pPrice{ width:33%;}
+.productListBox.hrView .ptListDate span, .productListBox.hrView .otherInfo span,
+.productListBox.hrView .pListStockPrice{ width:100%;}
+.productListBox.hrView .updateInline{ margin-bottom:-17px;}
+.productListBox.hrView .pDiscount .updateInline{ right:auto; left:}
+.productListBox.hrView .ptListDate{ width:63%; margin-right:0%; margin-left:3%; float:left;}
+.productListBox.hrView .otherInfo{ width:33%; float:left; margin:0px; padding-top:1%; border-top:1px solid #eee;}
+.productListBox.hrView .pListTitle{ font-size:13px;}
+.productListBox.hrView .pDiscount .updateInline{ left:auto; right:0px;}
+.productListBox.hrView .pListImg{ margin:5px 2%;}
+.productListBox.hrView .pListPad{ width:80%;}
+#searchBoxWrap .submitBtn, #searchBoxWrap .cancelBtn, .searchBtnWrap .submitBtn, .searchBtnWrap .cancelBtn  { padding:0px 10px;}
+.backBtn{ height:auto; line-height:normal; float:right; padding:5px;}
+.addProductBox{ width:100%; margin:0px 0px 5px 0px;}
+.productListBox.hrView.popupView{ width:97%; margin-bottom:1%;}
+.popupChkBox{ width:44%; margin:0px 2% 2% 0px;}
+.addCoupons, .couponsFieldWidth{ width:99%;}
+.listCouponsRight{ width:99%; float:left;}
+.couponLable{ width:100%; height:auto; line-height:normal; margin-bottom:5px;}
+.couponsFullWrap{ padding-top:0px; border-bottom:0px; margin-bottom:10px;}
+.list_table table th, .list_table table td{ padding:7px 5px;}
+.mobRight{ text-align:right;}
+.list_table table td.mobRight{ text-align:right; font-size:9px;}
+.tShowVenue, .tShowPromoter, .tShowAddress, .tShowType, .tShowBooth, .tShowComment{ width:100%; padding:0px; margin-bottom:10px;}
+.userInfoWrap, .recOrderLeft{ width:100%; margin-bottom:10px; padding-bottom:10px; border-bottom:1px solid #eee;}
+.userInfoWrapR, .recOrderRight{ width:100%; padding-left:0%;}
+.activityCount{ margin-right:12px; padding-right:12px;}
+.userInfo50{ width:auto; margin-right:5%;}
+.smallSizeClear, .mobileCls{ display:block;}
+.activityCount{ border-right:0px; margin:0px 0px 0px 15px; padding:0px 0px 0px 15px;}
+.activityCount span{ border:0px; min-width:10px;}
+.activityCount span.tOrder{ min-width:32px;}
+.orderListTbl td.orderTd1, .orderListTbl td.orderTd3{ width:100%; display:block; float:left;}
+.orderTd2Heading{ min-width:100px;}
+.reviewBoxLeft{ width:100%; float:left; margin:0px 0px 4px 0px;}
+.reviewBoxRight{ width:100%; float:left; margin:0px;}
+.popupMainWrapper .couponsFullWrap{ padding-top:10px;}
+.orderReviewWrap{ padding:12px;}
+.reviewOrderCount i{ display:none;}
+.reviewOrderCount, .pendingReviewCount{ font-size:11px; border:0px; margin:0px 0px 6px 0px;}
+.reviewBoxLeft, .reviewBoxRight{ width:100%; margin:0px 0px 4px 0px;}
+.reviewProductImg{ float:left; border:0px;}
+
+.orderListInfo .reviewInfoLeft{ width:100%; border-bottom:1px solid #fff; padding-bottom:7px;}
+.recOrderStatus{margin:2px 10px 0px 0px; border:0px; padding:0px;}
+
+.width4 .txtBox.orderPrefix{ width:71%;}
+.orderPName{ margin-top:3px;}
+.addrBoxWrap{ width:94%; margin:0px 0px 10px 0px;}
+.orderHistoryImg{ width:50px;}
+.orderHistoryTxt{ margin-left:50px;}
+.productClcWrap h3.orderQtyTxt, .productClcWrap{ width:100%; margin-bottom:5px;}
+.productClcWrap h3{ width:50%;}
+.returnEditLeft{ width:100%;}
+.returnEditRight{ width:auto; float:right;}
+@media all and (min-width: 200px) and (max-width: 380px)
+{
+
+.list_table table th, .list_table table td{ padding:7px 3px;}
+.list_table table th{ font-size:10px;}
+.pListStockPrice .pStock, .pListStockPrice .pPrice{ width:100%; margin:2px 0px;}
+.sortBy{ width:152px; float:left;}
+.viewBy{ width:65px; float:right; text-align:left;}
+.viewBy .viewMode{ margin-right:5px; margin-left:0px;}
+.logo img{ max-width:100%; margin-top:17%;}
+.width2, .width3, .width4{ width:100%; margin-right:0%; }
+.smallListBox{ min-width:130px; margin:0px 6px 6px 0px;}
+#boxFixedWrap .submitBtn, #boxFixedWrap .saveAsDraftBtn, #boxFixedWrap .previewBtn, #boxFixedWrap .cancelBtn{ padding:0px 3px;}
+.productListBox.hrView .pListStockPrice{ width:120%; margin-left:-20%;}
+.productListBox.hrView .pListBtnWrap td img{ margin:0px 4px;}
+.popupChkBox{ width:90%; margin:0px 0% 2% 0px;}
+.reviewOrderCount, .pendingReviewCount{ padding:0px;}
+}

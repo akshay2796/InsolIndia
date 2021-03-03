@@ -1,0 +1,130 @@
+@charset "utf-8";
+/* CSS Document */
+.width2, .width3
+{
+	width:49%;
+	margin-right:1%;
+}
+
+.subCategoryWidth
+{
+	width:64%;
+}
+
+.width4
+{
+	width:32%;
+}
+
+.width5
+{
+	width:24%;
+}
+
+
+.mainLabel small i
+{
+	display:none;
+}
+
+.txt2Box .txtBox
+{
+	width:29%;
+	width:calc(48% - 35px);
+}
+
+.txt3Box .txtBox
+{
+	width:17%;
+	padding:0px 4%;
+}
+
+.customizeCol td .txtBox
+{
+	width:76%;
+}
+
+.sListBtnWrap td img, .pListBtnWrap td img
+{
+	margin:0px 2px;
+}
+
+.smallListBox, .productListBox
+{
+  width: 22%;
+  width:calc(25% - 20px);
+  
+}
+
+.hintIconList.top
+{
+	display:none;
+}
+
+.deleteSlelectedBox, .orderOtherInfo
+{
+	width:100%;
+	margin-bottom:5px;
+}
+
+.orderPName{ margin-top:3px;}
+
+
+.hintIconList
+{
+	max-width:100%;
+}
+
+.productListBox.hrView .pListSku, .productListBox.hrView .pStock, .productListBox.hrView .pDiscount, .productListBox.hrView .pPrice,
+.productListBox.hrView .ptListDate span, .productListBox.hrView .otherInfo span{ width:33%;}
+.productListBox.hrView .pListCat{width:67%; margin-right:0px;}
+.productListBox.hrView .pListStockPrice{ width:100%;}
+.productListBox.hrView .updateInline{ margin-bottom:-17px;}
+.productListBox.hrView .pDiscount .updateInline{ right:auto; left:}
+.productListBox.hrView .ptListDate, .productListBox.hrView .otherInfo{ width:96%;}
+.productListBox.hrView .pListImg{ margin:5px 2%;}
+.productListBox.hrView .pListPad{ width:80%;}
+.addCoupons, .listCouponsRight{ width:90%; float:left;}
+.userInfoWrap{ width:100%; margin-bottom:10px; padding-bottom:10px; border-bottom:1px solid #eee;}
+.userInfoWrapR{ width:100%; padding-left:0%;}
+.userInfo50{ width:48%;}
+.activityCount{ margin-right:12px; padding-right:12px;}
+.reviewOrderCount i{ display:none;}
+.orderListInfo .reviewInfoLeft{ width:100%; border-bottom:1px solid #fff; padding-bottom:7px;}
+.recOrderStatus{margin:2px 10px 0px 0px; border:0px; padding:0px;}
+.returnEditLeft{ width:100%;}
+.returnEditRight{ width:auto; float:right;}
+@media all and (min-width: 800px) and (max-width: 900px)
+{
+.notab{ display:none;}
+/*.fixedNow .removeOnFixed{ display:block }*/
+.smallListBox, .productListBox
+{
+  width: 30%;
+  width:calc(33% - 20px);
+}
+.addWrapper.master .width2, .addWrapper.master .submitWrapLoad{ width:100%; margin-bottom:0px}
+.addWrapper.assetMaster .width2, .addWrapper.assetMaster .submitWrapLoad{ width:100%;}
+.width4 .txtBox.orderPrefix{ width:71%;}
+}
+
+@media all and (min-width: 700px) and (max-width: 800px)
+{
+.smallScreenClickDisable.slideMe{ display:block;}
+.addWrapper.master .width2, .addWrapper.master .submitWrapLoad{ width:100%; margin-bottom:0px}
+.addWrapper.assetMaster .width2, .addWrapper.assetMaster .submitWrapLoad{ width:100%;}
+.menuWrapper { left:-250px; }
+.menuWrapper.slideMe { left:0px; }
+.mainWrapper { margin-left:0px; }
+.mainWrapper.slideMe { margin-left:0px; }
+.navHover { display:none;}
+.menuWrapper.slideMe .navHover{	right:0px; display:none; }
+.smallListBox, .productListBox
+{
+  width: 30%;
+  width:calc(33% - 20px);
+}
+.productListBox.hrView .pListTitle{ font-size:13px;}
+.width4 .txtBox.orderPrefix{ width:71%;}
+}
+
