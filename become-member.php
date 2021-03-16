@@ -815,7 +815,7 @@ $(document).ready(function(){
     							<div class="row">
     								<div class="clr"></div>
     								<div class="col-md-12">
-    									<textarea class="form-control" rows="2" name="interested" id="interested"></textarea>
+    									<textarea class="form-control" rows="2" name="interested" id="interested" maxlength="250"></textarea>
     								</div>
     							</div>
     						</div>					

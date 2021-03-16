@@ -85,7 +85,7 @@ error_reporting(E_ALL);
     $counter = 1; 
 $year = $_GET['year'];
 $month = $_GET['month'];
-$connect = mysqli_connect("localhost","insolind_insolin","s_Lay@Z+_^?A","insolind_insolindia")or die(mysqli_error($mysqli));
+$connect = mysqli_connect("localhost","root","root","insolindia")or die(mysqli_error($mysqli));
 $sql_main = "SELECT * FROM renew_member_detail WHERE YEAR(add_date) = $year && MONTH(add_date) = $month" ;
 $result_main = mysqli_query($connect, $sql_main);
 while($row_main = mysqli_fetch_array($result_main)){
@@ -186,4 +186,4 @@ $filename = "Insol India insol_member.xls";
 
 
 
-<!-- ("localhost","insolind_insolin","s_Lay@Z+_^?A","insolind_insolindia") -->
+<!-- ("localhost","root","root","insolindia") -->

@@ -617,7 +617,7 @@ function showDate(date) {
 </form>
 
 <?php 
-$connect = mysqli_connect("localhost","insolind_insolin","s_Lay@Z+_^?A","insolind_insolindia");
+$connect = mysqli_connect("localhost","root","root","insolindia");
 		if(isset($_POST['save'])){
 			$title = $_POST['title'];
 			$fname = $_POST['fname'];

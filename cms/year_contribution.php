@@ -82,7 +82,7 @@ elseif($actual_link == 'https://rightickets.co.uk/insolindia/cms/year_contributi
 				// 		echo $year;
 						$SQL  = "";
 							$SQL .= " SELECT MONTHNAME(add_date) as month, MONTH(add_date) as mon, COUNT(*) as cnt FROM renew_member_detail WHERE YEAR(add_date) = $year group by MONTH(add_date) ";
-							$connect = mysqli_connect("localhost","insolind_insolin","s_Lay@Z+_^?A","insolind_insolindia");
+							$connect = mysqli_connect("localhost","root","root","insolindia");
 							$result2 = mysqli_query($connect, $SQL);
                             while($show3 = mysqli_fetch_array($result2)){
 

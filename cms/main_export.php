@@ -112,7 +112,7 @@ error_reporting(E_ALL);
 for($i=0;$i<count($checkbox);$i++){
 
 $del_id = $checkbox[$i];
-$connect = mysqli_connect("localhost","insolind_insolin","s_Lay@Z+_^?A","insolind_insolindia");
+$connect = mysqli_connect("localhost","root","root","insolindia");
 $sql = "SELECT * FROM tbl_become_member WHERE member_id='$del_id'";
 $result = mysqli_query($connect, $sql);
 $row2 = mysqli_fetch_array($result);
@@ -211,4 +211,4 @@ header("Content-Disposition: attachment; filename=\"{$file}\"");
 
 
 
-<!-- ("localhost","insolind_insolin","s_Lay@Z+_^?A","insolind_insolindia") -->
+<!-- ("localhost","root","root","insolindia") -->
