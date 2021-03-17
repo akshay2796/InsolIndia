@@ -108,6 +108,11 @@ function saveData()
     $correspondence_state = trustme($_REQUEST["correspondence_state"]);
     $country = trustme($_REQUEST["country"]);
     $pin = trustme($_REQUEST["pin"]);
+    $gst_no = trustme($_REQUEST["gst_no"]);
+
+    if ($gst_no == '') {
+        $gst_no = "NA";
+    }
 
     $permanent_address = trustme($_REQUEST["permanent_address"]);
     if ($permanent_address == "") {
@@ -307,6 +312,7 @@ function saveData()
             $SQL .= " correspondence_state = :correspondence_state,";
             $SQL .= " country = :country,";
             $SQL .= " pin = :pin,";
+            $SQL .= " gst_no = :gst_no,";
 
             $SQL .= " permanent_address = :permanent_address,";
             $SQL .= " permanent_address_2 = :permanent_address_2,";
@@ -366,6 +372,7 @@ function saveData()
             $stmt->bindParam(":correspondence_state", $correspondence_state);
             $stmt->bindParam(":country", $country);
             $stmt->bindParam(":pin", $pin);
+            $stmt->bindParam(":gst_no", $gst_no);
 
             $stmt->bindParam(":permanent_address", $permanent_address);
             $stmt->bindParam(":permanent_address_2", $permanent_address_2);
@@ -416,6 +423,8 @@ function saveData()
 
                 if (intval(count($image_array)) > intval(0)) {
                     foreach ($image_array as $indx => $image_result) {
+                        $MAXID_IMG = getMaxId('tbl_become_member_receipt', "reciept_id");
+
                         $reciept_image_name = "";
                         $reciept_caption = "";
                         $reciept_id = 0;
@@ -428,7 +437,7 @@ function saveData()
                         $MYFOLDERNAME = $folder_name_array[$indx];
 
                         $TEMP_FOLDER_NAME = "";
-                        $TEMP_FOLDER_NAME = CMS_UPLOAD_FOLDER_RELATIVE_PATH . $MYFOLDERNAME . "/";
+                        $TEMP_FOLDER_NAME = CMS_UPLOAD_FOLDER_RELATIVE_PATH . TEMP_UPLOAD . "/";
 
                         $FOLDER_NAME = "";
                         $FOLDER_NAME = CMS_UPLOAD_FOLDER_RELATIVE_PATH . FLD_PAYMENT_RECIEPT . "/";
@@ -446,24 +455,49 @@ function saveData()
                             $fpath_image = $reciept_image_name;
                         }
 
+                        // $SQL_IMG = "";
+                        // $SQL_IMG .= " UPDATE tbl_become_member_receipt SET ";
+                        // $SQL_IMG .= " reciept_image_name = :reciept_image_name, ";
+                        // $SQL_IMG .= " reciept_caption = :reciept_caption, ";
+                        // $SQL_IMG .= " update_ip = :update_ip, ";
+                        // $SQL_IMG .= " update_by = :update_by, ";
+                        // $SQL_IMG .= " update_time = :update_time ";
+                        // $SQL_IMG .= " where reciept_id = :reciept_id ";
+                        // $SQL_IMG .= " and member_id = :member_id ";
+
+                        // $stmtIMG = $dCON->prepare($SQL_IMG);
+                        // $stmtIMG->bindParam(":reciept_image_name", $fpath_image);
+                        // $stmtIMG->bindParam(":reciept_caption", $reciept_caption);
+                        // $stmtIMG->bindParam(":update_ip", $ip);
+                        // $stmtIMG->bindParam(":update_by", $BY);
+                        // $stmtIMG->bindParam(":update_time", $update_time);
+                        // $stmtIMG->bindParam(":reciept_id", $reciept_id);
+                        // $stmtIMG->bindParam(":member_id", $member_id);
+                        // $rsImage = $stmtIMG->execute();
+                        // //print_r($stmtIMG->errorInfo());
+                        // //echo intval($rsImage);
+                        // $stmtIMG->closeCursor();
+
                         $SQL_IMG = "";
-                        $SQL_IMG .= " UPDATE tbl_become_member_receipt SET ";
-                        $SQL_IMG .= " reciept_image_name = :reciept_image_name, ";
+                        $SQL_IMG .= " INSERT INTO tbl_become_member_receipt SET ";
+                        $SQL_IMG .= " reciept_id = :reciept_id, ";
+                        $SQL_IMG .= " member_id = :member_id, ";
                         $SQL_IMG .= " reciept_caption = :reciept_caption, ";
-                        $SQL_IMG .= " update_ip = :update_ip, ";
-                        $SQL_IMG .= " update_by = :update_by, ";
-                        $SQL_IMG .= " update_time = :update_time ";
-                        $SQL_IMG .= " where reciept_id = :reciept_id ";
-                        $SQL_IMG .= " and member_id = :member_id ";
+                        $SQL_IMG .= " reciept_image_name = :reciept_image_name, ";
+                        $SQL_IMG .= " position = :position, ";
+                        $SQL_IMG .= " add_ip = :add_ip, ";
+                        $SQL_IMG .= " add_by = :add_by, ";
+                        $SQL_IMG .= " add_time = :add_time ";
 
                         $stmtIMG = $dCON->prepare($SQL_IMG);
-                        $stmtIMG->bindParam(":reciept_image_name", $fpath_image);
+                        $stmtIMG->bindParam(":reciept_id", $MAXID_IMG);
+                        $stmtIMG->bindParam(":member_id", $MAX_ID);
                         $stmtIMG->bindParam(":reciept_caption", $reciept_caption);
-                        $stmtIMG->bindParam(":update_ip", $ip);
-                        $stmtIMG->bindParam(":update_by", $BY);
-                        $stmtIMG->bindParam(":update_time", $update_time);
-                        $stmtIMG->bindParam(":reciept_id", $reciept_id);
-                        $stmtIMG->bindParam(":member_id", $member_id);
+                        $stmtIMG->bindParam(":reciept_image_name", $fpath_image);
+                        $stmtIMG->bindParam(":position", $position);
+                        $stmtIMG->bindParam(":add_ip", $ip);
+                        $stmtIMG->bindParam(":add_by", $BY);
+                        $stmtIMG->bindParam(":add_time", $update_time);
                         $rsImage = $stmtIMG->execute();
                         //print_r($stmtIMG->errorInfo());
                         //echo intval($rsImage);
@@ -2171,7 +2205,7 @@ $CK_COUNTER = 0;
                         </td>
 
                         <td>
-                            <?php echo $fullname; //ucwords(strtolower($first_name.' '.$last_name));                      ?>
+                            <?php echo $fullname; //ucwords(strtolower($first_name.' '.$last_name));                                    ?>
                         </td>
                         <td>
                             <?php echo $email; ?>
