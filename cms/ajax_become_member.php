@@ -2108,9 +2108,14 @@ if (intval($dA) > intval(0)) {
                 <table cellpadding="0" cellspacing="0" width="100%" border='1'>
 
                     <tr>
-                        <th width="3%" align="center"><?php if ((intval($dA) > intval(0))) {?><input type="checkbox"
-                                name="chk_all" value="1" id="chk_all" /><?php }?></th>
-                        <th width="12%" align="left">Name</th>
+                        <th width="3%" align="center"
+                            style="width: 100%; display: flex; align-items: center; justify-content: center; border: none;">
+                            <?php if ((intval($dA) > intval(0))) {?>
+                            <input type="checkbox" name="chk_all" value="1" id="chk_all" style="margin-top: 0" />
+                            <?php }?>
+                        </th>
+                        <th width=" 12%" align="left">Name
+                        </th>
                         <th width="15%" align="left">Email/Password</th>
                         <th width="10%" align="left">Telephone</th>
                         <th width="12%" align="left">Reg. No.</th>
@@ -2205,7 +2210,7 @@ $CK_COUNTER = 0;
                         </td>
 
                         <td>
-                            <?php echo $fullname; //ucwords(strtolower($first_name.' '.$last_name));                                    ?>
+                            <?php echo $fullname; //ucwords(strtolower($first_name.' '.$last_name));                                                ?>
                         </td>
                         <td>
                             <?php echo $email; ?>
@@ -2356,7 +2361,7 @@ if (intval($CHK) == intval(0)) {
         </tr>
 
         <?php
-if ($paging[0] != "") {
+if ($paging != null && $paging[0] != "") {
             ?>
         <tr>
             <td style="padding: 10px;" align="right" colspan="<?php echo $COLSPAN; ?>">
