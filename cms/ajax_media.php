@@ -517,8 +517,8 @@ function saveData()
   
         if( intval($CHK) == intval(0) )
         { 
-            $MY_URLKEY = getURLKEY(MEDIA_TBL,$url_key,$media_name,"media_id",$id,"<>",$id); 
-            
+            $MY_URLKEY = getURLKEY(MEDIA_TBL,$url_key,$media_name,"media_id",$id,"<>",$id,""); //added extra parameter to match total 8 parameters
+            // $MY_URLKEY = "receipt";
             /*
             echo $video_type . "\n";
             echo $old_video . "\n";
@@ -809,11 +809,11 @@ function listData()
     $stmt2->execute();
     $row = $stmt2->fetchAll();      
     //echo '<pre>'; print_r($row);          
-    ?>   
-    
-    
-    <form name="frmDel" id="frmDel" method="post" action="">
-    
+    ?>
+
+
+<form name="frmDel" id="frmDel" method="post" action="">
+
     <table cellpadding="0" cellspacing="0" width="100%" border="0">
         <tr>
             <td valign="top" align="left">
@@ -823,105 +823,108 @@ function listData()
                             <table width="100%" cellspacing="0" cellpadding="0">
                                 <tr>
                                     <th align="left">Existing</th>
-                                    <?php if( intval($dA) > intval(0)) { ?><td align="right" style="padding-right:10px;"><b>Total Records: <?php echo intval($dA);?></b></td><?php }?>
-                                 </tr>
+                                    <?php if( intval($dA) > intval(0)) { ?><td align="right"
+                                        style="padding-right:10px;"><b>Total Records: <?php echo intval($dA);?></b></td>
+                                    <?php }?>
+                                </tr>
                             </table>
                         </td>
-                      </tr> 
+                    </tr>
                 </table>
-     		</td>
-         </tr>
+            </td>
+        </tr>
         <?php 
         if(intval($dA) > intval(0) ) 
         { 
-        ?>     
-            
-            <script language="javascript" type="text/javascript">
-                $(document).ready(function(){                                               
-                    //CHECK ALL
-                    $("#chk_all").click(function(){
-                            
-                        $( '.cb-element' ).attr( 'checked', $( this ).is( ':checked' ) ? true : false );              
-                        
-                       
-                        var nock = $(".cb-element:checked").size();
-                        if( parseInt(nock) == parseInt(0) )
-                        {
-                             $(".delete_all").attr("disabled", true).removeClass("submit_btn").addClass("grey_btn");                                   
-                        }
-                        else
-                        {
-                             $(".delete_all").attr("disabled", false).removeClass("grey_btn").addClass("submit_btn");  
-                        }
-                        
-                    }); 
-                    
-                        
-                    $(".cb-element").click(function(){
-                            
-                        var nock = $(".cb-element:checked").size();
-                        var unock = $(".cb-element:unchecked").size();
-                        //alert(nock);
-                        
-                        if( parseInt(nock) == parseInt(0) )
-                        {
-                             $(".delete_all").attr("disabled", true).removeClass("submit_btn").addClass("grey_btn");                                   
-                        }
-                        else
-                        {
-                             $(".delete_all").attr("disabled", false).removeClass("grey_btn").addClass("submit_btn");  
-                        }
-                        
-                        if( parseInt(unock) == parseInt(0))
-                        {
-                             $("#chk_all").attr("checked", true);      
-                        }
-                        else
-                        {
-                             $("#chk_all").attr("checked", false);  
-                        }
-                        
-                        
-                            
-                    });
-                    
-                    //DELETE SELECTED
-                    $(".delete_all").click(function(){
-                        $(this).deleteSelected();
-                    });
-                    
-                    //DELETE DATA
-                    $(".deleteData").click(function(){
-                        var value = $(this).attr("value");
-                        //alert(value);
-                        $(this).deleteData({ID: value});  
-                    });        
-                    
-                    $(".setStatus").live("click", function() {
-                        var ID = $(this).attr("value");
-                        var VAL = $(this).attr("myvalue");
-                        //alert(ID+"####"+VAL);
-                        $(this).setStatus({ID: ID,VAL:VAL});  
-                    }); 
-                    
-                  
-                     
+        ?>
+
+        <script language="javascript" type="text/javascript">
+        $(document).ready(function() {
+            //CHECK ALL
+            $("#chk_all").click(function() {
+
+                $('.cb-element').attr('checked', $(this).is(':checked') ? true : false);
+
+
+                var nock = $(".cb-element:checked").size();
+                if (parseInt(nock) == parseInt(0)) {
+                    $(".delete_all").attr("disabled", true).removeClass("submit_btn").addClass(
+                        "grey_btn");
+                } else {
+                    $(".delete_all").attr("disabled", false).removeClass("grey_btn").addClass(
+                        "submit_btn");
+                }
+
+            });
+
+
+            $(".cb-element").click(function() {
+
+                var nock = $(".cb-element:checked").size();
+                var unock = $(".cb-element:unchecked").size();
+                //alert(nock);
+
+                if (parseInt(nock) == parseInt(0)) {
+                    $(".delete_all").attr("disabled", true).removeClass("submit_btn").addClass(
+                        "grey_btn");
+                } else {
+                    $(".delete_all").attr("disabled", false).removeClass("grey_btn").addClass(
+                        "submit_btn");
+                }
+
+                if (parseInt(unock) == parseInt(0)) {
+                    $("#chk_all").attr("checked", true);
+                } else {
+                    $("#chk_all").attr("checked", false);
+                }
+
+
+
+            });
+
+            //DELETE SELECTED
+            $(".delete_all").click(function() {
+                $(this).deleteSelected();
+            });
+
+            //DELETE DATA
+            $(".deleteData").click(function() {
+                var value = $(this).attr("value");
+                //alert(value);
+                $(this).deleteData({
+                    ID: value
                 });
-            </script>
-           
-            <tr>
-                <td class="list_table" valign="top">
-                    <table cellpadding="0" cellspacing="0" width="100%" border='0'>
-                        <tr>
-                            <th width="3%" align="center"><?php if( ( intval($dA) > intval(0) ) ) { ?><input type="checkbox" name="chk_all" value="1" id="chk_all" /><?php } ?></th>
-                            <th width="3%" align="center">Status</th>                     
-                            <th width="34%" align="left">Name</th>
-                            <th width="15%" align="left">Date</th> 
-                            <th width="8%" align="center">Image</th>
-                                        
-                            <th align="center" width="8%">Action</th>                      
-                        </tr>                    
-                        <?php                                                       
+            });
+
+            $(".setStatus").live("click", function() {
+                var ID = $(this).attr("value");
+                var VAL = $(this).attr("myvalue");
+                //alert(ID+"####"+VAL);
+                $(this).setStatus({
+                    ID: ID,
+                    VAL: VAL
+                });
+            });
+
+
+
+        });
+        </script>
+
+        <tr>
+            <td class="list_table" valign="top">
+                <table cellpadding="0" cellspacing="0" width="100%" border='0'>
+                    <tr>
+                        <th width="3%" align="center"><?php if( ( intval($dA) > intval(0) ) ) { ?><input type="checkbox"
+                                name="chk_all" value="1" id="chk_all" /><?php } ?></th>
+                        <th width="3%" align="center">Status</th>
+                        <th width="34%" align="left">Name</th>
+                        <th width="15%" align="left">Date</th>
+                        <th width="8%" align="center">Image</th>
+
+                        <th align="center" width="8%">Action</th>
+                    </tr>
+                    <?php                                                       
                         $CK_COUNTER = 0;
                         $FOR_BG_COLOR = 0;
                         $temp = '';
@@ -960,125 +963,133 @@ function listData()
                                 $DISPLAY_IMG = CMS_UPLOAD_FOLDER_RELATIVE_PATH . FLD_MEDIA . "/" . FLD_MEDIA_IMG . "/R50-" . $image_name;
                             }          
                             
-                        ?>     
-                            
-                            <tr class="expiredCoupons trhover">
-                                 <td align="center" width="3%"> 
-                                    <input type="checkbox" class="cb-element" name="chk[]" value="<?php echo $media_id; ?>" />
-                                </td>
-                                
-                                <td align="center">
-                                   <div id="INPROCESS_STATUS_1_<?php echo $media_id; ?>" style="display: none;"></div>
-                                    <div id="INPROCESS_STATUS_2_<?php echo $media_id; ?>"  >
-                                        <a href="javascript:void(0);" value="<?php  echo $media_id; ?>" myvalue="<?php echo $STATUSnowaction; ?>" class="setStatus">
-                                            <img 
-                                            <?php 
+                        ?>
+
+                    <tr class="expiredCoupons trhover">
+                        <td align="center" width="3%">
+                            <input type="checkbox" class="cb-element" name="chk[]" value="<?php echo $media_id; ?>" />
+                        </td>
+
+                        <td align="center">
+                            <div id="INPROCESS_STATUS_1_<?php echo $media_id; ?>" style="display: none;"></div>
+                            <div id="INPROCESS_STATUS_2_<?php echo $media_id; ?>">
+                                <a href="javascript:void(0);" value="<?php  echo $media_id; ?>"
+                                    myvalue="<?php echo $STATUSnowaction; ?>" class="setStatus">
+                                    <img <?php 
                                             if( trim($status) == 'ACTIVE') 
                                             { 
-                                            ?>
-                                                src="<?php echo CMS_INCLUDES_ICON_RELATIVE_PATH; ?>active.png" title="Click to Inactive" alt="Click to Inactive" />
-                                            
-                                            <?php 
+                                            ?> src="<?php echo CMS_INCLUDES_ICON_RELATIVE_PATH; ?>active.png"
+                                        title="Click to Inactive" alt="Click to Inactive" />
+
+                                    <?php 
                                             }
                                             elseif( trim($status) == 'INACTIVE') 
                                             { 
                                             ?>
-                                                src="<?php echo CMS_INCLUDES_ICON_RELATIVE_PATH; ?>inactive.png" title="Click to Active" alt="Click to Active" />
-                                            <?php 
+                                    src="<?php echo CMS_INCLUDES_ICON_RELATIVE_PATH; ?>inactive.png" title="Click to
+                                    Active" alt="Click to Active" />
+                                    <?php 
                                             }
-                                            ?>             
-                                        
-                                        </a>  
-                                    </div>
-                                </td>
-                                <td>
-                                	<h3 class="couponType">
-                                        <a class="previewBookReview" href="javascript: void(0);" bid=<?php echo $media_id; ?>><?php echo $media_name; ?></a>
-                                   </h3>
-                                </td>  
-                                <td>
-                                    <?php echo $media_from_date;?>
-                                    
-                                </td> 
-                                <td align='center'>
-                                    <?php  if($DISPLAY_IMG !=''){ ?>
-                                        <img src="<?php echo $DISPLAY_IMG; ?>" alt="" width="30" height="30"/>
-                                    <?php } ?>
-                                </td>
-                                
-                                
-                              
-                                                                                                           
-                                <td align="center" >
-                                   <div id="INPROCESS_DELETE_1_<?php echo $media_id; ?>" style="display: none;"></div>
-                                   <div id="INPROCESS_DELETE_2_<?php echo $media_id; ?>"  >
-                                        <a href="<?php echo PAGE_MAIN; ?>?ID=<?php echo base64_encode(intval($media_id)); ?>" class="modifyData img_btn">
-                                            <img src="<?php echo CMS_INCLUDES_ICON_RELATIVE_PATH; ?>edit_icon.png" border="0" title="Modify" alt="Modify" />
-                                        </a>  
-                                        <?php
+                                            ?>
+
+                                </a>
+                            </div>
+                        </td>
+                        <td>
+                            <h3 class="couponType">
+                                <a class="previewBookReview" href="javascript: void(0);"
+                                    bid=<?php echo $media_id; ?>><?php echo $media_name; ?></a>
+                            </h3>
+                        </td>
+                        <td>
+                            <?php echo $media_from_date;?>
+
+                        </td>
+                        <td align='center'>
+                            <?php  if($DISPLAY_IMG !=''){ ?>
+                            <img src="<?php echo $DISPLAY_IMG; ?>" alt="" width="30" height="30" />
+                            <?php } ?>
+                        </td>
+
+
+
+
+                        <td align="center">
+                            <div id="INPROCESS_DELETE_1_<?php echo $media_id; ?>" style="display: none;"></div>
+                            <div id="INPROCESS_DELETE_2_<?php echo $media_id; ?>">
+                                <a href="<?php echo PAGE_MAIN; ?>?ID=<?php echo base64_encode(intval($media_id)); ?>"
+                                    class="modifyData img_btn">
+                                    <img src="<?php echo CMS_INCLUDES_ICON_RELATIVE_PATH; ?>edit_icon.png" border="0"
+                                        title="Modify" alt="Modify" />
+                                </a>
+                                <?php
                                         if( intval($CHK) == intval(0) )
                                         {
                                         ?>
-                                            <a href="javascript:void(0);" value="<?php  echo $media_id; ?>" class="deleteData img_btn">
-                                                <img src="<?php echo CMS_INCLUDES_ICON_RELATIVE_PATH; ?>trash.png" border="0" title="Delete" alt="Delete"/>
-                                            </a>
-                                        <?php
+                                <a href="javascript:void(0);" value="<?php  echo $media_id; ?>"
+                                    class="deleteData img_btn">
+                                    <img src="<?php echo CMS_INCLUDES_ICON_RELATIVE_PATH; ?>trash.png" border="0"
+                                        title="Delete" alt="Delete" />
+                                </a>
+                                <?php
                                         }
                                         else
                                         {
                                         ?>
-                                             <a href="javascript:void(0);" class="img_btn_dis">
-                                                    <img src="<?php echo CMS_INCLUDES_ICON_RELATIVE_PATH; ?>trash.png" border="0" title="Cannot Delete" alt="Cannot Delete"/>
-                                             </a> 
-                                             
-                                        <?php
+                                <a href="javascript:void(0);" class="img_btn_dis">
+                                    <img src="<?php echo CMS_INCLUDES_ICON_RELATIVE_PATH; ?>trash.png" border="0"
+                                        title="Cannot Delete" alt="Cannot Delete" />
+                                </a>
+
+                                <?php
                                         }
                                         ?>
-                                      </div>
-                                </td>
-                           </tr>
-                        <?php
+                            </div>
+                        </td>
+                    </tr>
+                    <?php
                         }
                         ?>
-                    </table>   
-                </td>
-            </tr>
-            <tr>
-                <td height="30" colspan="<?php echo $COLSPAN; ?>" class="txt1" style="padding-top:10px;" valign="top" id="INPROCESS_DEL">
-                    <input type="button"  class="grey_btn delete_all" value="Delete Selected"  id="delete_all" disabled="" />
-                    <?php showICONS("~~~ACTIVE~~~INACTIVE~~~MODIFY~~~DELETE~~~"); ?>
-                 </td>
-            </tr>                                                                
-            <?php 
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td height="30" colspan="<?php echo $COLSPAN; ?>" class="txt1" style="padding-top:10px;" valign="top"
+                id="INPROCESS_DEL">
+                <input type="button" class="grey_btn delete_all" value="Delete Selected" id="delete_all" disabled="" />
+                <?php showICONS("~~~ACTIVE~~~INACTIVE~~~MODIFY~~~DELETE~~~"); ?>
+            </td>
+        </tr>
+        <?php 
 			if($paging[0]!="")
 			{
 			?>
-                <tr>
-                    <td height="30" colspan="<?php echo $COLSPAN; ?>" align="right">
-                        <div id="pagingWrap">
-                    	   <?php echo $paging[0]; ?>
-                        </div>             
-                     </td>
-                 </tr>
-            <?php 
+        <tr>
+            <td height="30" colspan="<?php echo $COLSPAN; ?>" align="right">
+                <div id="pagingWrap">
+                    <?php echo $paging[0]; ?>
+                </div>
+            </td>
+        </tr>
+        <?php 
 			}
-			?>  
-        </table>            
-       
-        <?php
+			?>
+    </table>
+
+    <?php
         }        
         else
         {
         ?>
-            <tr>
-               <td align="center" height="100" colspan="<?php echo $COLSPAN; ?>" ><strong>Not Found</strong></td>
-           </tr>
-            
-        <?php
+    <tr>
+        <td align="center" height="100" colspan="<?php echo $COLSPAN; ?>"><strong>Not Found</strong></td>
+    </tr>
+
+    <?php
         } 
         ?>
     </table>
-</form> 
+</form>
 <?php
 }
 
