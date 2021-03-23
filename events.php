@@ -348,7 +348,7 @@ define("PAGE_LIST","events.php");
                                                 <i class="ico-chevron-double-white"></i>
 
                                                 View <strong>details</strong>
-                                            </a><a href="https://www.insol.org/login" class="btnWrapBlue">
+                                            </a><a href="./become-member.php" class="btnWrapBlue">
                                                 <i class="ico-chevron-double-white"></i>
 
                                                 Register <strong>to attend</strong>

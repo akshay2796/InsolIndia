@@ -295,6 +295,10 @@ function saveData()
                 }
             }
 
+            if ($membership_expired_date!='0000-00-00'){
+               $membership_expired_date= date_format(date_create($membership_expired_date), "Y-m-d");
+            }
+
             $SQL = "";
             $SQL .= " INSERT INTO " . BECOME_MEMBER_TBL . " SET ";
             $SQL .= " member_id = :member_id, ";
@@ -408,7 +412,7 @@ function saveData()
             $stmt->bindParam(":payment_status", $payment_status);
             $stmt->bindParam(":payment_text", $payment_text);
             $stmt->bindParam(":membership_start_date", date_format(date_create($membership_start_date), "Y-m-d"));
-            $stmt->bindParam(":membership_expired_date", date_format(date_create($membership_expired_date), "Y-m-d"));
+            $stmt->bindParam(":membership_expired_date", $membership_expired_date);
             $stmt->bindParam(":internal_comments", $internal_comments);
 
             $stmt->bindParam(":status", $status);
@@ -880,7 +884,7 @@ function editData()
 
     $member_id = intval($_REQUEST['id']);
 
-    $connect = mysqli_connect("localhost", "root", "root", "insolindia");
+    $connect = mysqli_connect("localhost", "sabsoin_ins_user", "Yrs[aidZ&8gA", "sabsoin_insol_india");
     $sql = "SELECT * FROM tbl_become_member WHERE member_id='$member_id'";
     $result = mysqli_query($connect, $sql);
     $row2 = mysqli_fetch_array($result);
@@ -1127,7 +1131,9 @@ function editData()
 
     $ip = trustme($_SERVER['REMOTE_ADDR']);
     $update_time = date("Y-m-d H:i:s");
-
+     if ($membership_expired_date!='0000-00-00'){
+               $membership_expired_date= date_format(date_create($membership_expired_date), "Y-m-d");
+            }
     //exit;
 
     $sql = "";
@@ -1265,7 +1271,7 @@ function editData()
     }
 
     $stmt3->bindParam(":membership_start_date", date_format(date_create($membership_start_date), "Y-m-d"));
-    $stmt3->bindParam(":membership_expired_date", date_format(date_create($membership_expired_date), "Y-m-d"));
+    $stmt3->bindParam(":membership_expired_date", $membership_expired_date);
     $stmt3->bindParam(":internal_comments", $internal_comments);
 
     $stmt3->bindParam(":update_ip", $ip);
@@ -1542,7 +1548,7 @@ function editData()
 
     }
 
-    $connection = mysqli_connect("localhost", "root", "root", "insolindia");
+    $connection = mysqli_connect("localhost", "sabsoin_ins_user", "Yrs[aidZ&8gA", "sabsoin_insol_india");
 
     $query_id = "SELECT * FROM renew_member_detail where p_id = $member_id";
     $result_id = mysqli_query($connection, $query_id);
@@ -2108,14 +2114,9 @@ if (intval($dA) > intval(0)) {
                 <table cellpadding="0" cellspacing="0" width="100%" border='1'>
 
                     <tr>
-                        <th width="3%" align="center"
-                            style="width: 100%; display: flex; align-items: center; justify-content: center; border: none;">
-                            <?php if ((intval($dA) > intval(0))) {?>
-                            <input type="checkbox" name="chk_all" value="1" id="chk_all" style="margin-top: 0" />
-                            <?php }?>
-                        </th>
-                        <th width=" 12%" align="left">Name
-                        </th>
+                        <th width="3%" align="center"><?php if ((intval($dA) > intval(0))) {?><input type="checkbox"
+                                name="chk_all" value="1" id="chk_all" /><?php }?></th>
+                        <th width="12%" align="left">Name</th>
                         <th width="15%" align="left">Email/Password</th>
                         <th width="10%" align="left">Telephone</th>
                         <th width="12%" align="left">Reg. No.</th>
@@ -2210,7 +2211,7 @@ $CK_COUNTER = 0;
                         </td>
 
                         <td>
-                            <?php echo $fullname; //ucwords(strtolower($first_name.' '.$last_name));                                                ?>
+                            <?php echo $fullname; //ucwords(strtolower($first_name.' '.$last_name));                                  ?>
                         </td>
                         <td>
                             <?php echo $email; ?>
@@ -2361,7 +2362,7 @@ if (intval($CHK) == intval(0)) {
         </tr>
 
         <?php
-if ($paging != null && $paging[0] != "") {
+if ($paging[0] != "") {
             ?>
         <tr>
             <td style="padding: 10px;" align="right" colspan="<?php echo $COLSPAN; ?>">
