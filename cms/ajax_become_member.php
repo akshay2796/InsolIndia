@@ -295,8 +295,8 @@ function saveData()
                 }
             }
 
-            if ($membership_expired_date!='0000-00-00'){
-               $membership_expired_date= date_format(date_create($membership_expired_date), "Y-m-d");
+            if ($membership_expired_date != '0000-00-00') {
+                $membership_expired_date = date_format(date_create($membership_expired_date), "Y-m-d");
             }
 
             $SQL = "";
@@ -884,7 +884,7 @@ function editData()
 
     $member_id = intval($_REQUEST['id']);
 
-    $connect = mysqli_connect("localhost", "sabsoin_ins_user", "Yrs[aidZ&8gA", "sabsoin_insol_india");
+    $connect = mysqli_connect("localhost", "root", "root", "insolindia");
     $sql = "SELECT * FROM tbl_become_member WHERE member_id='$member_id'";
     $result = mysqli_query($connect, $sql);
     $row2 = mysqli_fetch_array($result);
@@ -1131,9 +1131,9 @@ function editData()
 
     $ip = trustme($_SERVER['REMOTE_ADDR']);
     $update_time = date("Y-m-d H:i:s");
-     if ($membership_expired_date!='0000-00-00'){
-               $membership_expired_date= date_format(date_create($membership_expired_date), "Y-m-d");
-            }
+    if ($membership_expired_date != '0000-00-00') {
+        $membership_expired_date = date_format(date_create($membership_expired_date), "Y-m-d");
+    }
     //exit;
 
     $sql = "";
@@ -1548,7 +1548,7 @@ function editData()
 
     }
 
-    $connection = mysqli_connect("localhost", "sabsoin_ins_user", "Yrs[aidZ&8gA", "sabsoin_insol_india");
+    $connection = mysqli_connect("localhost", "root", "root", "insolindia");
 
     $query_id = "SELECT * FROM renew_member_detail where p_id = $member_id";
     $result_id = mysqli_query($connection, $query_id);
@@ -2211,7 +2211,7 @@ $CK_COUNTER = 0;
                         </td>
 
                         <td>
-                            <?php echo $fullname; //ucwords(strtolower($first_name.' '.$last_name));                                  ?>
+                            <?php echo $fullname; //ucwords(strtolower($first_name.' '.$last_name));                                   ?>
                         </td>
                         <td>
                             <?php echo $email; ?>
