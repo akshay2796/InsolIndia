@@ -1,5 +1,5 @@
 <?php
-ini_set("max_execution_time", 600);
+// ini_set("max_execution_time", 600);
 error_reporting(0);
 
 include "library_insol/class.pdo.php";
@@ -120,7 +120,7 @@ foreach ($row as $rs) {
 
 ?>
 <?php
-ini_set("max_execution_time", 600);
+// ini_set("max_execution_time", 600);
 error_reporting(0);
 
 include "library_insol/class.pdo.php";

@@ -61,12 +61,7 @@ function saveData()
             $MAX_ID = getMaxId(GOVERNANCE_TYPE_TBL, "type_id");
             $MAX_POS = getMaxPosition(GOVERNANCE_TYPE_TBL, "position", "", "", "=");
 
-            try {
-                $MY_URLKEY = getURLKEY(GOVERNANCE_TYPE_TBL, $url_key, $url_key, "", "", "", $MAX_ID);
-            } catch (Exception $e) {
-                var_dump($e);
-                var_dump($MY_URLKEY);
-            }
+            $MY_URLKEY = getURLKEY(GOVERNANCE_TYPE_TBL, $url_key, $url_key, "", "", "", $MAX_ID, "");
 
             $sql = "";
             $sql .= " INSERT INTO " . GOVERNANCE_TYPE_TBL . " SET ";
@@ -111,13 +106,7 @@ function saveData()
 
         if (intval($CHK) == intval(0)) {
 
-            // try {
-            //     $MY_URLKEY = getURLKEY(GOVERNANCE_TYPE_TBL, $url_key, $url_key, "type_id", $id, "<>", $id);
-
-            // } catch (Exception $e) {
-            //     var_dump($e);
-            //     var_dump($MY_URLKEY);
-            // }
+            $MY_URLKEY = getURLKEY(GOVERNANCE_TYPE_TBL, $url_key, $url_key, "type_id", $id, "<>", $id, "");
 
             $MY_URLKEY = "";
 
