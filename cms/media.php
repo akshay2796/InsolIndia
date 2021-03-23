@@ -1145,7 +1145,7 @@ function showDate(date) {
                 ?>
                     <div class="width2" id="showFTYPE">
                         <!-- <a href="<?php echo $FTYPE_PATH . "/" . $file_name; ?>" target="_blank"> -->
-                        <img src="<?php echo $FTYPE_PATH . "/" . $file_name; ?>" border="0" width="80px" height="120px"
+                        <img src="<?php echo $FTYPE_PATH . "/" . $file_name; ?>" border="0" width="120px" height="150px"
                             alt="<?php echo $file_name; ?>" title="<?php echo $file_name; ?>">
                         <!-- <?php //echo $file_name; ?> </a> -->
                         <img src="<?php echo CMS_INCLUDES_IMAGES_RELATIVE_PATH; ?>cms-icon/trash.png"
