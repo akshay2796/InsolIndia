@@ -843,11 +843,15 @@ $CK_COUNTER = 0;
             $STATUSnowaction = stripslashes($status) == 'ACTIVE' ? "INACTIVE" : "ACTIVE";
 
             $image_name = trim(stripslashes($rs['image_name']));
+            $file_name = trim(stripslashes($rs['file_name']));
+            $media_type = trim(stripslashes($rs['media_type']));
 
             $DISPLAY_IMG = "";
             $R50_IMG_EXIST = chkImageExists(CMS_UPLOAD_FOLDER_RELATIVE_PATH . FLD_MEDIA . "/" . FLD_MEDIA_IMG . "/R50-" . $image_name);
 
-            if (intval($R50_IMG_EXIST) == intval(1)) {
+            if ($media_type == 'FILE' && $file_name != "") {
+                $DISPLAY_IMG = CMS_UPLOAD_FOLDER_RELATIVE_PATH . FLD_MEDIA . "/" . FLD_MEDIA_FILE . "/" . $file_name;
+            } else if (intval($R50_IMG_EXIST) == intval(1)) {
                 $DISPLAY_IMG = CMS_UPLOAD_FOLDER_RELATIVE_PATH . FLD_MEDIA . "/" . FLD_MEDIA_IMG . "/R50-" . $image_name;
             }
 
