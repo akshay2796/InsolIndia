@@ -2212,6 +2212,544 @@ function sendMailformate($TYP,$ID,$via="")
                                     
                                 }
                             }
+                            else if (trim($TYP) == "NEWS")
+                            {
+                                $MAIL_BODY = '<table border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100.0%;border-collapse:collapse">
+	<tbody>
+		<tr>
+			<td valign="top" style="padding:0cm 0cm 0cm 0cm">
+				<div align="center">
+					<table border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100.0%;background:white;min-width:100%">
+						<tbody>
+							<tr>
+								<td width="100%" style="width:100.0%;padding:0cm 0cm 0cm 0cm">
+									<div align="center">
+										<table border="0" cellspacing="0" cellpadding="0" width="660" style="width:495.0pt">
+											<tbody>
+												<tr>
+													<td style="padding:0cm 0cm 0cm 0cm">
+														<div align="center">
+															<table border="0" cellspacing="0" cellpadding="0" style="max-width:495.0pt">
+																<tbody>
+																	<tr>
+																		<td style="padding:0cm 0cm 0cm 0cm">
+																			<table border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100.0%;min-width:100%">
+																				<tbody>
+																					<tr>
+																						<td width="100%" valign="top" style="width:100.0%;padding:0cm 0cm 0cm 0cm">
+																							<div align="center">
+																								<table border="0" cellspacing="0" cellpadding="0" width="660" style="width:495.0pt">
+																									<tbody>
+																										<tr>
+																											<td width="660" valign="top" style="width:495.0pt;padding:0cm 0cm 0cm 0cm">
+																												<div>
+																													<div align="center">
+																														<table border="0" cellspacing="0" cellpadding="0" style="max-width:495.0pt;background:#1c2544;min-width:100%">
+																															<tbody>
+																																<tr>
+																																	<td valign="top" style="padding:0cm 7.5pt 0cm 7.5pt">
+																																		<div align="center">
+																																			<table border="0" cellspacing="0" cellpadding="0" width="640" style="width:480.0pt">
+																																				<tbody>
+																																					<tr>
+																																						<td width="58" valign="top" style="width:43.5pt;padding:0cm 0cm 0cm 0cm">
+																																							<div>
+																																								<table border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100.0%">
+																																									<tbody>
+																																										<tr>
+																																											<td style="padding:0cm 0cm 0cm 0cm">
+																																												<table border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100.0%">
+																																													<tbody>
+																																														<tr>
+																																															<td style="padding:7.5pt 7.5pt 7.5pt 7.5pt">
+																																																<p class="MsoNormal"><span style="font-size:1.0pt;font-family:Helvetica"><img border="0" width="37" style="width:.3854in" id="m_8053333333070756144m_1046288401685704852_x0000_i1038" src="https://ci6.googleusercontent.com/proxy/6DRhZKX9PKC-VIv3fQ2kOWiORQlGQMbPPF5heTyFCOVA1s6HbGZhInVHmpE927eLRQaZz_EfAzfWszmMsN-VkWoPxq_K1VNPyQakuehdLQt_yVg-s3O-9FIn7F8XDZErynDpDb5psQ=s0-d-e1-ft#https://i.emlfiles4.com/cmpimg/8/7/4/8/2/2/files/87902_insollogotmwebtransparent.png" class="CToWUd"><u></u><u></u></span></p>
+																																															</td>
+																																														</tr>
+																																													</tbody>
+																																												</table>
+																																											</td>
+																																										</tr>
+																																									</tbody>
+																																								</table>
+																																							</div>
+																																						</td>
+																																						<td width="582" valign="top" style="width:436.5pt;padding:0cm 0cm 0cm 0cm">
+																																							<div>
+																																								<table border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100.0%">
+																																									<tbody>
+																																										<tr>
+																																											<td style="padding:0cm 0cm 0cm 0cm">
+																																												<table border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100.0%">
+																																													<tbody>
+																																														<tr>
+																																															<td style="padding:0cm 0cm 0cm 0cm">
+																																																<p class="MsoNormal"><span style="font-size:1.0pt;font-family:Helvetica"><img border="0" width="1" height="2" style="width:.0104in;height:.0208in" id="m_8053333333070756144m_1046288401685704852_x0000_i1037" src="https://ci3.googleusercontent.com/proxy/GGMHcz_unUGUha6zZoYRnlCiRLTlUGMdgmiaivMW-BbWmUXp9J-YXbys5sZAYnxtYU5Cba-2-M2c=s0-d-e1-ft#https://i.emlfiles4.com/cmpimg/t/s.gif" class="CToWUd"><u></u><u></u></span></p>
+																																															</td>
+																																														</tr>
+																																													</tbody>
+																																												</table>
+																																												<p class="MsoNormal"><span style="font-family:Helvetica;display:none"><u></u>&nbsp;<u></u></span></p>
+																																												<table border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100.0%;min-width:100%">
+																																													<tbody>
+																																														<tr>
+																																															<td valign="top" style="padding:7.5pt 7.5pt 7.5pt 7.5pt">
+																																																<div>
+																																																	<p style="margin:0cm;word-break:break-word"><b><span style="font-size:18.0pt;font-family:Helvetica;color:white">INSOL International</span></b><span style="font-size:10.5pt;font-family:Helvetica;color:#333333"><u></u><u></u></span></p>
+																																																</div>
+																																															</td>
+																																														</tr>
+																																													</tbody>
+																																												</table>
+																																											</td>
+																																										</tr>
+																																									</tbody>
+																																								</table>
+																																							</div>
+																																						</td>
+																																					</tr>
+																																				</tbody>
+																																			</table>
+																																		</div>
+																																	</td>
+																																</tr>
+																															</tbody>
+																														</table>
+																													</div>
+																													<p class="MsoNormal" align="center" style="text-align:center"><span style="font-family:Helvetica;display:none"><u></u>&nbsp;<u></u></span></p>
+																													<div align="center">
+																														<table border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100.0%;min-width:100%">
+																															<tbody>
+																																<tr>
+																																	<td style="padding:0cm 0cm 0cm 0cm">
+																																		<p class="MsoNormal">
+																																			<span style="font-size:1.0pt;font-family:Helvetica">
+																																				<img border="0" width="660" style="width:6.875in" id="m_8053333333070756144m_1046288401685704852_x0000_i1036" src="https://ci3.googleusercontent.com/proxy/IbPD8TRpeqYtkEl6DCkRxIVataWIR2DQvaRi1QI_DusxZZwImzwC_I9r7QMUkUQjrMH_SfZbF4jkEPuta3VBrk3lyDAXuaIBJq0NSucnm5Ymp2cVFdgJkq69_or579rGh90VDMC0BdYKVXq79yV_dbgrTk4=s0-d-e1-ft#https://i.emlfiles4.com/cmpimg/8/7/4/8/2/2/files/imagecache/767929/w660_790435_indiadotmailer.jpg" class="CToWUd a6T" tabindex="0">
+																																		<div class="a6S" dir="ltr" style="opacity: 0.01; left: 934px; top: 605px;"><div id=":sg" class="T-I J-J5-Ji aQv T-I-ax7 L3 a5q" role="button" tabindex="0" aria-label="Download attachment " data-tooltip-class="a1V" data-tooltip="Download"><div class="akn"><div class="aSK J-J5-Ji aYr"></div></div></div></div><u></u><u></u></span></p>
+																																	</td>
+																																</tr>
+																															</tbody>
+																														</table>
+																													</div>
+																													<p class="MsoNormal" align="center" style="text-align:center"><span style="font-family:Helvetica;display:none"><u></u>&nbsp;<u></u></span></p>
+																													<div align="center">
+																														<table border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100.0%;min-width:100%">
+																															<tbody>
+																																<tr>
+																																	<td valign="top" style="padding:7.5pt 7.5pt 7.5pt 7.5pt">
+																																		<div>
+																																			<p style="margin:0cm;line-height:12.75pt;word-break:break-word"><b><span style="font-size:12.0pt;font-family:Helvetica;color:black">INSOL International India Virtual Seminar – 23, 24, 25 February 2021</span></b><span style="font-size:10.5pt;font-family:Helvetica;color:#333333"><u></u><u></u></span></p>
+																																			<p style="margin:0cm;line-height:12.75pt;word-break:break-word"><b><i><span style="font-size:12.0pt;font-family:Helvetica;color:black">in association with INSOL India </span></i></b><span style="font-size:10.5pt;font-family:Helvetica;color:black"><u></u><u></u></span></p>
+																																			<p style="margin:0cm;line-height:12.75pt;word-break:break-word"><span style="font-size:10.5pt;font-family:Helvetica;color:black"><u></u>&nbsp;<u></u></span></p>
+																																			<p style="margin:0cm;line-height:12.75pt;word-break:break-word"><span style="font-size:10.5pt;font-family:Helvetica;color:black">INSOL International and INSOL India will be joining forces to run a virtual seminar over three days. Join us live on <b>23, 24, 25 February at 2.30 pm India/ 9am GMT </b>for three 90-minute sessions.<b> </b>Each webinar will be split into two subtopics, as below. <u></u><u></u></span></p>
+																																			<p style="margin:0cm;line-height:12.75pt;word-break:break-word"><span style="font-size:10.5pt;font-family:Helvetica;color:black"><u></u>&nbsp;<u></u></span></p>
+																																			<p style="margin:0cm;line-height:12.75pt;word-break:break-word"><span style="font-size:10.5pt;font-family:Helvetica;color:black">The theme for the virtual seminar is <b>“Insolvency Resolution in India post COVID-19”. </b>The Main Organising Committee have put together a very topical programme. Further details to follow. &nbsp;<u></u><u></u></span></p>
+																																			<p style="margin:0cm;line-height:12.75pt;word-break:break-word"><span style="font-size:10.5pt;font-family:Helvetica;color:black"><u></u>&nbsp;<u></u></span></p>
+																																			<p style="margin:0cm;line-height:12.75pt;word-break:break-word"><u><span style="font-size:10.5pt;font-family:Helvetica;color:black">Main Organising Committee</span></u><span style="font-size:10.5pt;font-family:Helvetica;color:black"><u></u><u></u></span></p>
+																																			<p style="margin:0cm;line-height:12.75pt;word-break:break-word"><span style="font-size:10.5pt;font-family:Helvetica;color:black">Nikhil Shah, Alavarez &amp; Marsal, India (Chair)<u></u><u></u></span></p>
+																																			<p style="margin:0cm;line-height:12.75pt;word-break:break-word"><span style="font-size:10.5pt;font-family:Helvetica;color:black">Abizer Diwanji, EY, India<u></u><u></u></span></p>
+																																			<p style="margin:0cm;line-height:12.75pt;word-break:break-word"><span style="font-size:10.5pt;font-family:Helvetica;color:black">Dhananjay Kumar, INSOL Fellow, Cyril Armachand Mangaldas, India<u></u><u></u></span></p>
+																																			<p style="margin:0cm;line-height:12.75pt;word-break:break-word"><span style="font-size:10.5pt;font-family:Helvetica;color:black">Veena Sivaramakrishnan, Shardul Amarchang Mangaldas &amp; Co, India<u></u><u></u></span></p>
+																																			<p style="margin:0cm;line-height:12.75pt;word-break:break-word"><span style="font-size:10.5pt;font-family:Helvetica;color:black">Susan Thomas, Research Professor of Business, Jindal Global Business School, India<u></u><u></u></span></p>
+																																		</div>
+																																	</td>
+																																</tr>
+																															</tbody>
+																														</table>
+																													</div>
+																													<p class="MsoNormal" align="center" style="text-align:center"><span style="font-family:Helvetica"><u></u>&nbsp;<u></u></span></p>
+																													<div align="center">
+																														<table border="0" cellspacing="0" cellpadding="0" style="max-width:495.0pt;min-width:100%">
+																															<tbody>
+																																<tr>
+																																	<td valign="top" style="padding:0cm 7.5pt 0cm 0cm">
+																																		<div align="center">
+																																			<table border="0" cellspacing="0" cellpadding="0" width="650" style="width:487.5pt">
+																																				<tbody>
+																																					<tr>
+																																						<td width="151" valign="top" style="width:113.5pt;padding:0cm 0cm 0cm 0cm">
+																																							<div>
+																																								<table border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100.0%">
+																																									<tbody>
+																																										<tr>
+																																											<td style="padding:0cm 0cm 0cm 0cm">
+																																												<table border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100.0%">
+																																													<tbody>
+																																														<tr>
+																																															<td style="padding:7.5pt 7.5pt 7.5pt 7.5pt">
+																																																<p class="MsoNormal"><span style="font-family:&quot;Arial&quot;,sans-serif"><u></u><span><map name="m_8053333333070756144_m_1046288401685704852_MicrosoftOfficeMap0"></map><img border="0" width="105" height="39" style="width:1.0937in;height:.4062in" src="https://mail.google.com/mail/u/0?ui=2&amp;ik=1a82268fda&amp;attid=0.1&amp;permmsgid=msg-f:1693027071093377177&amp;th=177ed726afa40899&amp;view=fimg&amp;sz=s0-l75-ft&amp;attbid=ANGjdJ8ZpnqdlCi-XYUVSi7uuiTeTEEmH8iTeLel2KlODVU1kkAdEAjel0wiYW8njKhM1koztZ_yqMPTaak2PaBggZp4NV7hW6hEC7UTTlNoWHf58c-MFjB3YFVuNDI&amp;disp=emb&amp;realattid=177ed714dfb5b16b22" usemap="#m_8053333333070756144_m_1046288401685704852_MicrosoftOfficeMap0" data-image-whitelisted="" class="CToWUd"></span><u></u></span><span style="font-family:Helvetica"><u></u><u></u></span></p>
+																																															</td>
+																																														</tr>
+																																													</tbody>
+																																												</table>
+																																											</td>
+																																										</tr>
+																																									</tbody>
+																																								</table>
+																																							</div>
+																																						</td>
+																																						<td width="499" valign="top" style="width:374.0pt;padding:0cm 0cm 0cm 0cm">
+																																							<div>
+																																								<table border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100.0%">
+																																									<tbody>
+																																										<tr>
+																																											<td style="padding:0cm 0cm 0cm 0cm">
+																																												<table border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100.0%">
+																																													<tbody>
+																																														<tr>
+																																															<td style="padding:7.5pt 7.5pt 7.5pt 7.5pt">
+																																																<p class="MsoNormal"><span style="font-family:&quot;Arial&quot;,sans-serif"><u></u><span><map name="m_8053333333070756144_m_1046288401685704852_MicrosoftOfficeMap1"></map><img border="0" width="106" height="39" style="width:1.1041in;height:.4062in" src="https://mail.google.com/mail/u/0?ui=2&amp;ik=1a82268fda&amp;attid=0.2&amp;permmsgid=msg-f:1693027071093377177&amp;th=177ed726afa40899&amp;view=fimg&amp;sz=s0-l75-ft&amp;attbid=ANGjdJ9kw_3Icat7qiv2CBvES2ic0pb-wgFONpPkKyYLFLfBBJY4gabOYyhLXydKE-UITwWXSuUf3yDkCH2hvsNLuYwXJoaucWSSB-7gn9kb2i6dp_FMLxdEIAJhcbg&amp;disp=emb&amp;realattid=177ed714dfc692e333" usemap="#m_8053333333070756144_m_1046288401685704852_MicrosoftOfficeMap1" data-image-whitelisted="" class="CToWUd"></span><u></u></span><span style="font-family:Helvetica"><u></u><u></u></span></p>
+																																															</td>
+																																														</tr>
+																																													</tbody>
+																																												</table>
+																																											</td>
+																																										</tr>
+																																									</tbody>
+																																								</table>
+																																							</div>
+																																						</td>
+																																					</tr>
+																																				</tbody>
+																																			</table>
+																																		</div>
+																																	</td>
+																																</tr>
+																															</tbody>
+																														</table>
+																													</div>
+																													<p class="MsoNormal" align="center" style="text-align:center"><span style="font-family:Helvetica;display:none"><u></u>&nbsp;<u></u></span></p>
+																													<div align="center">
+																														<table border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100.0%;min-width:100%">
+																															<tbody>
+																																<tr>
+																																	<td valign="top" style="padding:7.5pt 7.5pt 7.5pt 7.5pt">
+																																		<div>
+																																			<p class="MsoNormal" style="line-height:12.75pt;word-break:break-word"><span style="font-size:10.5pt;font-family:Helvetica;color:black">Join in the conversation, use #INSOL #India #insolvency #restructuring #cross-border&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<u></u><u></u></span></p>
+																																			<p class="MsoNormal" style="line-height:12.75pt;word-break:break-word"><span style="font-size:10.5pt;font-family:Helvetica;color:black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<u></u><u></u></span></p>
+																																			<p class="MsoNormal" style="line-height:12.75pt;word-break:break-word"><b><span style="font-size:10.5pt;font-family:Helvetica;color:black">Tuesday 23 February at 2.30 pm India/ 9am GMT</span></b><span style="font-size:10.5pt;font-family:Helvetica;color:black"><u></u><u></u></span></p>
+																																			<p class="MsoNormal" style="line-height:12.75pt;word-break:break-word"><span style="font-size:10.5pt;font-family:Helvetica;color:black">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<u></u><u></u></span></p>
+																																			<ul style="margin-top:0cm" type="disc">
+																																				<li class="MsoNormal" style="color:black;line-height:12.75pt;word-break:break-word"><span style="font-size:10.5pt;font-family:Helvetica">How should India deal with the pandemic NPA deluge?<u></u><u></u></span></li>
+																																				<li class="MsoNormal" style="color:black;line-height:12.75pt;word-break:break-word"><span style="font-size:10.5pt;font-family:Helvetica">Exit and Rescue Options for a distressed company in India (including directors’ duties)<u></u><u></u></span></li>
+																																			</ul>
+																																			<p class="MsoNormal" style="line-height:12.75pt;word-break:break-word"><span style="font-size:10.5pt;font-family:Helvetica;color:black">&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<u></u><u></u></span></p>
+																																			<p class="MsoNormal" style="line-height:12.75pt;word-break:break-word"><b><span style="font-size:10.5pt;font-family:Helvetica;color:black">Wednesday 24 February at 2.30 pm India/ 9am GMT</span></b><span style="font-size:10.5pt;font-family:Helvetica;color:black"><u></u><u></u></span></p>
+																																			<p class="MsoNormal" style="line-height:12.75pt;word-break:break-word"><span style="font-size:10.5pt;font-family:Helvetica;color:black">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<u></u><u></u></span></p>
+																																			<ul style="margin-top:0cm" type="disc">
+																																				<li class="MsoNormal" style="color:black;line-height:12.75pt;word-break:break-word"><span style="font-size:10.5pt;font-family:Helvetica">Prepacks – will they work in India?<u></u><u></u></span></li>
+																																				<li class="MsoNormal" style="color:black;line-height:12.75pt;word-break:break-word"><span style="font-size:10.5pt;font-family:Helvetica">Challenges in arriving at consensual resolution in India<u></u><u></u></span></li>
+																																			</ul>
+																																			<p class="MsoNormal" style="line-height:12.75pt;word-break:break-word"><span style="font-size:10.5pt;font-family:Helvetica;color:black">&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<u></u><u></u></span></p>
+																																			<p class="MsoNormal" style="line-height:12.75pt;word-break:break-word"><b><span style="font-size:10.5pt;font-family:Helvetica;color:black">Thursday 25 February at 2.30 pm India/ 9am GMT</span></b><span style="font-size:10.5pt;font-family:Helvetica;color:black"><u></u><u></u></span></p>
+																																			<p class="MsoNormal" style="line-height:12.75pt;word-break:break-word"><span style="font-size:10.5pt;font-family:Helvetica;color:black">&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<u></u><u></u></span></p>
+																																			<ul style="margin-top:0cm" type="disc">
+																																				<li class="MsoNormal" style="color:black;line-height:12.75pt;word-break:break-word"><span style="font-size:10.5pt;font-family:Helvetica">How has IBC performed so far in resolving stress? <u></u><u></u></span></li>
+																																				<li class="MsoNormal" style="color:black;line-height:12.75pt;word-break:break-word"><span style="font-size:10.5pt;font-family:Helvetica">Next frontiers for IBC – cross-border, personal insolvency, group insolvency<u></u><u></u></span></li>
+																																			</ul>
+																																			<p class="MsoNormal" style="line-height:12.75pt;word-break:break-word"><span style="font-size:10.5pt;font-family:Helvetica;color:black">&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<u></u><u></u></span></p>
+																																			<p class="MsoNormal" style="line-height:12.75pt;word-break:break-word"><span style="font-size:10.5pt;font-family:Helvetica;color:black">All three webinars will last for 90 minutes and will include Q&amp;A. <u></u><u></u></span></p>
+																																			<p class="MsoNormal" style="line-height:12.75pt;word-break:break-word"><span style="font-size:10.5pt;font-family:Helvetica;color:black">&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<u></u><u></u></span></p>
+																																			<p class="MsoNormal" style="line-height:12.75pt;word-break:break-word"><span style="font-size:10.5pt;font-family:Helvetica;color:black">Please note that the technical programme may be subject to change. <u></u><u></u></span></p>
+																																			<p class="MsoNormal" style="line-height:12.75pt;word-break:break-word"><span style="font-size:10.5pt;font-family:Helvetica;color:black">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<u></u><u></u></span></p>
+																																			<table border="0" cellspacing="0" cellpadding="0">
+																																				<tbody>
+																																					<tr style="height:17.2pt">
+																																						<td width="359" valign="top" style="width:269.25pt;padding:0cm 0cm 0cm 0cm;height:17.2pt;word-break:break-word">
+																																							<p class="MsoNormal" style="line-height:12.75pt;word-break:break-word"><span style="font-size:10.5pt;font-family:Helvetica;color:black">Registration fees*<u></u><u></u></span></p>
+																																						</td>
+																																						<td width="242" valign="top" style="width:181.5pt;padding:0cm 0cm 0cm 0cm;height:17.2pt;word-break:break-word"></td>
+																																					</tr>
+																																					<tr>
+																																						<td width="359" valign="top" style="width:269.25pt;padding:0cm 0cm 0cm 0cm;word-break:break-word">
+																																							<p class="MsoNormal" style="line-height:12.75pt;word-break:break-word"><span style="font-size:10.5pt;font-family:Helvetica;color:black">Member (for both INSOL International and INSOL India)<u></u><u></u></span></p>
+																																						</td>
+																																						<td width="242" valign="top" style="width:181.5pt;padding:0cm 0cm 0cm 0cm;word-break:break-word">
+																																							<p class="MsoNormal" style="line-height:12.75pt;word-break:break-word"><span style="font-size:10.5pt;font-family:Helvetica;color:black">GBP 15.00<u></u><u></u></span></p>
+																																						</td>
+																																					</tr>
+																																					<tr>
+																																						<td width="359" valign="top" style="width:269.25pt;padding:0cm 0cm 0cm 0cm;word-break:break-word">
+																																							<p class="MsoNormal" style="line-height:12.75pt;word-break:break-word"><span style="font-size:10.5pt;font-family:Helvetica;color:black">Non-Member <u></u><u></u></span></p>
+																																						</td>
+																																						<td width="242" valign="top" style="width:181.5pt;padding:0cm 0cm 0cm 0cm;word-break:break-word">
+																																							<p class="MsoNormal" style="line-height:12.75pt;word-break:break-word"><span style="font-size:10.5pt;font-family:Helvetica;color:black">GBP 30.00<u></u><u></u></span></p>
+																																						</td>
+																																					</tr>
+																																					<tr>
+																																						<td width="359" valign="top" style="width:269.25pt;padding:0cm 0cm 0cm 0cm;word-break:break-word">
+																																							<p class="MsoNormal" style="line-height:12.75pt;word-break:break-word"><span style="font-size:10.5pt;font-family:Helvetica;color:black">Judges and regulators<u></u><u></u></span></p>
+																																						</td>
+																																						<td width="242" valign="top" style="width:181.5pt;padding:0cm 0cm 0cm 0cm;word-break:break-word">
+																																							<p class="MsoNormal" style="line-height:12.75pt;word-break:break-word"><span style="font-size:10.5pt;font-family:Helvetica;color:black">Free of charge <u></u><u></u></span></p>
+																																						</td>
+																																					</tr>
+																																				</tbody>
+																																			</table>
+																																			<p class="MsoNormal" style="line-height:12.75pt;word-break:break-word"><span style="font-size:10.5pt;font-family:Helvetica;color:black">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<u></u><u></u></span></p>
+																																			<p class="MsoNormal" style="line-height:12.75pt;word-break:break-word"><span style="font-size:10.5pt;font-family:Helvetica;color:black">*one fee to access all three webinars<u></u><u></u></span></p>
+																																		</div>
+																																	</td>
+																																</tr>
+																															</tbody>
+																														</table>
+																													</div>
+																												</div>
+																												<div align="center">
+																													<table border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100.0%;background:#1c2544">
+																														<tbody>
+																															<tr>
+																																<td style="padding:0cm 0cm 0cm 0cm">
+																																	<p class="MsoNormal"><span style="font-size:1.0pt;font-family:Helvetica;color:white"><img border="0" width="1" height="5" style="width:.0104in;height:.052in" id="m_8053333333070756144m_1046288401685704852_x0000_i1033" src="https://ci3.googleusercontent.com/proxy/GGMHcz_unUGUha6zZoYRnlCiRLTlUGMdgmiaivMW-BbWmUXp9J-YXbys5sZAYnxtYU5Cba-2-M2c=s0-d-e1-ft#https://i.emlfiles4.com/cmpimg/t/s.gif" class="CToWUd"></span><span style="font-size:1.0pt;font-family:Helvetica"><u></u><u></u></span></p>
+																																</td>
+																															</tr>
+																														</tbody>
+																													</table>
+																												</div>
+																												<p class="MsoNormal" align="center" style="text-align:center"><span style="font-family:Helvetica"><u></u>&nbsp;<u></u></span></p>
+																												<div align="center">
+																													<table border="0" cellspacing="0" cellpadding="0" style="max-width:495.0pt;min-width:100%">
+																														<tbody>
+																															<tr>
+																																<td valign="top" style="padding:0cm 7.5pt 0cm 0cm">
+																																	<div align="center">
+																																		<table border="0" cellspacing="0" cellpadding="0" width="650" style="width:487.5pt">
+																																			<tbody>
+																																				<tr>
+																																					<td width="151" valign="top" style="width:113.5pt;padding:0cm 0cm 0cm 0cm">
+																																						<div>
+																																							<table border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100.0%">
+																																								<tbody>
+																																									<tr>
+																																										<td style="padding:0cm 0cm 0cm 0cm">
+																																											<table border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100.0%">
+																																												<tbody>
+																																													<tr>
+																																														<td style="padding:7.5pt 7.5pt 7.5pt 7.5pt">
+																																															<p class="MsoNormal"><span style="font-family:&quot;Arial&quot;,sans-serif"><u></u><span><map name="m_8053333333070756144_m_1046288401685704852_MicrosoftOfficeMap2"></map><img border="0" width="105" height="39" style="width:1.0937in;height:.4062in" src="https://mail.google.com/mail/u/0?ui=2&amp;ik=1a82268fda&amp;attid=0.1&amp;permmsgid=msg-f:1693027071093377177&amp;th=177ed726afa40899&amp;view=fimg&amp;sz=s0-l75-ft&amp;attbid=ANGjdJ_Z3kPyggEoMdEE50YPCd4HxG55AGr2mA2XSTRTAQVhKNE7ffTRH9qG3Wj30JN5u3zIMiujbydGqDso5DzYOeJVORCdXXJsJp_EaHTTBLomJoPv-rtWON6TuY8&amp;disp=emb&amp;realattid=177ed714dfb5b16b22" usemap="#m_8053333333070756144_m_1046288401685704852_MicrosoftOfficeMap2" data-image-whitelisted="" class="CToWUd"></span><u></u></span><span style="font-family:Helvetica"><u></u><u></u></span></p>
+																																														</td>
+																																													</tr>
+																																												</tbody>
+																																											</table>
+																																										</td>
+																																									</tr>
+																																								</tbody>
+																																							</table>
+																																						</div>
+																																					</td>
+																																					<td width="499" valign="top" style="width:374.0pt;padding:0cm 0cm 0cm 0cm">
+																																						<div>
+																																							<table border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100.0%">
+																																								<tbody>
+																																									<tr>
+																																										<td style="padding:0cm 0cm 0cm 0cm">
+																																											<table border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100.0%">
+																																												<tbody>
+																																													<tr>
+																																														<td style="padding:7.5pt 7.5pt 7.5pt 7.5pt">
+																																															<p class="MsoNormal"><span style="font-family:&quot;Arial&quot;,sans-serif"><u></u><span><map name="m_8053333333070756144_m_1046288401685704852_MicrosoftOfficeMap3"></map><img border="0" width="106" height="39" style="width:1.1041in;height:.4062in" src="https://mail.google.com/mail/u/0?ui=2&amp;ik=1a82268fda&amp;attid=0.2&amp;permmsgid=msg-f:1693027071093377177&amp;th=177ed726afa40899&amp;view=fimg&amp;sz=s0-l75-ft&amp;attbid=ANGjdJ9HkWChi_GlBqB0TIht_aOjSqCYmt5tHiCOPDclaQ-WtHUVo-N9el-lUoPSu_jA1Yla00eC2zO7ccQmn33eUgMBrXjO04WS75XloAfWAoQsZGSu3p3aMXwCWMI&amp;disp=emb&amp;realattid=177ed714dfc692e333" usemap="#m_8053333333070756144_m_1046288401685704852_MicrosoftOfficeMap3" data-image-whitelisted="" class="CToWUd"></span><u></u></span><span style="font-family:Helvetica"><u></u><u></u></span></p>
+																																														</td>
+																																													</tr>
+																																												</tbody>
+																																											</table>
+																																										</td>
+																																									</tr>
+																																								</tbody>
+																																							</table>
+																																						</div>
+																																					</td>
+																																				</tr>
+																																			</tbody>
+																																		</table>
+																																	</div>
+																																</td>
+																															</tr>
+																														</tbody>
+																													</table>
+																												</div>
+																												<p class="MsoNormal" align="center" style="text-align:center"><span style="font-family:Helvetica;display:none"><u></u>&nbsp;<u></u></span></p>
+																												<div align="center">
+																													<table border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100.0%;min-width:100%">
+																														<tbody>
+																															<tr>
+																																<td valign="top" style="padding:7.5pt 7.5pt 7.5pt 7.5pt">
+																																	<div>
+																																		<p style="margin:0cm;line-height:12.75pt;word-break:break-word"><span style="font-size:10.5pt;font-family:Helvetica;color:black">Join the conversation #INSOL #India #insolvency #restructuring #cross-border</span><span style="font-size:10.5pt;font-family:Helvetica;color:#333333"><u></u><u></u></span></p>
+																																	</div>
+																																</td>
+																															</tr>
+																														</tbody>
+																													</table>
+																												</div>
+																												<p class="MsoNormal" align="center" style="text-align:center"><span style="font-family:Helvetica;display:none"><u></u>&nbsp;<u></u></span></p>
+																												<div align="center">
+																													<table border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100.0%;min-width:100%">
+																														<tbody>
+																															<tr>
+																																<td style="padding:0cm 0cm 0cm 0cm">
+																																	<p class="MsoNormal"><span style="font-size:1.0pt;font-family:Helvetica"><img border="0" width="1" height="10" style="width:.0104in;height:.1041in" id="m_8053333333070756144m_1046288401685704852_x0000_i1030" src="https://ci3.googleusercontent.com/proxy/GGMHcz_unUGUha6zZoYRnlCiRLTlUGMdgmiaivMW-BbWmUXp9J-YXbys5sZAYnxtYU5Cba-2-M2c=s0-d-e1-ft#https://i.emlfiles4.com/cmpimg/t/s.gif" class="CToWUd"><u></u><u></u></span></p>
+																																</td>
+																															</tr>
+																														</tbody>
+																													</table>
+																												</div>
+																												<p class="MsoNormal" align="center" style="text-align:center"><span style="font-family:Helvetica;display:none"><u></u>&nbsp;<u></u></span></p>
+																												<div align="center">
+																													<table border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100.0%;background:#1c2544;min-width:100%">
+																														<tbody>
+																															<tr>
+																																<td style="padding:0cm 0cm 0cm 0cm">
+																																	<p class="MsoNormal"><span style="font-size:1.0pt;font-family:Helvetica;color:white"><img border="0" width="1" height="5" style="width:.0104in;height:.052in" id="m_8053333333070756144m_1046288401685704852_x0000_i1029" src="https://ci3.googleusercontent.com/proxy/GGMHcz_unUGUha6zZoYRnlCiRLTlUGMdgmiaivMW-BbWmUXp9J-YXbys5sZAYnxtYU5Cba-2-M2c=s0-d-e1-ft#https://i.emlfiles4.com/cmpimg/t/s.gif" class="CToWUd"></span><span style="font-size:1.0pt;font-family:Helvetica"><u></u><u></u></span></p>
+																																</td>
+																															</tr>
+																														</tbody>
+																													</table>
+																												</div>
+																												<p class="MsoNormal" align="center" style="text-align:center"><span style="font-family:Helvetica"><u></u>&nbsp;<u></u></span></p>
+																												<div align="center">
+																													<table border="0" cellspacing="0" cellpadding="0" style="max-width:495.0pt;min-width:100%">
+																														<tbody>
+																															<tr>
+																																<td valign="top" style="padding:0cm 7.5pt 0cm 7.5pt">
+																																	<div align="center">
+																																		<table border="0" cellspacing="0" cellpadding="0" width="640" style="width:480.0pt">
+																																			<tbody>
+																																				<tr>
+																																					<td width="64" valign="top" style="width:48.0pt;padding:0cm 0cm 0cm 0cm">
+																																						<div>
+																																							<table border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100.0%">
+																																								<tbody>
+																																									<tr>
+																																										<td style="padding:0cm 0cm 0cm 0cm">
+																																											<table border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100.0%">
+																																												<tbody>
+																																													<tr>
+																																														<td style="padding:7.5pt 7.5pt 7.5pt 7.5pt">
+																																															<p class="MsoNormal"><span style="font-size:10.5pt;font-family:&quot;Arial&quot;,sans-serif"><a href="https://email.insol.org/4WAM-GGJD-3Y1RF4-DEMD0-1/c.aspx" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://email.insol.org/4WAM-GGJD-3Y1RF4-DEMD0-1/c.aspx&amp;source=gmail&amp;ust=1616570948151000&amp;usg=AFQjCNHvUUY3EBR43jXqYnEvuDFpz2Ee3w"><span style="color:windowtext;text-decoration:none"><span style="font-family:Helvetica;color:blue"><img border="0" width="38" style="width:.3958in" id="m_8053333333070756144m_1046288401685704852_x0000_i1028" src="https://ci3.googleusercontent.com/proxy/mZz5nM_Zxvi-BYdnx8R5JcQW__KAhZYGb_-7j0PpaeGnlU5oYJ3zKmwCdBTT72_OKc62YBldtQCfiHTps2MoWxzgyzl_a5UGMGHdBPqNjgeB-Ft39C7VQiOokPTF9OWyZ64LYxVAvpE9YPO3hyAaZ98f=s0-d-e1-ft#https://i.emlfiles4.com/cmpimg/8/7/4/8/2/2/files/imagecache/767929/w660_616846_insolroundel.jpg" class="CToWUd"></span></span></a></span><span style="font-size:10.5pt;font-family:Helvetica"><u></u><u></u></span></p>
+																																														</td>
+																																													</tr>
+																																												</tbody>
+																																											</table>
+																																										</td>
+																																									</tr>
+																																								</tbody>
+																																							</table>
+																																						</div>
+																																					</td>
+																																					<td width="64" valign="top" style="width:48.0pt;padding:0cm 0cm 0cm 0cm">
+																																						<div>
+																																							<table border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100.0%">
+																																								<tbody>
+																																									<tr>
+																																										<td style="padding:0cm 0cm 0cm 0cm">
+																																											<table border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100.0%">
+																																												<tbody>
+																																													<tr>
+																																														<td style="padding:7.5pt 7.5pt 7.5pt 7.5pt">
+																																															<p class="MsoNormal"><span style="font-size:1.0pt;font-family:&quot;Arial&quot;,sans-serif"><a href="https://email.insol.org/4WAM-GGJD-3Y1RF4-DEMD1-1/c.aspx" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://email.insol.org/4WAM-GGJD-3Y1RF4-DEMD1-1/c.aspx&amp;source=gmail&amp;ust=1616570948152000&amp;usg=AFQjCNF5VXVmHQhAdmahgazexjizQQ1AiA"><span style="color:windowtext;text-decoration:none"><span style="font-family:Helvetica;color:blue"><img border="0" width="39" style="width:.4062in" id="m_8053333333070756144m_1046288401685704852_x0000_i1027" src="https://ci6.googleusercontent.com/proxy/Cr9lMt5ScSvgxceCYgMZviB-yF7pggOe1LOJH1Or-VYIgG1D9c0ztHzTZT_OYK-0D0r0-ptiGlXAAx-ogTk3HRJOaYhOHdlXayM6I4NEbhg-z0uzBYv5JXBoek5wHYZPPBGjorqactH3fEYtJafe1CIYf8s=s0-d-e1-ft#https://i.emlfiles4.com/cmpimg/8/7/4/8/2/2/files/imagecache/767929/w660_616832_twitterroundel.jpg" class="CToWUd"></span></span></a></span><span style="font-size:1.0pt;font-family:Helvetica"><u></u><u></u></span></p>
+																																														</td>
+																																													</tr>
+																																												</tbody>
+																																											</table>
+																																										</td>
+																																									</tr>
+																																								</tbody>
+																																							</table>
+																																						</div>
+																																					</td>
+																																					<td width="512" valign="top" style="width:384.0pt;padding:0cm 0cm 0cm 0cm">
+																																						<div>
+																																							<table border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100.0%">
+																																								<tbody>
+																																									<tr>
+																																										<td style="padding:0cm 0cm 0cm 0cm">
+																																											<table border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100.0%">
+																																												<tbody>
+																																													<tr>
+																																														<td style="padding:7.5pt 7.5pt 7.5pt 7.5pt">
+																																															<p class="MsoNormal"><span style="font-size:1.0pt;font-family:&quot;Arial&quot;,sans-serif"><a href="https://email.insol.org/4WAM-GGJD-3Y1RF4-DEMD2-1/c.aspx" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://email.insol.org/4WAM-GGJD-3Y1RF4-DEMD2-1/c.aspx&amp;source=gmail&amp;ust=1616570948152000&amp;usg=AFQjCNEmqv9L5ygm1PQnzVylXh0XweNikw"><span style="color:windowtext;text-decoration:none"><span style="font-family:Helvetica;color:blue"><img border="0" width="39" style="width:.4062in" id="m_8053333333070756144m_1046288401685704852_x0000_i1026" src="https://ci6.googleusercontent.com/proxy/tuzHktOF4M1WG9LgeslQu0TwcoL_hf6ysJghOWwivDk3liu5qQe693l7r71tWwoXZhUCyWKuazLPcaUg6uuMKRymvY7EokHp0Nfg2gO9yh7Xa7rtDJP7W8PCd2AwwFwHJ-UbH4VrN8WNrdTMwUMM0K0mUIWl=s0-d-e1-ft#https://i.emlfiles4.com/cmpimg/8/7/4/8/2/2/files/imagecache/767929/w660_616847_linkedinroundel.jpg" class="CToWUd"></span></span></a></span><span style="font-size:1.0pt;font-family:Helvetica"><u></u><u></u></span></p>
+																																														</td>
+																																													</tr>
+																																												</tbody>
+																																											</table>
+																																										</td>
+																																									</tr>
+																																								</tbody>
+																																							</table>
+																																						</div>
+																																					</td>
+																																				</tr>
+																																			</tbody>
+																																		</table>
+																																	</div>
+																																</td>
+																															</tr>
+																														</tbody>
+																													</table>
+																												</div>
+																												<p class="MsoNormal" align="center" style="text-align:center"><span style="font-family:Helvetica;display:none"><u></u>&nbsp;<u></u></span></p>
+																												<div align="center">
+																													<table border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100.0%;min-width:100%">
+																														<tbody>
+																															<tr>
+																																<td valign="top" style="padding:7.5pt 15.0pt 7.5pt 15.0pt">
+																																	<div>
+																																		<p style="margin:0cm;line-height:16.5pt;word-break:break-word"><span style="font-size:8.0pt;font-family:Helvetica;color:#333333">Copyright © INSOL INTERNATIONAL 2021.&nbsp;All Rights Reserved. Registered in England and Wales, No. 03037353. <br>INSOL, INSOL INTERNATIONAL, INSOL Globe are trademarks of INSOL INTERNATIONAL.</span><span style="font-size:10.5pt;font-family:Helvetica;color:#333333"> <u></u><u></u></span></p>
+																																	</div>
+																																</td>
+																															</tr>
+																														</tbody>
+																													</table>
+																												</div>
+																												<p class="MsoNormal" align="center" style="text-align:center"><span style="font-family:Helvetica;display:none"><u></u>&nbsp;<u></u></span></p>
+																												<div align="center">
+																													<table border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100.0%;min-width:100%">
+																														<tbody>
+																															<tr>
+																																<td valign="top" style="padding:7.5pt 15.0pt 7.5pt 15.0pt">
+																																	<div>
+																																		<p align="center" style="margin:0cm;text-align:center;line-height:16.5pt;word-break:break-word"><span style="font-size:10.5pt;font-family:Helvetica;color:#3a3a3a"><a href="https://email.insol.org/4WAM-GGJD-3F07403A8E43A4293Y1RF44BBB543E75B2A5D0/uns.aspx" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://email.insol.org/4WAM-GGJD-3F07403A8E43A4293Y1RF44BBB543E75B2A5D0/uns.aspx&amp;source=gmail&amp;ust=1616570948152000&amp;usg=AFQjCNETM_6TqmxsHy8VXZkqHj8Y_lFkBA"><span style="color:#3a3a3a">Unsubscribe</span></a><u></u><u></u></span></p>
+																																	</div>
+																																</td>
+																															</tr>
+																														</tbody>
+																													</table>
+																												</div>
+																											</td>
+																										</tr>
+																									</tbody>
+																								</table>
+																							</div>
+																						</td>
+																					</tr>
+																				</tbody>
+																			</table>
+																		</td>
+																	</tr>
+																</tbody>
+															</table>
+														</div>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</td>
+		</tr>
+	</tbody>
+</table>';
+
+                            $to = "akshay2796@gmail.com";
+                            $subject = "INSOL India - News Test";
+
+                            $FROM = "info@sabsoftzone.in";
+                            $BCC = "";
+
+                            }
                             
                             $MAIL_BODY .= '<tr>';
                                 $MAIL_BODY .= '<td bgcolor="#f5f5f5" style="color: #333; text-align: center; font-size: 11px;border-top: 8px solid #000;">';
