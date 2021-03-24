@@ -1305,7 +1305,7 @@ function sendNewsletter()
     {
         if($testEmail !='')
         {
-            $MAIL_FORMAT = newsletterFormat($ID,"NEWSLETTER");
+            $MAIL_FORMAT = newsletterFormat($ID,"NEWSLETTER","");
             $MAIL_FORMAT = str_ireplace("%mid%", $member_id . " " . $lastname, $MAIL_FORMAT);
             $MAIL_FORMAT = str_ireplace("%memail%", $test_email, $MAIL_FORMAT);
             $SUBJECT = $newsletter_subject;

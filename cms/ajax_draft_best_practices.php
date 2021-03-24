@@ -268,7 +268,8 @@ function saveData()
                 //{
                 //unlink($FTYPE_FILE_FOLDER . $old_ftype_file);
                 //}else{
-                $ftFILE = $old_ftype_file;
+                // $ftFILE = $old_ftype_file;
+                $ftFILE = trustme($_REQUEST['ftype_file_validation']);
                 //}
 
             }
