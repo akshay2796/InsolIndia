@@ -42,6 +42,7 @@ function saveData()
     $ip = $_SERVER['REMOTE_ADDR'];
     $TIME = date("Y-m-d H:i:s");
     $TIME = date("Y-m-d H:i:s");
+    $image_name = '';
 
     //$url_key = filterString($socialmedia_name);
 
@@ -66,6 +67,8 @@ function saveData()
             $sql .= " add_ip = :add_ip, ";
             $sql .= " add_time = :add_time, ";
             $sql .= " add_by = :add_by ";
+            $sql .= "  image_name = :image_name ";
+
             // $sql .= " url_key = :url_key, ";
 
             $stmt = $dCON->prepare($sql);
@@ -77,6 +80,7 @@ function saveData()
             $stmt->bindParam(":add_ip", $ip);
             $stmt->bindParam(":add_time", $TIME);
             $stmt->bindParam(":add_by", $_SESSION['USERNAME']);
+            $stmt->bindParam(":image_name", $image_name);
             // $stmt->bindParam(":url_key", $MY_URLKEY);
 
             $rs = $stmt->execute();
