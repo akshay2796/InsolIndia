@@ -2272,6 +2272,214 @@ function sendMailformate($TYP,$ID,$via="")
                                     
                                 }       
                             }
+                            else if (trim($TYP) == "NEWS")
+                            {
+                                $news_title = trustme($_REQUEST['news_title']);
+                                $news_source = trustme($_REQUEST['news_source']);
+                                $news_date = trustme($_REQUEST['news_date']);
+
+                                $news_date_array = explode("-", $news_date);
+                                $news_date = $news_date_array[2] . "-" . $news_date_array[1] . "-" . $news_date_array[0];
+
+                                $news_related_link = trustme($_REQUEST['news_related_link']);
+
+                                $news_content = trustyou($_REQUEST['dcontent']);
+
+                                $status = trustme($_REQUEST['status']); //"ACTIVE";
+                                $con = trustme($_REQUEST['con']);
+                                $id = (int) $_REQUEST['id'];
+                                $ip = $_SERVER['REMOTE_ADDR'];
+                                $TIME = date("Y-m-d H:i:s");
+                                echo $TIME;
+                                $image = trustme($_REQUEST['image']);
+
+                                $MAIL_BODY = '<table border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100.0%;border-collapse:collapse">
+	<tbody>
+		<tr>
+			<td valign="top" style="padding:0cm 0cm 0cm 0cm">
+				<div align="center">
+					<table border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100.0%;background:white;min-width:100%">
+						<tbody>
+							<tr>
+								<td width="100%" style="width:100.0%;padding:0cm 0cm 0cm 0cm">
+									<div align="center">
+										<table border="0" cellspacing="0" cellpadding="0" width="660" style="width:495.0pt">
+											<tbody>
+												<tr>
+													<td style="padding:0cm 0cm 0cm 0cm">
+														<div align="center">
+															<table border="0" cellspacing="0" cellpadding="0" style="max-width:495.0pt">
+																<tbody>
+																	<tr>
+																		<td style="padding:0cm 0cm 0cm 0cm">
+																			<table border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100.0%;min-width:100%">
+																				<tbody>
+																					<tr>
+																						<td width="100%" valign="top" style="width:100.0%;padding:0cm 0cm 0cm 0cm">
+																							<div align="center">
+																								<table border="0" cellspacing="0" cellpadding="0" width="660" style="width:495.0pt">
+																									<tbody>
+																										<tr>
+																											<td width="660" valign="top" style="width:495.0pt;padding:0cm 0cm 0cm 0cm">
+																												<div>
+																													<div align="center">
+																														<table border="0" cellspacing="0" cellpadding="0" style="max-width:495.0pt;background:#1c2544;min-width:100%">
+																															<tbody>
+																																<tr>
+																																	<td valign="top" style="padding:0cm 7.5pt 0cm 7.5pt">
+																																		<div align="center">
+																																			<table border="0" cellspacing="0" cellpadding="0" width="640" style="width:480.0pt">
+																																				<tbody>
+																																					<tr>
+																																						<td width="58" valign="top" style="width:43.5pt;padding:0cm 0cm 0cm 0cm">
+																																							<div>
+																																								<table border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100.0%">
+																																									<tbody>
+																																										<tr>
+																																											<td style="padding:0cm 0cm 0cm 0cm">
+																																												<table border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100.0%">
+																																													<tbody>
+																																														<tr>
+																																															<td style="padding:7.5pt 7.5pt 7.5pt 7.5pt">
+																																																<p class="MsoNormal"><span style="font-size:1.0pt;font-family:Helvetica"><img border="0" width="37" style="width:.3854in" id="m_8053333333070756144m_1046288401685704852_x0000_i1038" src="https://ci6.googleusercontent.com/proxy/6DRhZKX9PKC-VIv3fQ2kOWiORQlGQMbPPF5heTyFCOVA1s6HbGZhInVHmpE927eLRQaZz_EfAzfWszmMsN-VkWoPxq_K1VNPyQakuehdLQt_yVg-s3O-9FIn7F8XDZErynDpDb5psQ=s0-d-e1-ft#https://i.emlfiles4.com/cmpimg/8/7/4/8/2/2/files/87902_insollogotmwebtransparent.png" class="CToWUd"><u></u><u></u></span></p>
+																																															</td>
+																																														</tr>
+																																													</tbody>
+																																												</table>
+																																											</td>
+																																										</tr>
+																																									</tbody>
+																																								</table>
+																																							</div>
+																																						</td>
+																																						<td width="582" valign="top" style="width:436.5pt;padding:0cm 0cm 0cm 0cm">
+																																							<div>
+																																								<table border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100.0%">
+																																									<tbody>
+																																										<tr>
+																																											<td style="padding:0cm 0cm 0cm 0cm">
+																																												<table border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100.0%">
+																																													<tbody>
+																																														<tr>
+																																															<td style="padding:0cm 0cm 0cm 0cm">
+																																																<p class="MsoNormal"><span style="font-size:1.0pt;font-family:Helvetica"><img border="0" width="1" height="2" style="width:.0104in;height:.0208in" id="m_8053333333070756144m_1046288401685704852_x0000_i1037" src="https://ci3.googleusercontent.com/proxy/GGMHcz_unUGUha6zZoYRnlCiRLTlUGMdgmiaivMW-BbWmUXp9J-YXbys5sZAYnxtYU5Cba-2-M2c=s0-d-e1-ft#https://i.emlfiles4.com/cmpimg/t/s.gif" class="CToWUd"><u></u><u></u></span></p>
+																																															</td>
+																																														</tr>
+																																													</tbody>
+																																												</table>
+																																												<p class="MsoNormal"><span style="font-family:Helvetica;display:none"><u></u>&nbsp;<u></u></span></p>
+																																												<table border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100.0%;min-width:100%">
+																																													<tbody>
+																																														<tr>
+																																															<td valign="top" style="padding:7.5pt 7.5pt 7.5pt 7.5pt">
+																																																<div>
+																																																	<p style="margin:0cm;word-break:break-word"><b><span style="font-size:18.0pt;font-family:Helvetica;color:white">INSOL International</span></b><span style="font-size:10.5pt;font-family:Helvetica;color:#333333"><u></u><u></u></span></p>
+																																																</div>
+																																															</td>
+																																														</tr>
+																																													</tbody>
+																																												</table>
+																																											</td>
+																																										</tr>
+																																									</tbody>
+																																								</table>
+																																							</div>
+																																						</td>
+																																					</tr>
+																																				</tbody>
+																																			</table>
+																																		</div>
+																																	</td>
+																																</tr>
+																															</tbody>
+																														</table>
+																													</div>
+																													<p class="MsoNormal" align="center" style="text-align:center"><span style="font-family:Helvetica;display:none"><u></u>&nbsp;<u></u></span></p>
+																													<div align="center">
+																														<table border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100.0%;min-width:100%">
+																															<tbody>
+																																<tr>
+																																	<td style="padding:0cm 0cm 0cm 0cm">
+																																		<p class="MsoNormal">
+																																			<span style="font-size:1.0pt;font-family:Helvetica">
+																																				<img border="0" width="660" style="width:6.875in" id="m_8053333333070756144m_1046288401685704852_x0000_i1036" src="https://ci3.googleusercontent.com/proxy/IbPD8TRpeqYtkEl6DCkRxIVataWIR2DQvaRi1QI_DusxZZwImzwC_I9r7QMUkUQjrMH_SfZbF4jkEPuta3VBrk3lyDAXuaIBJq0NSucnm5Ymp2cVFdgJkq69_or579rGh90VDMC0BdYKVXq79yV_dbgrTk4=s0-d-e1-ft#https://i.emlfiles4.com/cmpimg/8/7/4/8/2/2/files/imagecache/767929/w660_790435_indiadotmailer.jpg" class="CToWUd a6T" tabindex="0">
+																																		<div class="a6S" dir="ltr" style="opacity: 0.01; left: 934px; top: 605px;"><div id=":sg" class="T-I J-J5-Ji aQv T-I-ax7 L3 a5q" role="button" tabindex="0" aria-label="Download attachment " data-tooltip-class="a1V" data-tooltip="Download"><div class="akn"><div class="aSK J-J5-Ji aYr"></div></div></div></div><u></u><u></u></span></p>
+																																	</td>
+																																</tr>
+																															</tbody>
+																														</table>
+																													</div>
+																													<p class="MsoNormal" align="center" style="text-align:center"><span style="font-family:Helvetica;display:none"><u></u>&nbsp;<u></u></span></p>
+																													<div align="center">
+																														<table border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100.0%;min-width:100%">
+																															<tbody>
+																																<tr>
+																																	<td valign="top" style="padding:7.5pt 7.5pt 7.5pt 7.5pt">
+																																		<div>
+																																			<p style="margin:0cm;line-height:12.75pt;word-break:break-word"><b><span style="font-size:12.0pt;font-family:Helvetica;color:black">'. $news_title .'</span></b><span style="font-size:10.5pt;font-family:Helvetica;color:#333333"><u></u><u></u></span></p>
+																																			<p style="margin:0cm;line-height:12.75pt;word-break:break-word"><b><i><span style="font-size:12.0pt;font-family:Helvetica;color:black">in association with INSOL India </span></i></b><span style="font-size:10.5pt;font-family:Helvetica;color:black"><u></u><u></u></span></p>
+																																			<p style="margin:0cm;line-height:12.75pt;word-break:break-word"><span style="font-size:10.5pt;font-family:Helvetica;color:black"><u></u>&nbsp;<u></u></span></p>
+																																			<p style="margin:0cm;line-height:12.75pt;word-break:break-word"><span style="font-size:10.5pt;font-family:Helvetica;color:black">'. $news_content .'</span></p>'.
+																																			// <p style="margin:0cm;line-height:12.75pt;word-break:break-word"><span style="font-size:10.5pt;font-family:Helvetica;color:black"><u></u>&nbsp;<u></u></span></p>
+																																			// <p style="margin:0cm;line-height:12.75pt;word-break:break-word"><span style="font-size:10.5pt;font-family:Helvetica;color:black">The theme for the virtual seminar is <b>“Insolvency Resolution in India post COVID-19”. </b>The Main Organising Committee have put together a very topical programme. Further details to follow. &nbsp;<u></u><u></u></span></p>
+																																			// <p style="margin:0cm;line-height:12.75pt;word-break:break-word"><span style="font-size:10.5pt;font-family:Helvetica;color:black"><u></u>&nbsp;<u></u></span></p>
+																																			// <p style="margin:0cm;line-height:12.75pt;word-break:break-word"><u><span style="font-size:10.5pt;font-family:Helvetica;color:black">Main Organising Committee</span></u><span style="font-size:10.5pt;font-family:Helvetica;color:black"><u></u><u></u></span></p>
+																																			// <p style="margin:0cm;line-height:12.75pt;word-break:break-word"><span style="font-size:10.5pt;font-family:Helvetica;color:black">Nikhil Shah, Alavarez &amp; Marsal, India (Chair)<u></u><u></u></span></p>
+																																			// <p style="margin:0cm;line-height:12.75pt;word-break:break-word"><span style="font-size:10.5pt;font-family:Helvetica;color:black">Abizer Diwanji, EY, India<u></u><u></u></span></p>
+																																			// <p style="margin:0cm;line-height:12.75pt;word-break:break-word"><span style="font-size:10.5pt;font-family:Helvetica;color:black">Dhananjay Kumar, INSOL Fellow, Cyril Armachand Mangaldas, India<u></u><u></u></span></p>
+																																			// <p style="margin:0cm;line-height:12.75pt;word-break:break-word"><span style="font-size:10.5pt;font-family:Helvetica;color:black">Veena Sivaramakrishnan, Shardul Amarchang Mangaldas &amp; Co, India<u></u><u></u></span></p>
+																																			// <p style="margin:0cm;line-height:12.75pt;word-break:break-word"><span style="font-size:10.5pt;font-family:Helvetica;color:black">Susan Thomas, Research Professor of Business, Jindal Global Business School, India<u></u><u></u></span></p>
+																																		'</div>
+																																	</td>
+																																</tr>
+																															</tbody>
+																														</table>
+																													</div>
+																											</td>
+																										</tr>
+																									</tbody>
+																								</table>
+																							</div>
+																						</td>
+																					</tr>
+																				</tbody>
+																			</table>
+																		</td>
+																	</tr>
+																</tbody>
+															</table>
+														</div>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</td>
+		</tr>
+	</tbody>
+</table>';
+
+                            $to = "";
+                            $subject = "Insol India News";
+
+                            $FROM = "info@sabsoftzone.in";
+                            
+                            $sql = "";
+                            $sql .= "SELECT GROUP_CONCAT(DISTINCT CONCAT( email)) AS combined_mail FROM " . BECOME_MEMBER_TBL . "where member_id = 4447 or member_id = 4442";
+
+                            $stmt = $dCON->prepare($sql);
+                            $rs = $stmt->execute();
+                            $mails = $stmt->fetchAll();
+                            $BCC = $mails[0]['combined_mail'];
+                            $stmt->closeCursor();
+
+
+                            }
                             
                             $MAIL_BODY .= '<tr>';
                                 $MAIL_BODY .= '<td bgcolor="#f5f5f5" style="color: #333; text-align: center; font-size: 11px;border-top: 8px solid #000;">';

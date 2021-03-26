@@ -17,7 +17,7 @@ if (intval($news_id) > intval(0)) {
     $con = "modify";
     $id = intval($news_id);
 
-    $stmt = $dCON->prepare(" SELECT * FROM " . NEWS_TBL . " WHERE news_id = ? ");
+    $stmt = $dCON->prepare(" SELECT * FROM " . NEWS_SOCIALMEDIA_TBL . " WHERE news_id = ? ");
     $stmt->bindParam(1, $news_id);
     $stmt->execute();
     $row_stmt = $stmt->fetchAll();
@@ -180,7 +180,7 @@ if (strpos($_SERVER['HTTP_USER_AGENT'], 'MSIE') !== false) {
         image_list_html = image_list_html +
             '<input type="hidden" class="folder_name" name="folder_name" value="<?php echo TEMP_UPLOAD; ?>" />';
         image_list_html = image_list_html +
-            '<div class="addPhotoIconTbl"><span><a href="javascript:void(0)"><img src="<?php echo $RESIZE_PREFIX_RELPATH; ?>' +
+            '<div class="addPhotoIconSOCIALMEDIA_TBL"><span><a href="javascript:void(0)"><img src="<?php echo $RESIZE_PREFIX_RELPATH; ?>' +
             file.name + '" class="fixedImg imgno' + fixedImg_CT + '" /></a></span></div>';
         image_list_html = image_list_html + '</div>';
         image_list_html = image_list_html + '<div class="uploadImgBtn">';
@@ -505,7 +505,7 @@ if ($image_name != "") {
                         <input type="hidden" class="image_id" name="image_id" value="<?php echo $image_id; ?>" />
                         <input type="hidden" class="cl_r_image" id="image" name="image"
                             value="<?php echo $image_name; ?>" />
-                        <div class="addPhotoIconTbl"><span><a href="javascript:void(0)"><img
+                        <div class="addPhotoIconSOCIALMEDIA_TBL"><span><a href="javascript:void(0)"><img
                                         src="<?php echo $display_image; ?>"
                                         class="fixedImg imgno<?php echo $image_id; ?>" /></a></span></div>
                     </div>
@@ -536,7 +536,7 @@ if ($image_name != "") {
                     <div class="uploadImgBox">
                         <img src="<?php echo CMS_INCLUDES_IMAGES_RELATIVE_PATH; ?>blackUploadArea.png"
                             class="fullImg" />
-                        <div class="addPhotoIconTbl"><span><a href="#/" id="filelist_main"><img
+                        <div class="addPhotoIconSOCIALMEDIA_TBL"><span><a href="#/" id="filelist_main"><img
                                         src="<?php echo CMS_INCLUDES_IMAGES_RELATIVE_PATH; ?>cameraIcon.png"
                                         alt="Upload Photo" /><br />Upload</a></span></div>
                     </div>

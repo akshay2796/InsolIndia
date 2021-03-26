@@ -66,7 +66,7 @@ function saveData()
             $sql .= " position = :position, ";
             $sql .= " add_ip = :add_ip, ";
             $sql .= " add_time = :add_time, ";
-            $sql .= " add_by = :add_by ";
+            $sql .= " add_by = :add_by, ";
             $sql .= "  image_name = :image_name ";
 
             // $sql .= " url_key = :url_key, ";

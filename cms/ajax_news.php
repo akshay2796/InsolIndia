@@ -274,6 +274,7 @@ function saveData()
     switch ($rs) {
         case "1":
             echo "~~~1~~~Successfully saved~~~" . $last_insert_id;
+            sendMailformate("NEWS", "", "ADMIN");
             break;
         case "2":
             echo "~~~2~~~Already exists";
