@@ -1717,8 +1717,8 @@ $u_id = $_GET['id'];
     $sql = "SELECT * FROM renew_member_detail WHERE p_id='$u_id'";
     $result = mysqli_query($connect, $sql);
     ?>
-    <div class="fullWidth" id="renewalDates">
-        <div class="width4">
+    <div class="fullWidth" id="renewalDates" style="width: 50%;">
+        <div class="width2">
             <label class="mainLabel">Date Of renewal</label>
             <?php
 
@@ -1737,9 +1737,45 @@ $u_id = $_GET['id'];
     ?>
         </div>
     </div>
+
+    /* Testing */
+    <?php
+$u_id = $_GET['id'];
+    $connect = mysqli_connect("localhost", "root", "root", "insolindia");
+    $sql = "SELECT * FROM renew_member_detail WHERE p_id='$u_id'";
+    $result = mysqli_query($connect, $sql);
+    ?>
+    <div class="fullWidth" id="renewalDates" style="width: 50%;">
+        <div class="width2">
+            <label class="mainLabel">Date Of renewal</label>
+
+            <?php
+$renewal_array = array();
+    while ($show3 = mysqli_fetch_array($result)) {
+        $renewal_array[explode("-", $show3["renewal_start_date"])[2]] = $show3["renewal_payment_detail"];
+    }?>
+            <select id="renewal_payment_detail" name="renewal_payment_detail">
+                <?php
+for ($i = array_keys($renewal_array)[count($renewal_array) - 1]; $i <= array_keys($renewal_array)[0]; $i++) {?>
+                <option value="<?php echo $i ?>" onChange="setPaymentDetail('<?php echo $i ?>')"><?php echo $i; ?>
+                </option>
+                <?php }
+    ?>
+            </select>
+            <span id="renewal_payment_text"></span>
+        </div>
+    </div>
 </div>
 
 <?php }?>
+
+<script>
+function setPaymentDetail(year) {
+    let payment_span = document.getElementById("renewal_payment_text");
+    let yearArray = <?php echo json_ecode($renewal_array); ?>;
+    console.log(yearArray);
+}
+</script>
 
 
 <!--<script-->
