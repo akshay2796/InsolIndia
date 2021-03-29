@@ -1738,7 +1738,6 @@ $u_id = $_GET['id'];
         </div>
     </div>
 
-    /* Testing */
     <?php
 $u_id = $_GET['id'];
     $connect = mysqli_connect("localhost", "root", "root", "insolindia");
@@ -1754,15 +1753,18 @@ $renewal_array = array();
     while ($show3 = mysqli_fetch_array($result)) {
         $renewal_array[explode("-", $show3["renewal_start_date"])[2]] = $show3["renewal_payment_detail"];
     }?>
-            <select id="renewal_payment_detail" name="renewal_payment_detail">
+            <select id="renewal_payment_detail" name="renewal_payment_detail" onchange="setPaymentDetail(this)"
+                style="margin-right: 10px;">
                 <?php
 for ($i = array_keys($renewal_array)[count($renewal_array) - 1]; $i <= array_keys($renewal_array)[0]; $i++) {?>
-                <option value="<?php echo $i ?>" onChange="setPaymentDetail('<?php echo $i ?>')"><?php echo $i; ?>
+                <option value="<?php echo $i ?>"><?php echo $i; ?>
                 </option>
                 <?php }
     ?>
             </select>
-            <span id="renewal_payment_text"></span>
+            <span
+                id="renewal_payment_text"><?php echo $renewal_array[array_keys($renewal_array)[count($renewal_array) - 1]] ?>
+            </span>
         </div>
     </div>
 </div>
@@ -1770,10 +1772,10 @@ for ($i = array_keys($renewal_array)[count($renewal_array) - 1]; $i <= array_key
 <?php }?>
 
 <script>
-function setPaymentDetail(year) {
-    let payment_span = document.getElementById("renewal_payment_text");
-    let yearArray = <?php echo json_ecode($renewal_array); ?>;
-    console.log(yearArray);
+function setPaymentDetail(selectField) {
+    let yearArray = <?php echo json_encode($renewal_array) ?>;
+    document.getElementById("renewal_payment_text").innerText = yearArray[selectField.value] === undefined ?
+        "Not Renewed" : yearArray[selectField.value];
 }
 </script>
 
