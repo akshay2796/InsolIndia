@@ -1746,7 +1746,7 @@ $u_id = $_GET['id'];
     ?>
     <div class="fullWidth" id="renewalDates" style="width: 50%;">
         <div class="width2">
-            <label class="mainLabel">Date Of renewal</label>
+            <label class="mainLabel">Renewal Payment Details</label>
 
             <?php
 $renewal_array = array();
