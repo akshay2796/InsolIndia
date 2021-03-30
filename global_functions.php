@@ -2480,7 +2480,8 @@ function sendMailformate($TYP,$ID,$via="")
 
 
                             }
-                            
+                            $MAIL_BODY .= '<table border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100.0%;border-collapse:collapse"';
+                            $MAIL_BODY .= '<tbody>';
                             $MAIL_BODY .= '<tr>';
                                 $MAIL_BODY .= '<td bgcolor="#f5f5f5" style="color: #333; text-align: center; font-size: 11px;border-top: 8px solid #000;">';
                                     $MAIL_BODY .= '5, Mathura Road, 3rd Floor, Jangpura-A, New Delhi-110014. <br>Contact No. 011 49785744 ';
