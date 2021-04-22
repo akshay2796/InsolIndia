@@ -42,8 +42,7 @@
     }
 
     .section__media img {
-        min-height: 200px;
-        max-height: 350px;
+        height: 200px;
         object-fit: cover;
     }
 
@@ -87,23 +86,23 @@ border-color: transparent #0e74b8 transparent transparent;}*/
     a.btnWrapRed {
         width: 100%;
         float: left;
-        background: rgba(227, 4, 32, 0.8);
+        background: #b72027CC;
         padding: 20px 30px;
     }
 
     a.btnWrapBlue {
         width: 100%;
         float: left;
-        background: rgba(14, 116, 184, 0.8);
+        background: #234090CC;
         padding: 20px 30px;
     }
 
     a.btnWrapRed:hover {
-        background: rgba(227, 4, 32, 1);
+        background: #b72027;
     }
 
     a.btnWrapBlue:hover {
-        background: rgba(14, 116, 184, 1);
+        background: #234090;
     }
 
     .emptyspace {
@@ -152,69 +151,64 @@ border-color: transparent #0e74b8 transparent transparent;}*/
     }
     </style>
 </head>
-<?php include('header.php'); 
+<?php include 'header.php';
 
-define("PAGE_MAIN","event-detail.php"); 
-define("PAGE_AJAX","ajax_event.php");
-define("PAGE_LIST","events.php");
-    $current_date = date("Y-m-d");
-    $current_event = strtolower($_GET['event']);
-    $SQL1  = ""; 
-    $SQL1 .= " SELECT COUNT(*) AS CT FROM " . EVENT_TBL . " as E "; 
-    $SQL1 .= " WHERE status = 'ACTIVE' and event_name !=''  ";
-   
-    $SQL = "";
-    $SQL .= " SELECT * ";
-    $SQL .= ",(SELECT image_name FROM ". EVENT_IMAGES_TBL ." AS I WHERE I.master_id = E.event_id ORDER BY default_image DESC, position LIMIT 1 ) AS image_name ";
-    if($current_event == 'upcoming'){
-        $SQL .= " FROM " . EVENT_TBL . " as E WHERE status = 'ACTIVE' and event_name !='' and event_from_date > '$current_date' ";
-    }
-    else if($current_event == 'past'){
-        $SQL .= " FROM " . EVENT_TBL . " as E WHERE status = 'ACTIVE' and event_name !='' and past_event = 1 ";
-    }
-    else{
-        $SQL .= " FROM " . EVENT_TBL . " as E WHERE status = 'ACTIVE' and event_name !=''";
-    }
-    $SQL .= " order by event_from_date desc ";
+define("PAGE_MAIN", "event-detail.php");
+define("PAGE_AJAX", "ajax_event.php");
+define("PAGE_LIST", "events.php");
+$current_date = date("Y-m-d");
+$current_event = strtolower($_GET['event']);
+$SQL1 = "";
+$SQL1 .= " SELECT COUNT(*) AS CT FROM " . EVENT_TBL . " as E ";
+$SQL1 .= " WHERE status = 'ACTIVE' and event_name !=''  ";
 
-    $stmt1 = $dCON->prepare($SQL1);  
+$SQL = "";
+$SQL .= " SELECT * ";
+$SQL .= ",(SELECT image_name FROM " . EVENT_IMAGES_TBL . " AS I WHERE I.master_id = E.event_id ORDER BY default_image DESC, position LIMIT 1 ) AS image_name ";
+if ($current_event == 'upcoming') {
+    $SQL .= " FROM " . EVENT_TBL . " as E WHERE status = 'ACTIVE' and event_name !='' and event_from_date > '$current_date' ";
+} else if ($current_event == 'past') {
+    $SQL .= " FROM " . EVENT_TBL . " as E WHERE status = 'ACTIVE' and event_name !='' and past_event = 1 ";
+} else {
+    $SQL .= " FROM " . EVENT_TBL . " as E WHERE status = 'ACTIVE' and event_name !=''";
+}
+$SQL .= " order by event_from_date desc ";
 
+$stmt1 = $dCON->prepare($SQL1);
 
+$stmt1->execute();
+$noOfRecords_row = $stmt1->fetch();
+$noOfRecords = intval($noOfRecords_row['CT']);
+$rowsPerPage = 6;
 
-    $stmt1->execute();
-    $noOfRecords_row = $stmt1->fetch();
-    $noOfRecords = intval($noOfRecords_row['CT']);
-    $rowsPerPage = 6;
+$pg_query = $pg->getPagingQuery($SQL, $rowsPerPage);
+$stmt2 = $dCON->prepare($pg_query[0]);
 
-    $pg_query = $pg->getPagingQuery($SQL,$rowsPerPage);
-    $stmt2 = $dCON->prepare($pg_query[0]);
+$stmt2->bindParam(":offset", $offset, PDO::PARAM_INT);
+$stmt2->bindParam(":RPP", $RPP, PDO::PARAM_INT);
+$offset = $pg_query[1];
+$RPP = $rowsPerPage;
+$paging = $pg->getAjaxPagingLink($noOfRecords, $rowsPerPage);
+$dA = $noOfRecords;
 
-    $stmt2->bindParam(":offset",$offset,PDO::PARAM_INT);
-    $stmt2->bindParam(":RPP",$RPP,PDO::PARAM_INT);
-    $offset = $pg_query[1];
-    $RPP = $rowsPerPage;
-    $paging = $pg->getAjaxPagingLink($noOfRecords,$rowsPerPage);
-    $dA = $noOfRecords;
-     
-    $stmt2->execute();
-    $rsLIST = $stmt2->fetchAll();
-    $stmt2->closeCursor();
-    ?>
+$stmt2->execute();
+$rsLIST = $stmt2->fetchAll();
+$stmt2->closeCursor();
+?>
 
 <div class="clearfix banner">
     <div class="container">
-        <?php 
-	    if($current_event == 'upcoming'){
-	    ?>
+        <?php
+if ($current_event == 'upcoming') {
+    ?>
         <h1>Upcoming Events</h1>
-        <?php }
-    	else if($current_event == 'past'){
-    	?>
+        <?php } else if ($current_event == 'past') {
+    ?>
         <h1>Past Events</h1>
-        <?php }else{
-    	?>
+        <?php } else {
+    ?>
         <h1>Events</h1>
-        <?php } ?>
+        <?php }?>
     </div>
 </div>
 
@@ -228,86 +222,73 @@ define("PAGE_LIST","events.php");
 
                     <div class="resultsWrap">
                         <div id="results">
-                            <?php 
-                if($dA > intval(0))
-                { 
-                    foreach($rsLIST as $rLIST)
-                    {
-                        $masterID = "";
-                        $masterLink = "";
-                        $masterNAME = "";
-                        $masterCATEGORY = "";
-                        
-                        
-                        $masterIMG = "";
-                        $masterURLKEY = "";
-                        $masterURL = "";
-                        $masterFDATE = "";
-                        $masterTDATE = "";
-                        
-                        $masterSDESC = "";
-                        
-                        $masterID = intval($rLIST['event_id']);
-                        $masterLink = stripslashes($rLIST['event_link']);
-                        $masterNAME = htmlentities(stripslashes($rLIST['event_name']));
-                        $webinar = htmlentities(stripslashes($rLIST['webinar']));
-                        $masterCATEGORY= htmlentities(stripslashes($rLIST['category_name']));
-                        $alt_text = $masterNAME;
-                        
-                        $masterFDATE = (stripslashes($rLIST['event_from_date']));
-                        $masterTDATE = (stripslashes($rLIST['event_to_date']));
-                        $masterFTIME = (stripslashes($rLIST['event_from_time']));
-                        $masterTTIME = (stripslashes($rLIST['event_to_time']));
-                        $event_venue = (stripslashes($rLIST['event_venue']));
-                        // for timings
+                            <?php
+if ($dA > intval(0)) {
+    foreach ($rsLIST as $rLIST) {
+        $masterID = "";
+        $masterLink = "";
+        $masterNAME = "";
+        $masterCATEGORY = "";
 
-                        if(($masterTTIME !="") && ($masterFTIME !=""))
-                            {
-                                $masterFTIME = date("h:i:sA", strtotime($masterFTIME));
-                                $masterTTIME = date("h:i:sA", strtotime($masterTTIME));
-                            }
+        $masterIMG = "";
+        $masterURLKEY = "";
+        $masterURL = "";
+        $masterFDATE = "";
+        $masterTDATE = "";
 
-                        // for Date
-                                if( date("F Y", strtotime($masterTDATE)) == date("F Y", strtotime($masterFDATE)) ){
-                                    if( date("d F Y", strtotime($masterTDATE)) == date("d F Y", strtotime($masterFDATE)) )
-                                    {
-                                        $dateDisplay = date("d F, Y", strtotime($masterFDATE));
-                                    }else{
-                                    $dateDisplay = date("d", strtotime($masterFDATE))." - ".date("d", strtotime($masterTDATE)) ." ".date("F, Y", strtotime($masterFDATE)); 
-                                    }
-                                }
-                                else{
-                                    $dateDisplay = date("d F, Y", strtotime($masterFDATE));
-                                    if( trim($masterTDATE) != '0000-00-00')
-                                    {
-                                    $dateDisplay .= " To " . date("d F, Y", strtotime($masterTDATE)); 
-                                    }
-                                }
-                                                            
-                        
-                        
-                        $masterSDESC = stripslashes($rLIST["event_short_description"]); 
-                    
-                        $masterIMG = stripslashes($rLIST['image_name']);
-                    
-                        $url_key = stripslashes($rLIST['url_key']);
-                        
-                        $masterURL = SITE_ROOT . urlRewrite("event-detail.php", array("url_key" => $url_key));
-                        
-                        
-                        $DISPLAY_IMG = "";
-                        $R200_IMG_EXIST =  "";
-                    
-                        $R200_IMG_EXIST = chkImageExists(MODULE_UPLOADIFY_ROOT . FLD_EVENT . "/" . FLD_EVENT_IMG . "/R200-" . $masterIMG);
-                        
-                        if( intval($R200_IMG_EXIST) == intval(1) )
-                        {
-                            $DISPLAY_IMG = MODULE_FILE_FOLDER . FLD_EVENT . "/" . FLD_EVENT_IMG . "/R200-" . $masterIMG;
-                        }
-                        else
-                        {
-                            $DISPLAY_IMG = SITE_IMAGES."no_images.jpg";
-                        }
+        $masterSDESC = "";
+
+        $masterID = intval($rLIST['event_id']);
+        $masterLink = stripslashes($rLIST['event_link']);
+        $masterNAME = htmlentities(stripslashes($rLIST['event_name']));
+        $webinar = htmlentities(stripslashes($rLIST['webinar']));
+        $masterCATEGORY = htmlentities(stripslashes($rLIST['category_name']));
+        $alt_text = $masterNAME;
+
+        $masterFDATE = (stripslashes($rLIST['event_from_date']));
+        $masterTDATE = (stripslashes($rLIST['event_to_date']));
+        $masterFTIME = (stripslashes($rLIST['event_from_time']));
+        $masterTTIME = (stripslashes($rLIST['event_to_time']));
+        $event_venue = (stripslashes($rLIST['event_venue']));
+        // for timings
+
+        if (($masterTTIME != "") && ($masterFTIME != "")) {
+            $masterFTIME = date("h:i:sA", strtotime($masterFTIME));
+            $masterTTIME = date("h:i:sA", strtotime($masterTTIME));
+        }
+
+        // for Date
+        if (date("F Y", strtotime($masterTDATE)) == date("F Y", strtotime($masterFDATE))) {
+            if (date("d F Y", strtotime($masterTDATE)) == date("d F Y", strtotime($masterFDATE))) {
+                $dateDisplay = date("d F, Y", strtotime($masterFDATE));
+            } else {
+                $dateDisplay = date("d", strtotime($masterFDATE)) . " - " . date("d", strtotime($masterTDATE)) . " " . date("F, Y", strtotime($masterFDATE));
+            }
+        } else {
+            $dateDisplay = date("d F, Y", strtotime($masterFDATE));
+            if (trim($masterTDATE) != '0000-00-00') {
+                $dateDisplay .= " To " . date("d F, Y", strtotime($masterTDATE));
+            }
+        }
+
+        $masterSDESC = stripslashes($rLIST["event_short_description"]);
+
+        $masterIMG = stripslashes($rLIST['image_name']);
+
+        $url_key = stripslashes($rLIST['url_key']);
+
+        $masterURL = SITE_ROOT . urlRewrite("event-detail.php", array("url_key" => $url_key));
+
+        $DISPLAY_IMG = "";
+        $R200_IMG_EXIST = "";
+
+        $R200_IMG_EXIST = chkImageExists(MODULE_UPLOADIFY_ROOT . FLD_EVENT . "/" . FLD_EVENT_IMG . "/R200-" . $masterIMG);
+
+        if (intval($R200_IMG_EXIST) == intval(1)) {
+            $DISPLAY_IMG = MODULE_FILE_FOLDER . FLD_EVENT . "/" . FLD_EVENT_IMG . "/R200-" . $masterIMG;
+        } else {
+            $DISPLAY_IMG = SITE_IMAGES . "no_images.jpg";
+        }
         ?>
                             <div class="eventsWrap">
                                 <div class="section__body">
@@ -330,8 +311,9 @@ define("PAGE_LIST","events.php");
                                                 </a>
                                             </h4>
                                             <h6 style="">
-                                                <?php $time=strtotime($masterFTIME);$time2=strtotime($masterTTIME);  ?>
-                                                <span><?php echo $dateDisplay; if($masterFTIME != ""){ echo " ".date("h",$time).":".date("i",$time)." ".date("A",$time); } if($masterTTIME != "") { echo " to ".date("h",$time2).":".date("i",$time2)." ".date("A",$time2); } ?>
+                                                <?php $time = strtotime($masterFTIME);
+        $time2 = strtotime($masterTTIME);?>
+                                                <span><?php echo $dateDisplay;if ($masterFTIME != "") {echo " " . date("h", $time) . ":" . date("i", $time) . " " . date("A", $time);}if ($masterTTIME != "") {echo " to " . date("h", $time2) . ":" . date("i", $time2) . " " . date("A", $time2);} ?>
                                                 </span>
                                             </h6>
                                             <strong></strong>
@@ -348,10 +330,16 @@ define("PAGE_LIST","events.php");
                                                 <i class="ico-chevron-double-white"></i>
 
                                                 View <strong>details</strong>
-                                            </a><a href="./become-member.php" class="btnWrapBlue">
-                                                <i class="ico-chevron-double-white"></i>
-
-                                                Register <strong>to attend</strong>
+                                            </a>
+                                            <a href="<?php echo $masterTDATE > date('Y-m-d') ? './become-member.php' : '#' ?>"
+                                                class="btnWrapBlue">
+                                                <?php if ($masterTDATE > date('Y-m-d')) {
+            echo '<i class="ico-chevron-double-white"></i>';
+            echo 'Register <strong>to attend</strong>';
+        } else {
+            echo '&nbsp';
+        }
+        ?>
                                             </a>
                                         </div>
                                     </div>
@@ -359,31 +347,28 @@ define("PAGE_LIST","events.php");
                             </div>
 
 
-                            <?php } 
+                            <?php }
 
-            if(trim($paging[0]) != "")
-                    {
-                    ?>
+    if (trim($paging[0]) != "") {
+        ?>
                             <div class="clearfix cls"></div>
                             <div class="clearfix" id="bottomPagging" style="margin-bottom: 30px;">
                                 <div class="pagingList">
                                     <label>PAGE</label>
                                     <ul>
-                                        <?php echo $paging[0];?>
+                                        <?php echo $paging[0]; ?>
                                     </ul>
                                 </div>
                                 <div class="clr"></div>
                             </div>
-                            <?php 
-                    }
-                    
-    
-            }
-            else{
-                echo "Under Formation...";
-            }
+                            <?php
+}
 
-        ?>
+} else {
+    echo "Under Formation...";
+}
+
+?>
                             <!-----Our Sponsors   ----------->
                             <!--<div class="container">-->
                             <!--<p style="text-align: center; color: black; font-weight: bold; font-size: 25px;">EVENT SPONSORS</p>-->
@@ -494,4 +479,4 @@ define("PAGE_LIST","events.php");
 
 
 
-                            <?php include('footer.php'); ?>
+                            <?php include 'footer.php';?>

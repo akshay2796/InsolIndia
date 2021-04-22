@@ -1,13 +1,13 @@
-<?php 
+<?php
 error_reporting(0);
-include("header.php");
+include "header.php";
 
-define("PAGE_AJAX_COMMON","ajax_common.php");  
+define("PAGE_AJAX_COMMON", "ajax_common.php");
 
-?> 
+?>
 
-<script language="javascript" type="text/javascript" src="<?php echo CMS_INCLUDES_JS_RELATIVE_PATH;?>jquery.history.js"></script>
-<div id="listWrapper" class="table-responsive"> 
+<script language="javascript" type="text/javascript" src="<?php echo CMS_INCLUDES_JS_RELATIVE_PATH; ?>jquery.history.js"></script>
+<div id="listWrapper" class="table-responsive">
     <table class="table">
   <thead>
     <tr>
@@ -20,14 +20,14 @@ define("PAGE_AJAX_COMMON","ajax_common.php");
     </tr>
   </thead>
   <tbody>
-<?php 
-$connection = mysqli_connect("localhost","root","root","insolindia") or die(mysqli_error($mysqli));
+<?php
+$connection = mysqli_connect("localhost", "ryanearf_akshay", "Friendship.101", "ryanearf_insolindia") or die(mysqli_error($mysqli));
 $id = $_GET['id'];
 $dec = $_GET['dec'];
 $query_read = "SELECT * FROM zoom";
-		$result = mysqli_query($connection, $query_read);
-		while($show = mysqli_fetch_array($result)){
-?>
+$result = mysqli_query($connection, $query_read);
+while ($show = mysqli_fetch_array($result)) {
+    ?>
     <tr>
       <th scope="row"><?php echo $show['id'] ?></th>
       <td><?php echo $show['name'] ?></td>
@@ -40,11 +40,11 @@ $query_read = "SELECT * FROM zoom";
   <?php }?>
  </tbody>
 </table>
-</div>    
-            
-     
+</div>
+
+
 
 <?php
-include("footer.php"); 
+include "footer.php";
 
 ?>

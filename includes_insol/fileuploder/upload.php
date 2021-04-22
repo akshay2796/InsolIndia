@@ -19,7 +19,7 @@ header("Pragma: no-cache");
 
 // Settings
 //$targetDir = ini_get("upload_tmp_dir") . DIRECTORY_SEPARATOR . "plupload";
-$targetDir = $_SERVER['DOCUMENT_ROOT'] .$folder_name. '/';
+$targetDir = $_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR . $folder_name. '/';
 
 $cleanupTargetDir = true; // Remove old files
 $maxFileAge = 5 * 3600; // Temp file age in seconds
@@ -62,6 +62,7 @@ if ($cleanupTargetDir) {
 	if (is_dir($targetDir) && ($dir = opendir($targetDir))) {
 		while (($file = readdir($dir)) !== false) {
 			$tmpfilePath = $targetDir . DIRECTORY_SEPARATOR . $file;
+
 
 			// Remove temp file if it is older than the max age and is not the current file
 			if (preg_match('/\.part$/', $file) && (filemtime($tmpfilePath) < time() - $maxFileAge) && ($tmpfilePath != "{$filePath}.part")) {

@@ -26,7 +26,7 @@
 <!--	</script>-->
 <!--</head>-->
 <!--<body>-->
-	
+
 	<style>
 	    tr,th,td{
 	        /*white-space: nowrap;*/
@@ -41,27 +41,26 @@
 	</style>
 
 
-	
-	<?php 
-	ob_start();
+
+	<?php
+ob_start();
 session_start();
-		ini_set('display_errors', 1);
+ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-	if(isset($_POST['frexp']))
-	{
+if (isset($_POST['frexp'])) {
 
     $checkbox = $_POST['chk'];
     ?>
     <table id="t1" border="0">
 					<table id="t1" border="1">
 					<tr width="100%" style="white-space:nowrap;">
-						
+
 						<th colspan=9>Bacic Details</th>
 						<th colspan="6">CORRESPONDENCE ADDRESS</th>
 						<th colspan="6">PERMANENT ADDRESS</th>
 						<th colspan="5">Communication Details</th>
-						<th colspan="14">Professional Details</th>	
+						<th colspan="14">Professional Details</th>
 					</tr>
 					<tr width="100%" >
 					<th width="100%" >Serial No</th>
@@ -104,107 +103,105 @@ error_reporting(E_ALL);
 				    <th width="100%" >Membership Expiry Date</th>
 				    <th width="100%" >Payment details</th>
 				    <th width="100%" >Register Date</th>
-				    
+
 				</tr>
     <?php
-    $counter = 1; 
+$counter = 1;
 
-for($i=0;$i<count($checkbox);$i++){
+    for ($i = 0; $i < count($checkbox); $i++) {
 
-$del_id = $checkbox[$i];
-$connect = mysqli_connect("localhost","root","root","insolindia");
-$sql = "SELECT * FROM tbl_become_member WHERE member_id='$del_id'";
-$result = mysqli_query($connect, $sql);
-$row2 = mysqli_fetch_array($result);
-if($row2["registered_insolvency_professional_number"] == ""){
-	$op = 'N';
-}
-else{
-	$op = 'Y';
-}
-if($row2["young_practitioner"] == 0){
-	$ope = 'N';
-}
-else{
-	$ope = 'Y';
-}
-if($row2["sig_member"] == 0){
-    $sig ='N';
-}else{
-    $sig = 'Y';
-}
-?>
+        $del_id = $checkbox[$i];
+        $connect = mysqli_connect("localhost", "ryanearf_akshay", "Friendship.101", "ryanearf_insolindia");
+        $sql = "SELECT * FROM tbl_become_member WHERE member_id='$del_id'";
+        $result = mysqli_query($connect, $sql);
+        $row2 = mysqli_fetch_array($result);
+        if ($row2["registered_insolvency_professional_number"] == "") {
+            $op = 'N';
+        } else {
+            $op = 'Y';
+        }
+        if ($row2["young_practitioner"] == 0) {
+            $ope = 'N';
+        } else {
+            $ope = 'Y';
+        }
+        if ($row2["sig_member"] == 0) {
+            $sig = 'N';
+        } else {
+            $sig = 'Y';
+        }
+        ?>
 <!--  -->
 
 
 <tr>
-							
+
 							<td width="100%" ><?php echo "$counter" ?></td>
 							<td width="100%" ><?php echo $row2["reg_number_text"] ?></td>
 							<td width="100%" ><?php echo $row2["title"] ?></td>
-							<td width="100%" ><?php echo $row2["first_name"]?></td>
-							<td width="100%" ><?php echo $row2["middle_name"]?></td>
-							<td width="100%" ><?php echo $row2["last_name"]?></td>
-							<td width="100%" ><?php echo $row2["suffix"]?></td>
-							<td width="100%" ><?php echo $row2["title"].' '.$row2["first_name"].' '.$row2["middle_name"].' '.$row2["last_name"]?></td>
-							<td width="100%" ><?php echo $row2["firm_name"]?></td>
-							<td width="100%" ><?php echo $row2["address"]?></td>
-							<td width="100%" ><?php echo $row2["correspondence_address_2"]?></td>
-							<td width="100%" ><?php echo $row2["city"]?></td>
-							<td width="100%" ><?php echo $row2["correspondence_state"]?></td>
-							<td width="100%" ><?php echo $row2["pin"]?></td>
-							<td width="100%" ><?php echo $row2["country"]?></td>
+							<td width="100%" ><?php echo $row2["first_name"] ?></td>
+							<td width="100%" ><?php echo $row2["middle_name"] ?></td>
+							<td width="100%" ><?php echo $row2["last_name"] ?></td>
+							<td width="100%" ><?php echo $row2["suffix"] ?></td>
+							<td width="100%" ><?php echo $row2["title"] . ' ' . $row2["first_name"] . ' ' . $row2["middle_name"] . ' ' . $row2["last_name"] ?></td>
+							<td width="100%" ><?php echo $row2["firm_name"] ?></td>
+							<td width="100%" ><?php echo $row2["address"] ?></td>
+							<td width="100%" ><?php echo $row2["correspondence_address_2"] ?></td>
+							<td width="100%" ><?php echo $row2["city"] ?></td>
+							<td width="100%" ><?php echo $row2["correspondence_state"] ?></td>
+							<td width="100%" ><?php echo $row2["pin"] ?></td>
+							<td width="100%" ><?php echo $row2["country"] ?></td>
 
-							<td width="100%" "><?php echo $row2["permanent_address"]?></td>
-							<td width="100%" "><?php echo $row2["permanent_address_2"]?></td>
-							<td width="100%" "><?php echo $row2["permanent_city"]?></td>
-							<td width="100%" "><?php echo $row2["permanent_state"]?></td>
-							<td width="100%" "><?php echo $row2["permanent_pin"]?></td>
-							<td width="100%" "><?php echo $row2["permanent_country"]?></td>
+							<td width="100%" "><?php echo $row2["permanent_address"] ?></td>
+							<td width="100%" "><?php echo $row2["permanent_address_2"] ?></td>
+							<td width="100%" "><?php echo $row2["permanent_city"] ?></td>
+							<td width="100%" "><?php echo $row2["permanent_state"] ?></td>
+							<td width="100%" "><?php echo $row2["permanent_pin"] ?></td>
+							<td width="100%" "><?php echo $row2["permanent_country"] ?></td>
 
-							<td width="100%" ><?php echo $row2["telephone"]?></td>
-							<td width="100%" ><?php echo $row2["residence_telephone"]?></td>
-							<td width="100%" ><?php echo $row2["mobile"]?></td>
-							<td width="100%" ><?php echo $row2["fax"]?></td>
-							<td width="100%" ><?php echo $row2["email"]?></td>
+							<td width="100%" ><?php echo $row2["telephone"] ?></td>
+							<td width="100%" ><?php echo $row2["residence_telephone"] ?></td>
+							<td width="100%" ><?php echo $row2["mobile"] ?></td>
+							<td width="100%" ><?php echo $row2["fax"] ?></td>
+							<td width="100%" ><?php echo $row2["email"] ?></td>
 
-							<td width="100%" ><?php echo $row2["i_am"]?></td>
-							<td width="100%" ><?php echo $row2["insolvency_professional_agency"]?></td>
-							<td width="100%" ><?php echo $row2["insolvency_professional_number"]?></td>
-							<td width="100%" ><?php echo "$op"?></td>
-							<td width="100%" ><?php echo $row2["registered_insolvency_professional_number"]?></td>
-							<td width="100%" ><?php echo "$ope"?></td>
-							<td width="100%" ><?php echo $row2["young_practitioner_enrolment"]?></td>
+							<td width="100%" ><?php echo $row2["i_am"] ?></td>
+							<td width="100%" ><?php echo $row2["insolvency_professional_agency"] ?></td>
+							<td width="100%" ><?php echo $row2["insolvency_professional_number"] ?></td>
+							<td width="100%" ><?php echo "$op" ?></td>
+							<td width="100%" ><?php echo $row2["registered_insolvency_professional_number"] ?></td>
+							<td width="100%" ><?php echo "$ope" ?></td>
+							<td width="100%" ><?php echo $row2["young_practitioner_enrolment"] ?></td>
 							<td width="100%" ><?php echo "$sig" ?></td>
-						    <td width="100%" ><?php echo $row2["sig_company_name"]?></td>
-						    	<td width="100%" ><?php echo $row2["interested"]?></td>
-							<td width="100%" ><?php echo $row2["membership_start_date"]?></td>
-						    <td width="100%" ><?php echo $row2["membership_expired_date"]?></td>
-						    <td width="100%" ><?php echo $row2["payment_text"]?></td>
-						    <td width="100%" ><?php echo $row2["update_time"]?></td>
-						    
+						    <td width="100%" ><?php echo $row2["sig_company_name"] ?></td>
+						    	<td width="100%" ><?php echo $row2["interested"] ?></td>
+							<td width="100%" ><?php echo $row2["membership_start_date"] ?></td>
+						    <td width="100%" ><?php echo $row2["membership_expired_date"] ?></td>
+						    <td width="100%" ><?php echo $row2["payment_text"] ?></td>
+						    <td width="100%" ><?php echo $row2["update_time"] ?></td>
+
 
 						</tr>
 
 <?php
 $counter++;
-}
-?>
+    }
+    ?>
 </table>
 <?php
 
-// if successful redirect to delete_multiple.php 
+// if successful redirect to delete_multiple.php
 // if($result){
 // echo "<meta http-equiv=\"refresh\" content=\"0;URL=export.php\">";
 // }
-$file = "Insol India insol_member.xls";
-header("Content-Type: application/xls");
-header("Content-Disposition: attachment; filename=\"{$file}\"");
+    $file = "Insol India insol_member.xls";
+    header("Content-Type: application/xls");
+    header("Content-Disposition: attachment; filename=\"{$file}\"");
 // echo "<meta http-equiv=\"refresh\" content=\"0;URL=become_member_list.php\">";
- }
-	?>
+}
+?>
 
-	
+
 
 
 
