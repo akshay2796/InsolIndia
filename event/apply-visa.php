@@ -3,7 +3,7 @@
 
 <?php
 
-$connect = mysqli_connect("localhost", "ryanearf_akshay", "ryanearf_insolindia", "Friendship.101");
+$connect = mysqli_connect("localhost", "ryanearf_insolindia", "ryanearf_akshay", "Friendship.101");
 
 if (isset($_POST['submit'])) {
     $appl = $_POST['appl'];
@@ -55,7 +55,7 @@ if (isset($_POST['submit'])) {
     $on = rand(1000, 9999);
     $on1 = 'IN00' . $on;
     //echo '<pre>';
-//print_r($_REQUEST);
+    //print_r($_REQUEST);
     //  echo '</pre>';
 
     $insert_query = "INSERT INTO evisa SET

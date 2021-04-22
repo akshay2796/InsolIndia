@@ -85,7 +85,7 @@ error_reporting(E_ALL);
 $counter = 1;
 $year = $_GET['year'];
 $month = $_GET['month'];
-$connect = mysqli_connect("localhost", "ryanearf_akshay", "ryanearf_insolindia", "Friendship.101") or die(mysqli_error($mysqli));
+$connect = mysqli_connect("localhost", "ryanearf_insolindia", "ryanearf_akshay", "Friendship.101") or die(mysqli_error($mysqli));
 $sql_main = "SELECT * FROM renew_member_detail WHERE YEAR(add_date) = $year && MONTH(add_date) = $month";
 $result_main = mysqli_query($connect, $sql_main);
 while ($row_main = mysqli_fetch_array($result_main)) {

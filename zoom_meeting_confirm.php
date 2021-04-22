@@ -10,7 +10,7 @@ include 'header.php';?>
 
 
 <?php
-$connection = mysqli_connect("localhost", "ryanearf_akshay", "ryanearf_insolindia", "Friendship.101") or die(mysqli_error($mysqli));
+$connection = mysqli_connect("localhost", "ryanearf_insolindia", "ryanearf_akshay", "Friendship.101") or die(mysqli_error($mysqli));
 $id = $_GET['id'];
 $dec = $_GET['dec'];
 $query_read = "SELECT * FROM zoom WHERE id='$id'";
@@ -69,7 +69,7 @@ The platform is entirely browser-based – no downloads will be required to ente
     include "library_insol/class.phpmailernew.php";
 
 // $email = $_REQUEST['email'];
-// $message = $_REQUEST['message'];
+    // $message = $_REQUEST['message'];
 
     $mail = new phpmailer;
     $mail->CharSet = "UTF-8";
@@ -77,12 +77,12 @@ The platform is entirely browser-based – no downloads will be required to ente
 
     $mail->IsSMTP();
 //$mail->Host     = "mail.acecabs.in.cust.a.hostedemail.com";
-//$mail->Username = "noreply@acecabs.in";
-//$mail->Password = "Newpass@0112";
+    //$mail->Username = "noreply@acecabs.in";
+    //$mail->Password = "Newpass@0112";
 
     $mail->Host = "103.21.58.112";
 //$mail->Username = "noreply@acecabs.in";
-//$mail->Password = "dOvb15^8";
+    //$mail->Password = "dOvb15^8";
     $mail->Username = "noreply@insolindia.com";
     $mail->Password = "f2B7~w)C[5d4";
 
@@ -119,15 +119,15 @@ The platform is entirely browser-based – no downloads will be required to ente
     <div class="clearfix inner_page">
         <div class="col-md-12 col-sm-12 inner_page_right">
             <h2>Member has been approved</h2>
-          	<div class="row">
-				<div class="col-md-10" style="padding-right: 0px;">
-				    	<h3 class="subsubHead">Mail has been sent to <?php echo $show['name']; ?></h3>
-					<br>
+            <div class="row">
+                <div class="col-md-10" style="padding-right: 0px;">
+                    <h3 class="subsubHead">Mail has been sent to <?php echo $show['name']; ?></h3>
+                    <br>
 
 
-					<a href="/" class="btn btn-primary">Go Home</a>
-				</div>
-			</div>
+                    <a href="/" class="btn btn-primary">Go Home</a>
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -140,13 +140,13 @@ The platform is entirely browser-based – no downloads will be required to ente
     <div class="clearfix inner_page">
         <div class="col-md-12 col-sm-12 inner_page_right">
             <h2>Member has been declained</h2>
-          	<div class="row">
-				<div class="col-md-10" style="padding-right: 0px;">
-					<br>
+            <div class="row">
+                <div class="col-md-10" style="padding-right: 0px;">
+                    <br>
 
-					<a href="/" class="btn btn-primary">Go Home</a>
-				</div>
-			</div>
+                    <a href="/" class="btn btn-primary">Go Home</a>
+                </div>
+            </div>
         </div>
     </div>
 </div>

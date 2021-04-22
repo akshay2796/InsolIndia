@@ -884,7 +884,7 @@ function editData()
 
     $member_id = intval($_REQUEST['id']);
 
-    $connect = mysqli_connect("localhost", "ryanearf_akshay", "ryanearf_insolindia", "Friendship.101");
+    $connect = mysqli_connect("localhost", "ryanearf_insolindia", "ryanearf_akshay", "Friendship.101");
     $sql = "SELECT * FROM tbl_become_member WHERE member_id='$member_id'";
     $result = mysqli_query($connect, $sql);
     $row2 = mysqli_fetch_array($result);
@@ -1505,12 +1505,12 @@ function editData()
 
                     $mail->IsSMTP();
 //$mail->Host     = "mail.acecabs.in.cust.a.hostedemail.com";
-//$mail->Username = "noreply@acecabs.in";
-//$mail->Password = "Newpass@0112";
+                    //$mail->Username = "noreply@acecabs.in";
+                    //$mail->Password = "Newpass@0112";
 
                     $mail->Host = "103.21.58.112";
 //$mail->Username = "noreply@acecabs.in";
-//$mail->Password = "dOvb15^8";
+                    //$mail->Password = "dOvb15^8";
                     $mail->Username = "noreply@insolindia.com";
                     $mail->Password = "f2B7~w)C[5d4";
 
@@ -1548,7 +1548,7 @@ function editData()
 
     }
 
-    $connection = mysqli_connect("localhost", "ryanearf_akshay", "ryanearf_insolindia", "Friendship.101");
+    $connection = mysqli_connect("localhost", "ryanearf_insolindia", "ryanearf_akshay", "Friendship.101");
 
     $query_id = "SELECT * FROM renew_member_detail where p_id = $member_id";
     $result_id = mysqli_query($connection, $query_id);
@@ -2211,7 +2211,7 @@ $CK_COUNTER = 0;
                         </td>
 
                         <td>
-                            <?php echo $fullname; //ucwords(strtolower($first_name.' '.$last_name));                                     ?>
+                            <?php echo $fullname; //ucwords(strtolower($first_name.' '.$last_name));                                      ?>
                         </td>
                         <td>
                             <?php echo $email; ?>

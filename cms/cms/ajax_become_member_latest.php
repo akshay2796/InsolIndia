@@ -837,7 +837,7 @@ function editData()
     global $dCON;
 
     $member_id = intval($_REQUEST['id']);
-    $connect = mysqli_connect("localhost", "ryanearf_akshay", "ryanearf_insolindia", "Friendship.101");
+    $connect = mysqli_connect("localhost", "ryanearf_insolindia", "ryanearf_akshay", "Friendship.101");
     $sql = "SELECT * FROM tbl_become_member WHERE member_id='$member_id'";
     $result = mysqli_query($connect, $sql);
     $row2 = mysqli_fetch_array($result);
@@ -1414,52 +1414,52 @@ function editData()
 </div>
 <div id="INPROCESS_1" style="display: none;"></div>';
                 // $email = $_REQUEST['email'];
-// $message = $_REQUEST['message'];
-// if($register_status =='Renewal' )
-//         {
+                // $message = $_REQUEST['message'];
+                // if($register_status =='Renewal' )
+                //         {
 
 // $mail = new phpmailer;
 
 // $mail->IsSMTP();
-// //$mail->Host     = "mail.acecabs.in.cust.a.hostedemail.com";
-// //$mail->Username = "noreply@acecabs.in";
-// //$mail->Password = "Newpass@0112";
+                // //$mail->Host     = "mail.acecabs.in.cust.a.hostedemail.com";
+                // //$mail->Username = "noreply@acecabs.in";
+                // //$mail->Password = "Newpass@0112";
 
 // $mail->Host     = "103.21.58.112";
-// //$mail->Username = "noreply@acecabs.in";
-// //$mail->Password = "dOvb15^8";
-// $mail->Username = "noreply@insolindia.com";
-// $mail->Password = "f2B7~w)C[5d4";
+                // //$mail->Username = "noreply@acecabs.in";
+                // //$mail->Password = "dOvb15^8";
+                // $mail->Username = "noreply@insolindia.com";
+                // $mail->Password = "f2B7~w)C[5d4";
 
 // $mail->Port = 25;
-// $mail->SMTPAuth = true;
-// $mail->SMTPDebug = true;
+                // $mail->SMTPAuth = true;
+                // $mail->SMTPDebug = true;
 
 // $mail->From = "contact@insolindia.com";
 
 // $mail->FromName = "insolindia";
-// $mail->ContentType = "text/html";
+                // $mail->ContentType = "text/html";
 
 // $to = $email;
-// $mail->Subject  = "Your Insol India Membership Has Been Renew";
+                // $mail->Subject  = "Your Insol India Membership Has Been Renew";
 
 // $mail->AddAddress("$email");
-// $mail->Body = "$MAIL_BODY";
-// $mail->AddCC("web@sabsoftzone.com");
+                // $mail->Body = "$MAIL_BODY";
+                // $mail->AddCC("web@sabsoftzone.com");
 
 // $mailSent = $mail->send();
-// $mail->ClearAddresses();
+                // $mail->ClearAddresses();
 
 // if($mailSent):
 
 //     $previousPage = $_SERVER["HTTP_REFERER"];
-//     header('Location: '.$previousPage);
-//     echo "Mail Successfully Sent";
-// else:
-//   echo "Sorry cannot process your request.";
-// endif;
-// ob_flush();
-//         }
+                //     header('Location: '.$previousPage);
+                //     echo "Mail Successfully Sent";
+                // else:
+                //   echo "Sorry cannot process your request.";
+                // endif;
+                // ob_flush();
+                //         }
             }
         }
 
@@ -2104,7 +2104,7 @@ $CK_COUNTER = 0;
                         </td>
 
                         <td>
-                            <?php echo $fullname; //ucwords(strtolower($first_name.' '.$last_name));   ?>
+                            <?php echo $fullname; //ucwords(strtolower($first_name.' '.$last_name));    ?>
                         </td>
                         <td>
                             <?php echo $email; ?>

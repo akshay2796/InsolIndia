@@ -82,7 +82,7 @@ include "../library_insol/class.phpmailernew.php";
 <?php
 
 $member_id = $_REQUEST['member_id'];
-$connection = mysqli_connect("localhost", "ryanearf_akshay", "ryanearf_insolindia", "Friendship.101") or die(mysqli_error($mysqli));
+$connection = mysqli_connect("localhost", "ryanearf_insolindia", "ryanearf_akshay", "Friendship.101") or die(mysqli_error($mysqli));
 $query = "SELECT * FROM tbl_become_member WHERE member_id = $member_id";
 $result = mysqli_query($connection, $query);
 $show = mysqli_fetch_array($result);
@@ -174,18 +174,18 @@ echo $MAIL_BODY;
 if (isset($_POST['expmail'])) {
 
 // $email = $_REQUEST['email'];
-// $message = $_REQUEST['message'];
+    // $message = $_REQUEST['message'];
 
     $mail = new phpmailer;
 
     $mail->IsSMTP();
 //$mail->Host     = "mail.acecabs.in.cust.a.hostedemail.com";
-//$mail->Username = "noreply@acecabs.in";
-//$mail->Password = "Newpass@0112";
+    //$mail->Username = "noreply@acecabs.in";
+    //$mail->Password = "Newpass@0112";
 
     $mail->Host = "103.21.58.112";
 //$mail->Username = "noreply@acecabs.in";
-//$mail->Password = "dOvb15^8";
+    //$mail->Password = "dOvb15^8";
     $mail->Username = "noreply@insolindia.com";
     $mail->Password = "f2B7~w)C[5d4";
 

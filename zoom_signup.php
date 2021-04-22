@@ -57,7 +57,7 @@ if (isset($_POST['submit'])) {
     $mob = $_POST['mob'];
     $prof = $_POST['prof'];
 
-    $connection = mysqli_connect("localhost", "ryanearf_akshay", "ryanearf_insolindia", "Friendship.101") or die(mysqli_error($mysqli));
+    $connection = mysqli_connect("localhost", "ryanearf_insolindia", "ryanearf_akshay", "Friendship.101") or die(mysqli_error($mysqli));
     $query = "INSERT INTO zoom(name, email, mob, profession) VALUES ('$name', '$email', '$mob', '$prof')";
     $result = mysqli_query($connection, $query);
 
@@ -109,18 +109,18 @@ if (isset($_POST['submit'])) {
     $MAIL_BODY .= '</table>';
 
 // $email = $_REQUEST['email'];
-// $message = $_REQUEST['message'];
+    // $message = $_REQUEST['message'];
 
     $mail = new phpmailer;
 
     $mail->IsSMTP();
 //$mail->Host     = "mail.acecabs.in.cust.a.hostedemail.com";
-//$mail->Username = "noreply@acecabs.in";
-//$mail->Password = "Newpass@0112";
+    //$mail->Username = "noreply@acecabs.in";
+    //$mail->Password = "Newpass@0112";
 
     $mail->Host = "103.21.58.112";
 //$mail->Username = "noreply@acecabs.in";
-//$mail->Password = "dOvb15^8";
+    //$mail->Password = "dOvb15^8";
     $mail->Username = "noreply@insolindia.com";
     $mail->Password = "f2B7~w)C[5d4";
 
@@ -144,10 +144,10 @@ if (isset($_POST['submit'])) {
 
     if ($mailSent):
         echo '<div class="alert alert-success" role="alert">
-		   <div class="container">
-		  Mail has been sent successfully
-		  </div>
-		</div>';
+			   <div class="container">
+			  Mail has been sent successfully
+			  </div>
+			</div>';
     else:
         echo "Sorry cannot process your request.";
     endif;

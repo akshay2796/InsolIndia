@@ -1383,14 +1383,14 @@ if (trim($register_status) == "expired" || trim($register_status) == "renewal") 
 echo $membership_start_date;
 if (trim($register_status) == "pending" || $sig_member == intval(1)) {
     $member_id = $_REQUEST['id'];
-    $connection = mysqli_connect("localhost", "ryanearf_akshay", "ryanearf_insolindia", "Friendship.101") or die(mysqli_error($mysqli));
+    $connection = mysqli_connect("localhost", "ryanearf_insolindia", "ryanearf_akshay", "Friendship.101") or die(mysqli_error($mysqli));
     $query = "SELECT * FROM tbl_become_member WHERE member_id = $member_id";
     $result = mysqli_query($connection, $query);
     $show = mysqli_fetch_array($result);
     $membership_start_date = $show['membership_start_date'];
     // $title =  $show['title'];
     // echo $membership_start_date;
-    ?>
+     ?>
                 <!--        <div class="width2" id="showMEMDATE" ?> -->
                 <!--	<label class="mainLabel">Membership Start Date <span>*</span> <?php if ($member_since_date != '') {?> <span style="font-size: 9px;">[SIG Member Since <?php echo $member_since_date; ?>] </span><?php }?></label> -->
                 <!--    <div class="txt2Box">-->
@@ -1601,7 +1601,7 @@ if ($membership_expired_date != "" || trim($register_status) == "expired") {
                 </div>
             </div>
             <?php
-$connection = mysqli_connect("localhost", "ryanearf_akshay", "ryanearf_insolindia", "Friendship.101") or die(mysqli_error($mysqli));
+$connection = mysqli_connect("localhost", "ryanearf_insolindia", "ryanearf_akshay", "Friendship.101") or die(mysqli_error($mysqli));
 $query3 = "SELECT * FROM renew_member_detail where p_id = $member_id ORDER BY id DESC LIMIT 1";
 $result3 = mysqli_query($connection, $query3);
 //  while($show = mysqli_fetch_array($result3)){
@@ -1698,7 +1698,7 @@ $membership_expired_date = '';
 <?php
 
 $u_id = $_GET['id'];
-$connect = mysqli_connect("localhost", "ryanearf_akshay", "ryanearf_insolindia", "Friendship.101");
+$connect = mysqli_connect("localhost", "ryanearf_insolindia", "ryanearf_akshay", "Friendship.101");
 $sql = "SELECT * FROM tbl_become_member WHERE member_id='$u_id'";
 
 $result = mysqli_query($connect, $sql);
@@ -1713,7 +1713,7 @@ if ($show2['register_status'] == 'Expired' || $show2['register_status'] == 'Rene
 
     <?php
 $u_id = $_GET['id'];
-    $connect = mysqli_connect("localhost", "ryanearf_akshay", "ryanearf_insolindia", "Friendship.101");
+    $connect = mysqli_connect("localhost", "ryanearf_insolindia", "ryanearf_akshay", "Friendship.101");
     $sql = "SELECT * FROM renew_member_detail WHERE p_id='$u_id'";
     $result = mysqli_query($connect, $sql);
     ?>
@@ -1740,7 +1740,7 @@ $u_id = $_GET['id'];
 
     <?php
 $u_id = $_GET['id'];
-    $connect = mysqli_connect("localhost", "ryanearf_akshay", "ryanearf_insolindia", "Friendship.101");
+    $connect = mysqli_connect("localhost", "ryanearf_insolindia", "ryanearf_akshay", "Friendship.101");
     $sql = "SELECT * FROM renew_member_detail WHERE p_id='$u_id'";
     $result = mysqli_query($connect, $sql);
     ?>
@@ -1962,18 +1962,18 @@ $MAIL_BODY .= '<a href="javascript:void(0);" id="submit" value="' . $member_id .
 if (isset($_POST['saveren'])) {
 
 // $email = $_REQUEST['email'];
-// $message = $_REQUEST['message'];
+    // $message = $_REQUEST['message'];
 
     $mail = new phpmailer;
 
     $mail->IsSMTP();
 //$mail->Host     = "mail.acecabs.in.cust.a.hostedemail.com";
-//$mail->Username = "noreply@acecabs.in";
-//$mail->Password = "Newpass@0112";
+    //$mail->Username = "noreply@acecabs.in";
+    //$mail->Password = "Newpass@0112";
 
     $mail->Host = "103.21.58.112";
 //$mail->Username = "noreply@acecabs.in";
-//$mail->Password = "dOvb15^8";
+    //$mail->Password = "dOvb15^8";
     $mail->Username = "noreply@insolindia.com";
     $mail->Password = "f2B7~w)C[5d4";
 

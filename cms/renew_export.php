@@ -109,7 +109,7 @@ error_reporting(E_ALL);
 $counter = 1;
 $u_id = $_GET['member_id'];
 $add_date = $_GET['add_date'];
-$connect = mysqli_connect("localhost", "ryanearf_akshay", "ryanearf_insolindia", "Friendship.101");
+$connect = mysqli_connect("localhost", "ryanearf_insolindia", "ryanearf_akshay", "Friendship.101");
 $sql = "SELECT * FROM tbl_become_member WHERE member_id='$u_id'";
 $result = mysqli_query($connect, $sql);
 $row2 = mysqli_fetch_array($result);
