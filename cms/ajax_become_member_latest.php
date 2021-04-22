@@ -837,7 +837,7 @@ function editData()
     global $dCON;
 
     $member_id = intval($_REQUEST['id']);
-    $connect = mysqli_connect("localhost", "ryanearf_akshay", "Friendship.101", "ryanearf_insolindia");
+    $connect = mysqli_connect("localhost", "ryanearf_akshay", "ryanearf_insolindia", "Friendship.101");
     $sql = "SELECT * FROM tbl_become_member WHERE member_id='$member_id'";
     $result = mysqli_query($connect, $sql);
     $row2 = mysqli_fetch_array($result);
@@ -2097,7 +2097,7 @@ $CK_COUNTER = 0;
                                 </td>
 
                                 <td>
-                                	<?php echo $fullname; //ucwords(strtolower($first_name.' '.$last_name));  ?>
+                                	<?php echo $fullname; //ucwords(strtolower($first_name.' '.$last_name));   ?>
                                 </td>
                                 <td>
                                 	<?php echo $email; ?>

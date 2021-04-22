@@ -21,7 +21,7 @@ define("PAGE_AJAX_COMMON", "ajax_common.php");
   </thead>
   <tbody>
 <?php
-$connection = mysqli_connect("localhost", "ryanearf_akshay", "Friendship.101", "ryanearf_insolindia") or die(mysqli_error($mysqli));
+$connection = mysqli_connect("localhost", "ryanearf_akshay", "ryanearf_insolindia", "Friendship.101") or die(mysqli_error($mysqli));
 $id = $_GET['id'];
 $dec = $_GET['dec'];
 $query_read = "SELECT * FROM zoom";

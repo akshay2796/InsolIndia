@@ -57,7 +57,7 @@ if (isset($_POST['submit'])) {
     $mob = $_POST['mob'];
     $prof = $_POST['prof'];
 
-    $connection = mysqli_connect("localhost", "ryanearf_akshay", "Friendship.101", "ryanearf_insolindia") or die(mysqli_error($mysqli));
+    $connection = mysqli_connect("localhost", "ryanearf_akshay", "ryanearf_insolindia", "Friendship.101") or die(mysqli_error($mysqli));
     $query = "INSERT INTO zoom(name, email, mob, profession) VALUES ('$name', '$email', '$mob', '$prof')";
     $result = mysqli_query($connection, $query);
 
@@ -144,10 +144,10 @@ if (isset($_POST['submit'])) {
 
     if ($mailSent):
         echo '<div class="alert alert-success" role="alert">
-	   <div class="container">
-	  Mail has been sent successfully
-	  </div>
-	</div>';
+		   <div class="container">
+		  Mail has been sent successfully
+		  </div>
+		</div>';
     else:
         echo "Sorry cannot process your request.";
     endif;
