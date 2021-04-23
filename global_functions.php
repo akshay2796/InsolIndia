@@ -2470,7 +2470,7 @@ function sendMailformate($TYP,$ID,$via="")
                             $FROM = "info@sabsoftzone.in";
                             
                             $sql = "";
-                            $sql .= "SELECT GROUP_CONCAT(DISTINCT CONCAT( email)) AS combined_mail FROM " . BECOME_MEMBER_TBL . "where member_id = 4447 or member_id = 4442";
+                            $sql .= "SELECT GROUP_CONCAT(DISTINCT CONCAT( email)) AS combined_mail FROM " . BECOME_MEMBER_TBL;
 
                             $stmt = $dCON->prepare($sql);
                             $rs = $stmt->execute();
