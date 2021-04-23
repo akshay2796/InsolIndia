@@ -10,7 +10,7 @@ include 'header.php';?>
 
 
 <?php
-$connection = mysqli_connect("localhost", "ryanearf_insolindia", "ryanearf_akshay", "Friendship.101") or die(mysqli_error($mysqli));
+$connection = mysqli_connect("localhost", "ryanearf_akshay", "Friendship.101", "ryanearf_insolindia") or die(mysqli_error($mysqli));
 $id = $_GET['id'];
 $dec = $_GET['dec'];
 $query_read = "SELECT * FROM zoom WHERE id='$id'";

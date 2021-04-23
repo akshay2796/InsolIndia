@@ -111,7 +111,7 @@ $counter = 1;
     for ($i = 0; $i < count($checkbox); $i++) {
 
         $del_id = $checkbox[$i];
-        $connect = mysqli_connect("localhost", "ryanearf_insolindia", "ryanearf_akshay", "Friendship.101");
+        $connect = mysqli_connect("localhost", "ryanearf_akshay", "Friendship.101", "ryanearf_insolindia");
         $sql = "SELECT * FROM tbl_become_member WHERE member_id='$del_id'";
         $result = mysqli_query($connect, $sql);
         $row2 = mysqli_fetch_array($result);

@@ -1383,7 +1383,7 @@ if (trim($register_status) == "expired" || trim($register_status) == "renewal") 
 echo $membership_start_date;
 if (trim($register_status) == "pending" || $sig_member == intval(1)) {
     $member_id = $_REQUEST['id'];
-    $connection = mysqli_connect("localhost", "ryanearf_insolindia", "ryanearf_akshay", "Friendship.101") or die(mysqli_error($mysqli));
+    $connection = mysqli_connect("localhost", "ryanearf_akshay", "Friendship.101", "ryanearf_insolindia") or die(mysqli_error($mysqli));
     $query = "SELECT * FROM tbl_become_member WHERE member_id = $member_id";
     $result = mysqli_query($connection, $query);
     $show = mysqli_fetch_array($result);
@@ -1601,7 +1601,7 @@ if ($membership_expired_date != "" || trim($register_status) == "expired") {
                 </div>
             </div>
             <?php
-$connection = mysqli_connect("localhost", "ryanearf_insolindia", "ryanearf_akshay", "Friendship.101") or die(mysqli_error($mysqli));
+$connection = mysqli_connect("localhost", "ryanearf_akshay", "Friendship.101", "ryanearf_insolindia") or die(mysqli_error($mysqli));
 $query3 = "SELECT * FROM renew_member_detail where p_id = $member_id ORDER BY id DESC LIMIT 1";
 $result3 = mysqli_query($connection, $query3);
 //  while($show = mysqli_fetch_array($result3)){
@@ -1698,7 +1698,7 @@ $membership_expired_date = '';
 <?php
 
 $u_id = $_GET['id'];
-$connect = mysqli_connect("localhost", "ryanearf_insolindia", "ryanearf_akshay", "Friendship.101");
+$connect = mysqli_connect("localhost", "ryanearf_akshay", "Friendship.101", "ryanearf_insolindia");
 $sql = "SELECT * FROM tbl_become_member WHERE member_id='$u_id'";
 
 $result = mysqli_query($connect, $sql);
@@ -1713,7 +1713,7 @@ if ($show2['register_status'] == 'Expired' || $show2['register_status'] == 'Rene
 
     <?php
 $u_id = $_GET['id'];
-    $connect = mysqli_connect("localhost", "ryanearf_insolindia", "ryanearf_akshay", "Friendship.101");
+    $connect = mysqli_connect("localhost", "ryanearf_akshay", "Friendship.101", "ryanearf_insolindia");
     $sql = "SELECT * FROM renew_member_detail WHERE p_id='$u_id'";
     $result = mysqli_query($connect, $sql);
     ?>
@@ -1740,7 +1740,7 @@ $u_id = $_GET['id'];
 
     <?php
 $u_id = $_GET['id'];
-    $connect = mysqli_connect("localhost", "ryanearf_insolindia", "ryanearf_akshay", "Friendship.101");
+    $connect = mysqli_connect("localhost", "ryanearf_akshay", "Friendship.101", "ryanearf_insolindia");
     $sql = "SELECT * FROM renew_member_detail WHERE p_id='$u_id'";
     $result = mysqli_query($connect, $sql);
     ?>
