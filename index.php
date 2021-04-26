@@ -1,5 +1,5 @@
 <!-- INSOL.ORG Version 1.0 -->
-
+<?php include 'header.php';?>
 <!DOCTYPE html>
 <html lang="en" class=" js no-touch">
 
@@ -53,6 +53,8 @@
     <link rel="stylesheet"
         href="//web.archive.org/web/20210325171058cs_/https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css"
         type="text/css">
+
+    <link rel="stylesheet" type="text/css" href="https://www.insolindia.com/css_insol/main.css" />
 
     <meta name="generatedon" content="2021-03-25 05:11:01">
     <!-- <script src="assets/vendor/jquery-1.12.4.min.js" type="text/javascript"></script>-->
@@ -4033,130 +4035,188 @@
             </ul><!-- /.arrows -->
 
             <div class="intro__inner">
-                <div class="intro__aside">
-                    <div class="shell">
-                        <a href="https://web.archive.org/web/20210325171058/https://www.insol.org/"
-                            class="logo intro__logo"></a>
-                        <h1 class="hide-on-mobile">
-                            <a style="text-decoration: none; text-underline: none;"
-                                href="https://web.archive.org/web/20210325171058/https://www.insol.org/events/detail/181">INSOL
-                                International and INSOL Europe Online Seminar 2021 </a>
-                        </h1>
 
-                        <ul class="hide-on-mobile">
-                            <li>
-                                <strong></strong> <br>
-                                15 April 2021
-                            </li>
 
-                        </ul>
-                    </div><!-- /.shell -->
-                </div><!-- /.intro__aside -->
+            </div>
 
-                <div class="intro__body">
-                    <header class="header">
-                        <a href="#" class="btn-burger">
-                            <span></span>
+            <div class="intro__body">
+                <header class="header">
+                    <a href="#" class="btn-burger">
+                        <span></span>
 
-                            <span></span>
+                        <span></span>
 
-                            <span></span>
-                        </a>
+                        <span></span>
+                    </a>
 
-                        <div class="header__body">
-                            <div class="shell">
-                                <!-- /.header__body__inner -->
-                            </div><!-- /.shell -->
-                        </div><!-- /.header__body -->
+                    <div class="header__body">
+                        <div class="shell">
+                            <!-- /.header__body__inner -->
+                        </div><!-- /.shell -->
+                    </div><!-- /.header__body -->
 
-                        <!-- <div class="header__bar fixed">-->
-                        <div class="header__bar">
-                            <div class="shell">
-                                <div class="header__bar__inner">
+                    <!-- <div class="header__bar fixed">-->
+                    <div class="header__bar">
+                        <div class="shell">
+                            <div class="header__bar__inner">
 
-                                    <nav class="nav" style=" margin-left: 70px; z-index: 1000;">
-                                        <ul>
-                                            <li class="active">
-                                                <a href="https://insolindia.com/">Home</a>
-                                            </li>
-                                            <li>
-                                                <a href="https://insolindia.com/about">About</a>
-                                            </li>
+                                <nav class="nav" style=" margin-left: 70px; z-index: 1000;">
+                                    <ul>
+                                        <li class="active">
+                                            <a href="https://insolindia.com/">Home</a>
+                                        </li>
+                                        <li>
+                                            <a href="https://insolindia.com/about">About</a>
+                                        </li>
 
-                                            <li>
-                                                <a href="https://insolindia.com/membership">Membership</a>
-                                            </li>
+                                        <li>
+                                            <a href="https://insolindia.com/membership">Membership</a>
+                                        </li>
 
-                                            <li>
-                                                <a href="https://insolindia.com/events">Events</a>
-                                            </li>
+                                        <li>
+                                            <a href="https://insolindia.com/events">Events</a>
+                                        </li>
 
-                                            <li>
-                                                <a href="https://insolindia.com/library">Library</a>
-                                            </li>
+                                        <li>
+                                            <a href="https://insolindia.com/library">Library</a>
+                                        </li>
 
-                                            <li class="">
-                                                <a href="https://insolindia.com/education">Education</a>
-                                            </li>
+                                        <li class="">
+                                            <a href="https://insolindia.com/education">Education</a>
+                                        </li>
 
-                                            <li>
-                                                <a href="https://insolindia.com/fellows-home">Fellows</a>
-                                            </li>
+                                        <li>
+                                            <a href="https://insolindia.com/fellows-home">Fellows</a>
+                                        </li>
 
-                                            <li>
-                                                <a href="https://insolindia.com/special-interest-group">Focus
-                                                    Groups</a>
-                                            </li>
+                                        <li>
+                                            <a href="https://insolindia.com/special-interest-group">Focus
+                                                Groups</a>
+                                        </li>
 
-                                            <li>
-                                                <a href="https://insolindia.com/gthirtysix">G36</a>
-                                            </li>
+                                        <li>
+                                            <a href="https://insolindia.com/gthirtysix">G36</a>
+                                        </li>
 
-                                            <li>
-                                                <a href="https://insolindia.com/webinars-podcasts">Webinars
-                                                    &amp; Podcasts</a>
-                                            </li>
+                                        <li>
+                                            <a href="https://insolindia.com/webinars-podcasts">Webinars
+                                                &amp; Podcasts</a>
+                                        </li>
 
-                                        </ul>
+                                    </ul>
 
-                                        <ul>
+                                    <ul>
 
-                                            <li>
-                                                <a href="https://insolindia.com/login">Login</a>
-                                            </li>
-                                            <li>
-                                                <a href="https://insolindia.com/register">Register
-                                                </a>
-                                            </li>
-                                            <!--<li>
-            <a href="#" class="btn-search">Search</a>
-        </li>-->
-                                        </ul>
-                                    </nav><!-- /.nav -->
+                                        <li>
+                                            <a href="https://insolindia.com/login">Login</a>
+                                        </li>
+                                        <li>
+                                            <a href="https://insolindia.com/register">Register
+                                            </a>
+                                        </li>
+                                        <!--<li>
+                                                <a href="#" class="btn-search">Search</a>
+                                            </li>-->
+                                    </ul>
+                                </nav><!-- /.nav -->
 
-                                    <div class="search search--fixed">
-                                        <form action="?" method="get">
-                                            <label for="f_search" class="hidden">Search</label>
+                                <div class="search search--fixed">
+                                    <form action="?" method="get">
+                                        <label for="f_search" class="hidden">Search</label>
 
-                                            <input type="search" name="f_search" id="f_search" value=""
-                                                placeholder="Search" class="search__field" />
+                                        <input type="search" name="f_search" id="f_search" value="" placeholder="Search"
+                                            class="search__field" />
 
-                                            <input type="submit" value="GO" class="search__btn" />
+                                        <input type="submit" value="GO" class="search__btn" />
 
-                                            <i class="fa fa-search search__ico" aria-hidden="true"></i>
-                                        </form>
-                                    </div><!-- /.search -->
-                                </div><!-- /.header__bar__inner -->
-                            </div><!-- /.shell -->
-                        </div><!-- /.header__body -->
+                                        <i class="fa fa-search search__ico" aria-hidden="true"></i>
+                                    </form>
+                                </div><!-- /.search -->
+                            </div><!-- /.header__bar__inner -->
+                        </div><!-- /.shell -->
+                    </div><!-- /.header__body -->
 
-                        <a href="https://insolindia.com/help" class="btn-help header__btn">
-                            <br>Feedback<br>
-                            <i class="ico-chevron-double-white"></i>
-                        </a>
-                    </header><!-- /.header -->
+                    <a href="https://insolindia.com/help" class="btn-help header__btn">
+                        <br>Feedback<br>
+                        <i class="ico-chevron-double-white"></i>
+                    </a>
+                </header><!-- /.header -->
 
-                    <div class="intro__bar">
+                <div class="clearfix home_banner" style="padding-top: 70px">
+
+                    <img class="homebanner" src="https://www.insolindia.com/images_insol/banner.jpg">
+                    <div class="clearfix home_slider">
+                        <h2>News</h2>
+                        <div class="single-item-rtl" style="display: none;">
+                            <?php if (intval(count($rs_news)) > intval(0)) {
+    foreach ($rs_news as $r) {
+        $news_title = htmlentities(stripslashes($r['news_title']));
+        $news_date = stripslashes($r['news_date']);
+        $news_url_key = stripslashes($r['url_key']);
+        $newsURL = SITE_ROOT . urlRewrite("news-details.php", array("url_key" => $news_url_key));
+
+        ?>
+                            <div>
+                                <h5><?php echo date('l jS F, Y', strtotime($news_date)); ?></h5>
+                                <p>
+                                    <a href="<?php echo $newsURL; ?>"> <?php echo $news_title; ?> </a>
+                                </p>
+                            </div>
+                            <?php }
+
+}?>
+                        </div>
+
+
+
+                    </div>
+                    <ul class="resourcesWrap" style="right: 15px; position: absolute; top: 0;">
+                        <li>
+                            <a href="https://insolindia.com/newsletter">Newsletter</a>
+                        </li>
+                        <?php
+$SQLRCAT = "";
+$SQLRCAT .= " SELECT * FROM " . RESOURCES_CATEGORY_TBL . " AS TC WHERE `status` = 'ACTIVE' ";
+$SQLRCAT .= " ORDER BY position ASC limit 7";
+$stmtRCat = $dCON->prepare($SQLRCAT);
+$stmtRCat->execute();
+$rowRCat = $stmtRCat->fetchAll();
+$stmtRCat->closeCursor();
+//echo count($rowCat);
+$r = 1;
+foreach ($rowRCat as $rsRCat) {
+    $R_cat_id = "";
+    $R_cat_name = "";
+    $R_cat_url_key = "";
+
+    $R_cat_id = intval($rsRCat['category_id']);
+    $R_cat_name = stripslashes($rsRCat['category_name']);
+    $R_cat_url_key = stripslashes($rsRCat['url_key']);
+    $R_cat_url = SITE_ROOT . urlRewrite("resources.php", array("cat_url_key" => $R_cat_url_key));
+    ?>
+                        <li>
+                            <a href="<?php echo $R_cat_url; ?>"><?php echo $R_cat_name; ?></a>
+                        </li>
+                        <?php
+if ($r >= 6) {
+        break;
+    }
+    $r++;
+}
+if (count($rowRCat) >= intval(7)) {
+    ?>
+                        <li style="border-bottom: 0px;"><a href="resource-list.php">More Resources &rarr;</a></li>
+                        <?php
+}
+?>
+                    </ul>
+
+                    <div class="bannerTxt">
+                        <h4>Committed to building the stature and prestige of insolvency, restructuring and turnaround
+                            profession.</h4>
+                    </div>
+
+                    <div class="intro__bar" style="display: none;">
                         <div class="shell">
                             <div class="intro__bar__inner">
                                 <h6>Not Yet A Member? Find Out The <a href="https://insolindia.com/membership/">Member
@@ -4316,93 +4376,6 @@
 
                 <!-- /.slider__bar -->
             </div>
-            <div class="slider-main">
-                <div class="slider__clip">
-                    <div class="slider__slides">
-                        <div class="slider__slide"
-                            style="background-image: url(https://web.archive.org/web/20210325171058im_/https://www.insol.org/headers/a425087d-d4e8-4def-8819-6ffa2c98ce0d.jpg)">
-
-                            <div class="slide__content-primary">
-                                <a href="#" class="logo-slider"></a>
-
-                                <h5>
-                                    The Foundation Certificate
-                                    <span></span>
-                                </h5>
-
-                                <h6>
-                                    A Postgraduate online programme
-                                    <span>aimed at new entrants to the profession</span>
-                                </h6>
-
-
-                                <a class="slide-button red"
-                                    href="/web/20210325171058/https://www.insol.org/foundationcertificatecourse">See
-                                    Details</a>
-
-                            </div>
-                        </div>
-                        <div class="slider__slide"
-                            style="background-image: url(https://web.archive.org/web/20210325171058im_/https://www.insol.org/headers/0e0f876c-1e3f-43fe-a852-068aa8951d7d.jpg)">
-
-                            <div class="slide__content-primary">
-                                <a href="#" class="logo-slider"></a>
-
-                                <h5>
-                                    Global Insolvency Practice Course
-                                    <span></span>
-                                </h5>
-
-                                <h6>
-                                    An advanced educational qualification
-                                    <span>focusing on international insolvency.</span>
-                                </h6>
-
-
-                                <a class="slide-button red" href="/web/20210325171058/https://www.insol.org/gpic">See
-                                    Details</a>
-
-                            </div>
-                        </div>
-                        <div class="slider__slide"
-                            style="background-image: url(https://web.archive.org/web/20210325171058im_/https://www.insol.org/headers/95b409f5-bbe1-4a55-87d4-5ab66a4b6af1.jpg)">
-
-                            <div class="slide__content-primary">
-                                <a href="#" class="logo-slider"></a>
-
-                                <h5>
-                                    INSOL Online
-                                    <span>A series of webinars and podcasts </span>
-                                </h5>
-
-                                <h6>
-                                    addressing key topical issues
-                                    <span></span>
-                                </h6>
-
-
-                                <a class="slide-button red"
-                                    href="https://web.archive.org/web/20210325171058/https://www.insol.org/webinars-podcasts">View
-                                    Schedule</a>
-
-                            </div>
-                        </div>
-                    </div><!-- /.slider__slides -->
-                </div><!-- /.slider__clip -->
-
-                <div class="slider__bar">
-                    <div class="shell">
-                        <div class="slider__bar__inner">
-                            <h6>Not Yet A Member? Find Out The <a
-                                    href="https://web.archive.org/web/20210325171058/https://www.insol.org/membership">Member
-                                    Benefits <i class="ico-chevron-double-white"></i></a></h6>
-
-                        </div><!-- /.slider__bar__inner -->
-                    </div><!-- /.shell -->
-
-                    <i class="arrow-big slider__ico"></i>
-                </div><!-- /.slider__bar -->
-            </div><!-- /.slider -->
         </div><!-- /.intro -->
 
 
@@ -4870,7 +4843,10 @@
         type="text/javascript" defer></script>
     <script src="https://web.archive.org/web/20210325171058js_/https://www.insol.org/assets/vendor/ticker.js"
         type="text/javascript" defer></script>
-
+    <script type="text/javascript">
+    let header = document.querySelector("header.clearfix.main_header");
+    header.style = "display: none;";
+    </script>
 </body>
 
 </html>
