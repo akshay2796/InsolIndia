@@ -1,0 +1,115 @@
+.btn.bumped {
+    bottom: -54px;
+    z-index: 999;
+}
+
+.padded-section {
+    padding: 40px 0 150px;
+}
+
+@media (min-width: 1450px) {
+    .padded-section .container {
+        max-width: 1250px;
+    }
+}
+
+@media (min-width: 768px) {
+    .padded-section .container {
+        padding: 0 6px;
+    }
+}
+
+.padded-section .columns-text {
+    margin-bottom: 60px;
+}
+
+@media (min-width: 768px) {
+    .padded-section .columns-text {
+        column-count: 2;
+        column-gap: 30px;
+    }
+}
+
+.padded-section h2 {
+    font: Bold 30px/34px Helvetica Neue;
+    color: #1E2642;
+}
+
+.padded-section .block-container {
+    margin-bottom: 50px;
+}
+
+.padded-section .block-container h3 {
+    font: Bold 30px/34px Helvetica Neue;
+    margin: 0 0 20px;
+    color: #1E2642;
+}
+
+@media (min-width: 768px) {
+    .padded-section .block-container .mb-30 {
+        margin-bottom: 30px;
+    }
+}
+
+.padded-section .block-container .block {
+    background-size: 100%;
+    background-position: top center;
+    display: block;
+    height: 100%;
+    position: relative;
+    padding-top: 80%;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+@media (max-width: 767px) {
+    .padded-section .block-container .block {
+        border-bottom: 30px solid #fff;
+    }
+}
+
+@media (min-width: 768px) {
+    .padded-section .block-container .block.big .content h4 {
+        font: Bold 24px/29px Helvetica Neue;
+    }
+}
+
+.padded-section .block-container .block .content {
+    position: absolute !important;
+    bottom: 0;
+    left: 0;
+    width: 100% !important;
+    padding: 12px 0;
+    background: #fff;
+}
+
+@media (max-width: 767px) {
+    .padded-section .block-container .block .content {
+        padding: 7px 0;
+    }
+}
+
+.padded-section .block-container .block .content h4 {
+    font: Bold 16px/19px Helvetica Neue;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+@media (max-width: 767px) {
+    .padded-section .block-container .block .content h4 {
+        font: Bold 14px/16px Helvetica Neue;
+    }
+}
+
+.padded-section .block-container .block .content p {
+    font-size: 18px;
+    margin: 0 0 10px;
+    display: none;
+}
+
+.padded-section .block-container .block .content span {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+}
