@@ -52,6 +52,10 @@
     width: 100%;
     height: auto;
 }
+.in_project_sec a {
+    padding: 10px 0;
+    font-size: 0.8rem;
+}
 .reso_sect .reso_sect_text h3 {
     font-size: 13px;
 }
@@ -269,7 +273,7 @@
     width: 100%;
 }
 .home_slider {
-    top: 25px;
+    top: 100px;
 }
 }
 
@@ -396,8 +400,7 @@
 
 @media (max-width: 767px){
 .in_project_sec {
-   	width: 33.3%;
-    float: left;
+   	width: 100%;
 }
 .footer_left {
     text-align: center;
@@ -658,7 +661,7 @@
     font-size: 11px;
 }
 .in_project_sec {
-    width: 50%;
+    width: 100%;
 }
 .led_team_left {
     padding: 0px 20px 0 0;
@@ -700,9 +703,17 @@
 	.sub_menu > ul > li > a{margin:6px 0 6px 12px; text-transform: none;}
 	.myaccountButton{width: 100px;}
 	.myaccountLogin{width: 100px;}
-	ul.resourcesWrap{width: 100%; padding: 0; margin: 10px 0; border: 0px;}
+	ul.resourcesWrap{width: 100% !important; padding: 0; margin: 10px 0; border: 0px;}
 	ul.resourcesWrap li{width: 32%; margin: 0.5%; float: left;}
 	ul.resourcesWrap li{border: 0px;}
+    .home_banner img {
+        min-height: unset;
+    }
+}
+@media all (max-width:581px) {
+    .home_banner img {
+        min-height: unset;
+    }
 }
 @media all and (min-width: 501px) and (max-width:580px){
 	.strenghtPos{position: relative; margin: 0 !important;}

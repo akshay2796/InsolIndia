@@ -1,15 +1,40 @@
 <!-- insolindia.com Version 1.0 -->
-<?php include 'header.php';?>
+<?php
+error_reporting(0);
+session_start();
+include "library_insol/class.pdo.php";
+include "library_insol/class.pagination_refresh_based.php";
+include "library_insol/class.inputfilter.php";
+include "library_insol/function.php";
+include "global_functions.php";
+
+$PAGENAME = strtolower(basename($_SERVER['PHP_SELF']));
+$page_name = basename($_SERVER['PHP_SELF']);
+
+include 'meta.php';
+
+if ($_SESSION["url_rewrite"] == '1') {
+    $_SESSION['INCLUDE_QMARK'] = "?";
+} else {
+    $_SESSION['INCLUDE_QMARK'] = "&";
+}
+
+if (isset($_SESSION['UID_INSOL']) && intval($_SESSION['UID_INSOL']) > intval(0)) {
+    define("LOGGED_IN", "YES");
+} else {
+    define("LOGGED_IN", "NO");
+}
+?>
 <!DOCTYPE html>
 <html lang="en" class=" js no-touch">
 
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>INSOL - Home Page</title>
+    <title>INSOLINDIA</title>
 
 
-    <link rel="shortcut icon" type="image/x-icon" href="<?php echo SITE_ROOT ?>assets/css/images/favicon.ico" />
+    <link rel="shortcut icon" type="image/x-icon" href="<?php echo SITE_ROOT ?>images_insol/favicon_icon.png" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <!-- Vendor Styles -->
     <link rel="stylesheet" href="<?php echo SITE_ROOT ?>assets/vendor/owl-carousel/dist/assets/owl.carousel.min.css"
@@ -22,11 +47,15 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css"
         type="text/css">
-
-    <link rel="stylesheet" type="text/css" href="<?php echo SITE_ROOT ?>css_insol/main.css" />
+    <link rel="stylesheet" href="<?php echo SITE_ROOT ?>css_insol/slick.css">
+    <link rel="stylesheet" href="<?php echo SITE_ROOT ?>css_insol/main.css" />
+    <link rel="stylesheet" href="<?php echo SITE_ROOT ?>css_insol/responsive.css" />
 
     <meta name="generatedon" content="2021-03-25 05:11:01">
     <script src="https://code.jquery.com/jquery-1.12.4.min.js" type="text/javascript"></script>
+
+    <script src="<?php echo SITE_ROOT ?>js_insol/lightgallery.min.js"></script>
+    <script src="<?php echo SITE_ROOT ?>js_insol/lg-video.min.js"></script>
     <script type="text/javascript" async>
     jQuery(window).load(function() {
         jQuery(".hameid-loader-overlay").fadeOut(500);
@@ -393,7 +422,7 @@
 
             <!-- /.slider__bar -->
         </div>
-        <div class="clearfix home_banner" style="padding-top: 70px">
+        <div class="clearfix home_banner" style="padding-top: 70px; background-color: #23408C;">
             <header class="header">
                 <a href="#" class="btn-burger">
                     <span></span>
@@ -500,7 +529,18 @@
             <div class="clearfix home_slider">
                 <h2>News</h2>
                 <div class="single-item-rtl" style="display: none;">
-                    <?php if (intval(count($rs_news)) > intval(0)) {
+                    <?php
+$SQL = "";
+$SQL = "SELECT *, CASE WHEN display_on_top = 1 THEN position ELSE 1000 END AS ordd FROM " . NEWS_TBL . " WHERE status = 'ACTIVE' AND display_on_top = 1 ORDER BY ordd ASC, news_date DESC, news_id DESC";
+$news = $dCON->prepare($SQL);
+$news->execute();
+$rs_news = $news->fetchAll();
+$news->closeCursor();
+//echo  '<pre>'; print_r($rs_news);exit();
+//echo SITE_ROOT;
+?>
+                    <?php
+if (intval(count($rs_news)) > intval(0)) {
     foreach ($rs_news as $r) {
         $news_title = htmlentities(stripslashes($r['news_title']));
         $news_date = stripslashes($r['news_date']);
@@ -522,7 +562,7 @@
 
 
             </div>
-            <ul class="resourcesWrap" style="right: 15px; position: absolute; top: 0;">
+            <ul class="resourcesWrap" style="right: 15px; position: absolute; top: 70px;">
                 <li>
                     <a href="<?php echo SITE_ROOT ?>newsletter">Newsletter</a>
                 </li>
@@ -610,9 +650,8 @@ if (count($rowRCat) >= intval(7)) {
                                 <div class="section__inner">
                                     <h1>Insol India</h1>
 
-                                    <p><strong>INSOL India is an independent leadership body representing
-                                            practitioners
-                                            and other associated professionals.</strong></p>
+                                    <p><strong>INDIAN ASSOCIATION OF RESTRUCTURING, INSOLVENCY & BANKRUPTCY
+                                            PROFESSIONALS</strong></p>
 
                                     <p style="text-transform: capitalize;">INSOL India is an independent
                                         leadership body
@@ -687,7 +726,8 @@ if (count($rowRCat) >= intval(7)) {
 
                                         <div class="feature feature--blue" style="margin-top: -9px">
                                             <div class="feature__head">
-                                                <h6><strong><span style="letter-spacing: 0.01em;">Our
+                                                <h6><strong><span
+                                                            style="letter-spacing: 0.01em; padding-left: 20px;">Our
                                                             Projects</span></strong></h6>
 
                                                 <?php
@@ -729,10 +769,10 @@ if ($dA > intval(0)) {
                                                     <a href="<?php echo $masterURL; ?>">
                                                         <img src="<?php echo $showIMG; ?>" style="object-fit: contain;">
                                                     </a>
-                                                    <h3>
+                                                    <span>
                                                         <a
                                                             href="<?php echo $masterURL; ?>"><?php echo $masterTITLE; ?></a>
-                                                    </h3>
+                                                    </span>
                                                 </div>
                                                 <?php
 }
@@ -759,21 +799,6 @@ if ($dA > intval(0)) {
 
                         <div class="col--size3">
                             <div class="section__content-white">
-                                <div class="section__inner" style="width: 375px;">
-                                    <iframe id="adeab37a" name="adeab37a"
-                                        src="https://adserver.insolindia.com/adserver/www/delivery/afr.php?refresh=15&amp;n=adeab37a&amp;zoneid=1&amp;cb={random}&amp;ct0={clickurl_enc}"
-                                        frameborder="0" scrolling="no" style="width: 375px; height: 250px;"
-                                        allowtransparency="true"><a
-                                            href="https://adserver.insol.lets-go-digital.co.uk/adserver/www/delivery/ck.php?n=a4b27d56&amp;cb={random}"
-                                            target="_blank"><img
-                                                src="https://adserver.insol.lets-go-digital.co.uk/adserver/www/delivery/avw.php?zoneid=1&amp;cb={random}&amp;n=a4b27d56&amp;ct0={clickurl_enc}"
-                                                border="0" alt="" /></a></iframe>
-                                    <script type="text/javascript"
-                                        src="https://adserver.insolindia.com/adserver/www/delivery/ag.php" async="">
-                                    </script>
-                                </div><!-- /.list-adds -->
-
-
                                 <div class="articles">
                                     <div class="articles__head">
                                         <h1>
@@ -1031,32 +1056,17 @@ $countEVENT = count($rs_events);
     <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.min.js" integrity="" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"
         type="text/javascript" defer></script>
-    <script src="<?php echo SITE_ROOT ?>assets/vendor/ticker.js" type="text/javascript" defer></script>
-    <script type="text/javascript">
-    let header = document.querySelector("header.clearfix.main_header");
-    header.style = "display: none;";
+    <script src="<?php echo SITE_ROOT ?>js_insol/slick.min.js"></script>
+    <script src="<?php echo SITE_ROOT ?>js_insol/scripts.js"></script>
+
+    <script src="<?php echo SITE_ROOT ?>js_insol/grids.js"></script>
+    <script>
+    $(document).ready(function() {
+        $('.eqH').responsiveEqualHeightGrid();
+        $('.profileH').responsiveEqualHeightGrid();
+    });
     </script>
+    <script src="<?php echo SITE_ROOT ?>js_insol/script.js"></script>
 </body>
 
 </html>
-<!--
-     FILE ARCHIVED ON 17:10:58 Mar 25, 2021 AND RETRIEVED FROM THE
-     INTERNET ARCHIVE ON 17:19:05 Apr 23, 2021.
-     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
-
-     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
-     SECTION 108(a)(3)).
--->
-<!--
-playback timings (ms):
-  esindex: 0.023
-  exclusion.robots.policy: 0.475
-  CDXLines.iter: 23.458 (3)
-  captures_list: 128.357
-  PetaboxLoader3.datanode: 107.663 (4)
-  exclusion.robots: 0.497
-  RedisCDXSource: 1.262
-  load_resource: 162.544
-  LoadShardBlock: 84.991 (3)
-  PetaboxLoader3.resolve: 99.562
--->

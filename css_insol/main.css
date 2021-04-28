@@ -8,7 +8,7 @@ body{
 	font-weight:400;
 	color:#666666;
 	text-align:left;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Gotham', 'Helvetica', sans-serif;
 }
 
 p{
@@ -1752,11 +1752,14 @@ a{
 	padding:0;
 	position:relative;
 }
-.home_banner img{width:100%;}
+.home_banner img {
+    width: 100%;
+    min-height: 335px;
+}
 .home_slider {
     width: 410px;
     padding: 0px;
-    top: 50px;
+    top: 100px;
     position: absolute;
     left: 6.8%;
     text-align: left;
