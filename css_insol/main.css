@@ -2156,7 +2156,7 @@ span.error{border: 0px !important; color: #ee0000; font-size:12px;}
 
 ul.resourcesWrap{list-style-type: none; margin: 25px 0; border-top: 5px solid #2B3584;border-bottom: 5px solid #2B3584;padding: 0; width: 180px; text-align: left; float: right;}
 ul.resourcesWrap li{border-bottom: 1px solid #a1191d;}
-ul.resourcesWrap li a{display: block; padding: 8px 15px; font-size: 13px; background:#B71D21; color: #ffffff;}
+ul.resourcesWrap li a{display: block; padding: 8px 15px; font-size: 12px; background:#B71D21; color: #ffffff;}
 ul.resourcesWrap li a:hover{background:#23408C; text-decoration: none;color: #ffffff;}
 
 

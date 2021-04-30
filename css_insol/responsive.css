@@ -709,10 +709,18 @@
     .home_banner img {
         min-height: unset;
     }
+    ul.resourcesWrap{
+        right:unset !important;
+        padding:10px;
+    }
 }
 @media all (max-width:581px) {
     .home_banner img {
         min-height: unset;
+    }
+    ul.resourcesWrap{
+        right:unset !important;
+        padding:10px;
     }
 }
 @media all and (min-width: 501px) and (max-width:580px){
@@ -723,9 +731,11 @@
 	.sub_menu > ul > li > a{margin:6px 0 6px 12px;}
 	.myaccountButton{width: 110px;}
 	.myaccountLogin{width: 110px;}
-	ul.resourcesWrap{width: 100%; padding: 0; margin: 0; border: 0px;}
+	ul.resourcesWrap{width: 100%; padding: 0; margin: 0; border: 0px; right:unset !important;
+        padding:10px;}
 	ul.resourcesWrap li{width: 49%; margin: 0.2%; float: left;}
-	ul.resourcesWrap li{border: 0px;}
+	ul.resourcesWrap li{border: 0px;
+    }
 }
 @media all and (min-width: 200px) and (max-width:500px){
 	.strenghtPos{position: relative; margin: 0 !important;}
@@ -738,9 +748,14 @@
 	.myaccountLogin{width: 100px;}
 	ul.resourcesWrap{width: 100%; padding: 0; margin: 0; border: 0px;}
 	ul.resourcesWrap li{width: 49%; margin: 0.2%; float: left;}
-	ul.resourcesWrap li a{padding:4px 9px; font-size: 12px;}
+	ul.resourcesWrap li a{padding:4px 9px; font-size: 10px;}
 	ul.resourcesWrap li{border: 0px;}
 	.home_banner .homebanner{height: 130px;}
+
+    ul.resourcesWrap{
+        right:unset !important;
+        padding:10px;
+    }
 }
 
 

@@ -143,7 +143,7 @@ if (isset($_SESSION['UID_INSOL']) && intval($_SESSION['UID_INSOL']) > intval(0))
     <div class="wrapper">
 
         <div class="intro" style="display: none;">
-            <ul class="arrows intro__arrows">
+            <ul class="arrows intro__arrows" style="display:none;">
                 <li data-top="295" data-top-desktop="345"
                     style="border-color: transparent transparent transparent #e00026;"></li>
 
@@ -186,35 +186,35 @@ if (isset($_SESSION['UID_INSOL']) && intval($_SESSION['UID_INSOL']) > intval(0))
                                 <nav class="nav" style=" margin-left: 70px; z-index: 1000;">
                                     <ul>
                                         <li class="active">
-                                            <a href="<?php echo SITE_ROOT ?>">Home</a>
+                                            <a href="<?php echo SITE_ROOT ?>">INSOL INDIA</a>
                                         </li>
                                         <li>
-                                            <a href="<?php echo SITE_ROOT ?>about">About</a>
-                                        </li>
-
-                                        <li>
-                                            <a href="<?php echo SITE_ROOT ?>membership">Membership</a>
+                                            <a href="<?php echo SITE_ROOT ?>governance.php">GOVERNANCE</a>
                                         </li>
 
                                         <li>
-                                            <a href="<?php echo SITE_ROOT ?>events">Events</a>
+                                            <a href="<?php echo SITE_ROOT ?>#">PROJECTS</a>
                                         </li>
 
                                         <li>
-                                            <a href="<?php echo SITE_ROOT ?>library">Library</a>
+                                            <a href="<?php echo SITE_ROOT ?>sipi.php">SIPI</a>
+                                        </li>
+
+                                        <li>
+                                            <a href="<?php echo SITE_ROOT ?>insol-international.php">INSOL
+                                                International</a>
                                         </li>
 
                                         <li class="">
-                                            <a href="<?php echo SITE_ROOT ?>education">Education</a>
+                                            <a href="<?php echo SITE_ROOT . urlRewrite('sig24.php'); ?>">SIG 24</a>
                                         </li>
 
                                         <li>
-                                            <a href="<?php echo SITE_ROOT ?>fellows-home">Fellows</a>
+                                            <a href="<?php echo SITE_ROOT ?>become_member.php">Membership</a>
                                         </li>
 
                                         <li>
-                                            <a href="<?php echo SITE_ROOT ?>special-interest-group">Focus
-                                                Groups</a>
+                                            <a href="<?php echo SITE_ROOT ?>resource-list.php">Resources</a>
                                         </li>
 
                                         <li>
@@ -347,31 +347,35 @@ if (isset($_SESSION['UID_INSOL']) && intval($_SESSION['UID_INSOL']) > intval(0))
                             <nav class="nav">
                                 <ul>
                                     <li class="active">
-                                        <a href="<?php echo SITE_ROOT ?>">Home</a>
+                                        <a href="<?php echo SITE_ROOT ?>">HOME</a>
                                     </li>
                                     <li>
-                                        <a href="<?php echo SITE_ROOT ?>membership">Membership</a>
+                                        <a href="<?php echo SITE_ROOT ?>governance.php">GOVERNANCE</a>
                                     </li>
 
                                     <li>
-                                        <a href="<?php echo SITE_ROOT ?>events">Events</a>
+                                        <a href="<?php echo SITE_ROOT ?>#">PROJECTS</a>
                                     </li>
 
                                     <li>
-                                        <a href="<?php echo SITE_ROOT ?>libraryconstruction">Library</a>
+                                        <a href="<?php echo SITE_ROOT ?>sipi.php">SIPI</a>
                                     </li>
 
                                     <li>
-                                        <a href="<?php echo SITE_ROOT ?>special-interest-group">Focus
-                                            Groups</a>
+                                        <a href="<?php echo SITE_ROOT ?>insol-international.php">INSOL
+                                            International</a>
                                     </li>
 
-                                    <li class="hidden-fixed">
-                                        <a href="<?php echo SITE_ROOT ?>education">Education</a>
+                                    <li class="">
+                                        <a href="<?php echo SITE_ROOT . urlRewrite('sig24.php'); ?>">SIG 24</a>
                                     </li>
 
                                     <li>
-                                        <a href="<?php echo SITE_ROOT ?>fellows-home">Fellows</a>
+                                        <a href="<?php echo SITE_ROOT ?>become_member.php">Membership</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="<?php echo SITE_ROOT ?>resource-list.php">Resources</a>
                                     </li>
 
                                     <li>
@@ -382,22 +386,16 @@ if (isset($_SESSION['UID_INSOL']) && intval($_SESSION['UID_INSOL']) > intval(0))
                                         <a href="<?php echo SITE_ROOT ?>webinars-podcasts">Webinars
                                             &amp; Podcasts</a>
                                     </li>
+                                    <ul>
 
-                                    <li class="hidden-fixed">
-                                        <a href="<?php echo SITE_ROOT ?>about">About</a>
-                                    </li>
-                                </ul>
-
-                                <ul>
-
-                                    <li>
-                                        <a href="<?php echo SITE_ROOT ?>login">Login</a>
-                                    </li>
-                                    <li>
-                                        <a href="<?php echo SITE_ROOT ?>register">Register
-                                        </a>
-                                    </li>
-                                </ul>
+                                        <li>
+                                            <a href="<?php echo SITE_ROOT ?>login">Login</a>
+                                        </li>
+                                        <li>
+                                            <a href="<?php echo SITE_ROOT ?>register">Register
+                                            </a>
+                                        </li>
+                                    </ul>
                             </nav>
                         </div>
                     </div>
@@ -446,35 +444,35 @@ if (isset($_SESSION['UID_INSOL']) && intval($_SESSION['UID_INSOL']) > intval(0))
                             <nav class="nav" style=" margin-left: 70px; z-index: 1000;">
                                 <ul>
                                     <li class="active">
-                                        <a href="<?php echo SITE_ROOT ?>">Home</a>
+                                        <a href="<?php echo SITE_ROOT ?>">HOME</a>
                                     </li>
                                     <li>
-                                        <a href="<?php echo SITE_ROOT ?>about">About</a>
-                                    </li>
-
-                                    <li>
-                                        <a href="<?php echo SITE_ROOT ?>membership">Membership</a>
+                                        <a href="<?php echo SITE_ROOT ?>governance.php">GOVERNANCE</a>
                                     </li>
 
                                     <li>
-                                        <a href="<?php echo SITE_ROOT ?>events">Events</a>
+                                        <a href="<?php echo SITE_ROOT ?>#">PROJECTS</a>
                                     </li>
 
                                     <li>
-                                        <a href="<?php echo SITE_ROOT ?>library">Library</a>
+                                        <a href="<?php echo SITE_ROOT ?>sipi.php">SIPI</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="<?php echo SITE_ROOT ?>insol-international.php">INSOL
+                                            International</a>
                                     </li>
 
                                     <li class="">
-                                        <a href="<?php echo SITE_ROOT ?>education">Education</a>
+                                        <a href="<?php echo SITE_ROOT . urlRewrite('sig24.php'); ?>">SIG 24</a>
                                     </li>
 
                                     <li>
-                                        <a href="<?php echo SITE_ROOT ?>fellows-home">Fellows</a>
+                                        <a href="<?php echo SITE_ROOT ?>become_member.php">Membership</a>
                                     </li>
 
                                     <li>
-                                        <a href="<?php echo SITE_ROOT ?>special-interest-group">Focus
-                                            Groups</a>
+                                        <a href="<?php echo SITE_ROOT ?>resource-list.php">Resources</a>
                                     </li>
 
                                     <li>
@@ -485,7 +483,6 @@ if (isset($_SESSION['UID_INSOL']) && intval($_SESSION['UID_INSOL']) > intval(0))
                                         <a href="<?php echo SITE_ROOT ?>webinars-podcasts">Webinars
                                             &amp; Podcasts</a>
                                     </li>
-
                                 </ul>
 
                                 <ul>
@@ -630,7 +627,7 @@ if (count($rowRCat) >= intval(7)) {
         <div class="main">
             <section class="section-features">
                 <div class="shell">
-                    <ul class="arrows arrows--right section__arrows">
+                    <ul class="arrows arrows--right section__arrows" style="display:none;">
                         <li style="border-color: transparent #e00026 transparent transparent;"></li>
 
                         <li style="border-color: transparent #1d2644 transparent transparent;"></li>
@@ -647,7 +644,7 @@ if (count($rowRCat) >= intval(7)) {
 
                         <div class="col--size1">
                             <div class="section__content-dark">
-                                <div class="section__inner">
+                                <div class="section__inner" style="padding: 20px;">
                                     <h1>Insol India</h1>
 
                                     <p><strong>INDIAN ASSOCIATION OF RESTRUCTURING, INSOLVENCY & BANKRUPTCY
@@ -683,7 +680,7 @@ if (count($rowRCat) >= intval(7)) {
                             <div class="section__content">
                                 <div class="feature">
                                     <div class="feature__head">
-                                        <h6><strong><span style="letter-spacing: 0.01em;"><span
+                                        <!-- <h6><strong><span style="letter-spacing: 0.01em;"><span
                                                         style="font-size:20px;"><a
                                                             href="<?php echo SITE_ROOT ?>library/opendownload/1755"
                                                             target="_blank">INSOL 2021 congress, San diego -
@@ -702,22 +699,22 @@ if (count($rowRCat) >= intval(7)) {
                                                                     style="color:#c0392b;">COVID-19, UPDATE FROM THE
                                                                     PRESIDENT</span></a></span></strong></u></span><br />
                                             &nbsp;
-                                        </h6>
+                                        </h6> -->
 
-                                        <h6><strong><span style="letter-spacing: 0.01em;"><span
+                                        <!-- <h6><strong><span style="letter-spacing: 0.01em;"><span
                                                         style="font-size:16px;"><a
                                                             href="<?php echo SITE_ROOT ?>webinars-podcasts">Explore
                                                             our webinar programme and watch previous webinars in the
                                                             INSOL Quick Takes and INSOL Focus
-                                                            Series</a></span></span></strong></h6>
-                                        <strong><span style="letter-spacing: 0.01em;">&nbsp; </span></strong>
+                                                            Series</a></span></span></strong></h6> -->
+                                        <!-- <strong><span style="letter-spacing: 0.01em;">&nbsp; </span></strong>
 
                                         <p align="center"><strong><span style="letter-spacing: 0.01em;"><a
                                                         href="<?php echo SITE_ROOT ?>foundationcertificatecourse"><img
                                                             alt=""
                                                             src="<?php echo SITE_ROOT ?>media/3acbb620-4d46-4139-a342-2c347cbb2733.png"
                                                             style="width: 259px; height: 273px;" /></a></span></strong>
-                                        </p>
+                                        </p> -->
                                         <strong><span style="letter-spacing: 0.01em;"> &nbsp; &nbsp; &nbsp;
                                                 &nbsp;&nbsp;<br />
                                                 <script src="https://fast.wistia.net/assets/external/E-v1.js" async>
@@ -926,7 +923,7 @@ $countEVENT = count($rs_events);
         </div><!-- /.main -->
 
         <footer class="footer footer--primary">
-            <div class="footer__body">
+            <!-- <div class="footer__body">
                 <div class="shell">
                     <div class="cols footer__cols">
                         <div class="col--1of3 footer__col">
@@ -948,12 +945,7 @@ $countEVENT = count($rs_events);
                                                 Library</a>
                                         </li>
 
-                                        <!--<li>
-                                    <a href="#">
-                                        Special
-                                        Interest Groups
-                                    </a>
-                                </li>-->
+
 
                                         <li>
                                             <a href="<?php echo SITE_ROOT ?>education/">Education</a>
@@ -967,9 +959,9 @@ $countEVENT = count($rs_events);
                                             <a href="<?php echo SITE_ROOT ?>about/">About</a>
                                         </li>
                                     </ul>
-                                </nav><!-- /.nav -->
-                            </div><!-- /.col__inner -->
-                        </div><!-- /.col-/-10f3 -->
+                                </nav>
+                            </div>
+                        </div>
 
                         <div class="col--1of3 footer__col">
                             <div class="col__inner">
@@ -998,9 +990,9 @@ $countEVENT = count($rs_events);
                                             E <a href="mailto:info@insol.ision.co.uk">Info@insol.ision.co.uk</a>
                                         </li>
                                     </ul>
-                                </div><!-- /.contact -->
-                            </div><!-- /.col__inner -->
-                        </div><!-- /.col-/-10f3 -->
+                                </div>
+                            </div>
+                        </div>
 
                         <div class="col--1of3 footer__col">
                             <div class="col__inner">
@@ -1024,12 +1016,12 @@ $countEVENT = count($rs_events);
                                                 target="_blank">Equality and Diversity Policy</a>
                                         </li>
                                     </ul>
-                                </nav><!-- /.nav -->
-                            </div><!-- /.col__inner -->
-                        </div><!-- /.col-/-10f3 -->
-                    </div><!-- /.cols -->
-                </div><!-- /.shell -->
-            </div><!-- /.footer__body -->
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
 
 
             <div class="footer__bar" style="position:fixed; bottom:0; width: 100%; background-color: red; ">
@@ -1070,3 +1062,5 @@ $countEVENT = count($rs_events);
 </body>
 
 </html>
+
+<?php include 'footer.php';?>
