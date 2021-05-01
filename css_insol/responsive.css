@@ -54,7 +54,8 @@
 }
 .in_project_sec a {
     padding: 10px 0;
-    font-size: 0.8rem;
+    font-size: 15px;
+    font-weight: 500;
 }
 .reso_sect .reso_sect_text h3 {
     font-size: 13px;

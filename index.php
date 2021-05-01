@@ -41,6 +41,7 @@ if (isset($_SESSION['UID_INSOL']) && intval($_SESSION['UID_INSOL']) > intval(0))
         type="text/css" media="all" />
 
     <!-- App Styles -->
+    <link rel="stylesheet" href="<?php echo SITE_ROOT ?>css_insol/bootstrap.min.css" />
     <link rel="stylesheet" href="<?php echo SITE_ROOT ?>assets/css/style.css?ver=3" type="text/css" />
     <link rel="stylesheet" href="<?php echo SITE_ROOT ?>assets/css/insol-v2.css?ver=1" type="text/css" />
     <link rel="stylesheet" href="<?php echo SITE_ROOT ?>assets/css/formstyle.css" type="text/css" />
@@ -218,12 +219,12 @@ if (isset($_SESSION['UID_INSOL']) && intval($_SESSION['UID_INSOL']) > intval(0))
                                         </li>
 
                                         <li>
-                                            <a href="<?php echo SITE_ROOT ?>gthirtysix">G36</a>
+                                            <a href="<?php echo SITE_ROOT ?>gallery">GALLERY</a>
                                         </li>
 
                                         <li>
-                                            <a href="<?php echo SITE_ROOT ?>webinars-podcasts">Webinars
-                                                &amp; Podcasts</a>
+                                            <a href="<?php echo SITE_ROOT ?>events">Events
+                                                &amp; Webinars</a>
                                         </li>
 
                                     </ul>
@@ -234,7 +235,7 @@ if (isset($_SESSION['UID_INSOL']) && intval($_SESSION['UID_INSOL']) > intval(0))
                                             <a href="<?php echo SITE_ROOT ?>login">Login</a>
                                         </li>
                                         <li>
-                                            <a href="<?php echo SITE_ROOT ?>register">Register
+                                            <a href="<?php echo SITE_ROOT ?>become_member.php">Register
                                             </a>
                                         </li>
                                         <!--<li>
@@ -379,12 +380,12 @@ if (isset($_SESSION['UID_INSOL']) && intval($_SESSION['UID_INSOL']) > intval(0))
                                     </li>
 
                                     <li>
-                                        <a href="<?php echo SITE_ROOT ?>gthirtysix">G36</a>
+                                        <a href="<?php echo SITE_ROOT ?>gallery">GALLERY</a>
                                     </li>
 
                                     <li>
-                                        <a href="<?php echo SITE_ROOT ?>webinars-podcasts">Webinars
-                                            &amp; Podcasts</a>
+                                        <a href="<?php echo SITE_ROOT ?>events">Events
+                                            &amp; Webinars</a>
                                     </li>
                                     <ul>
 
@@ -392,7 +393,7 @@ if (isset($_SESSION['UID_INSOL']) && intval($_SESSION['UID_INSOL']) > intval(0))
                                             <a href="<?php echo SITE_ROOT ?>login">Login</a>
                                         </li>
                                         <li>
-                                            <a href="<?php echo SITE_ROOT ?>register">Register
+                                            <a href="<?php echo SITE_ROOT ?>become_member.php">Register
                                             </a>
                                         </li>
                                     </ul>
@@ -476,12 +477,12 @@ if (isset($_SESSION['UID_INSOL']) && intval($_SESSION['UID_INSOL']) > intval(0))
                                     </li>
 
                                     <li>
-                                        <a href="<?php echo SITE_ROOT ?>gthirtysix">G36</a>
+                                        <a href="<?php echo SITE_ROOT ?>gallery">GALLERY</a>
                                     </li>
 
                                     <li>
-                                        <a href="<?php echo SITE_ROOT ?>webinars-podcasts">Webinars
-                                            &amp; Podcasts</a>
+                                        <a href="<?php echo SITE_ROOT ?>events">Events
+                                            &amp; Webinars</a>
                                     </li>
                                 </ul>
 
@@ -491,7 +492,7 @@ if (isset($_SESSION['UID_INSOL']) && intval($_SESSION['UID_INSOL']) > intval(0))
                                         <a href="<?php echo SITE_ROOT ?>login">Login</a>
                                     </li>
                                     <li>
-                                        <a href="<?php echo SITE_ROOT ?>register">Register
+                                        <a href="<?php echo SITE_ROOT ?>become_member.php">Register
                                         </a>
                                     </li>
                                     <!--<li>
@@ -715,11 +716,6 @@ if (count($rowRCat) >= intval(7)) {
                                                             src="<?php echo SITE_ROOT ?>media/3acbb620-4d46-4139-a342-2c347cbb2733.png"
                                                             style="width: 259px; height: 273px;" /></a></span></strong>
                                         </p> -->
-                                        <strong><span style="letter-spacing: 0.01em;"> &nbsp; &nbsp; &nbsp;
-                                                &nbsp;&nbsp;<br />
-                                                <script src="https://fast.wistia.net/assets/external/E-v1.js" async>
-                                                </script>
-                                            </span></strong>
 
                                         <div class="feature feature--blue" style="margin-top: -9px">
                                             <div class="feature__head">
@@ -922,7 +918,7 @@ $countEVENT = count($rs_events);
             </section><!-- /.section -->
         </div><!-- /.main -->
 
-        <footer class="footer footer--primary">
+        <footer class="footer footer--primary" style="display: none;">
             <!-- <div class="footer__body">
                 <div class="shell">
                     <div class="cols footer__cols">
@@ -1027,7 +1023,7 @@ $countEVENT = count($rs_events);
             <div class="footer__bar" style="position:fixed; bottom:0; width: 100%; background-color: red; ">
                 <div class="shell">
                     <div class="footer__bar__inner" style="text-align: center; color: white;;">
-                        <a href="<?php echo SITE_ROOT ?>membership">Become A
+                        <a href="<?php echo SITE_ROOT ?>become_member.php">Become A
                             Member</a> | <a href="<?php echo SITE_ROOT ?>events">Register for
                             an
                             event</a>
@@ -1048,17 +1044,6 @@ $countEVENT = count($rs_events);
     <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.min.js" integrity="" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"
         type="text/javascript" defer></script>
-    <script src="<?php echo SITE_ROOT ?>js_insol/slick.min.js"></script>
-    <script src="<?php echo SITE_ROOT ?>js_insol/scripts.js"></script>
-
-    <script src="<?php echo SITE_ROOT ?>js_insol/grids.js"></script>
-    <script>
-    $(document).ready(function() {
-        $('.eqH').responsiveEqualHeightGrid();
-        $('.profileH').responsiveEqualHeightGrid();
-    });
-    </script>
-    <script src="<?php echo SITE_ROOT ?>js_insol/script.js"></script>
 </body>
 
 </html>

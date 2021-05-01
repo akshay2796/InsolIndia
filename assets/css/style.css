@@ -194,7 +194,7 @@
  */
 
 .arrow-big {
-    background-image: url(/insolindia/assets/css/images/sprite.png);
+    background-image: url('/assets/css/images/sprite.png');
     background-position: 0% 0%;
     background-size: 262.5850340136054% 154.292343387471%;
     width: 294px;
@@ -205,7 +205,7 @@
 }
 
 .arrow-medium {
-    background-image: url(/insolindia/assets/css/images/sprite.png);
+    background-image: url('/assets/css/images/sprite.png');
     background-position: 55.493482309124765% 0%;
     background-size: 328.51063829787233% 198.50746268656715%;
     width: 235px;
@@ -216,7 +216,7 @@
 }
 
 .arrow-small {
-    background-image: url(/insolindia/assets/css/images/sprite.png);
+    background-image: url('/assets/css/images/sprite.png');
     background-position: 100% 0%;
     background-size: 328.51063829787233% 230.10380622837368%;
     width: 235px;
@@ -227,7 +227,7 @@
 }
 
 .arrow-smaller {
-    background-image: url(/insolindia/assets/css/images/sprite.png);
+    background-image: url('/assets/css/images/sprite.png');
     background-position: 0% 100%;
     background-size: 262.5850340136054% 289.1304347826087%;
     width: 294px;
@@ -238,7 +238,7 @@
 }
 
 .ico-chevron-blue-down {
-    background-image: url(/insolindia/assets/css/images/sprite.png);
+    background-image: url('/assets/css/images/sprite.png');
     background-position: 89.2998678996037% 44.801223241590215%;
     background-size: 5146.666666666667% 6045.454545454545%;
     width: 15px;
@@ -249,7 +249,7 @@
 }
 
 .ico-chevron-blue {
-    background-image: url(/insolindia/assets/css/images/sprite.png);
+    background-image: url('/assets/css/images/sprite.png');
     background-position: 96.34464751958225% 44.596651445966515%;
     background-size: 12866.666666666666% 8312.5%;
     width: 6px;
@@ -260,7 +260,7 @@
 }
 
 .ico-chevron-double-blue {
-    background-image: url(/insolindia/assets/css/images/sprite.png);
+    background-image: url('/assets/css/images/sprite.png');
     background-position: 93.7007874015748% 44.66463414634146%;
     background-size: 7720% 7388.888888888889%;
     width: 10px;
@@ -271,7 +271,7 @@
 }
 
 .ico-chevron-double-prev {
-    background-image: url(/insolindia/assets/css/images/sprite.png);
+    background-image: url('/assets/css/images/sprite.png');
     background-position: 86.73740053050398% 45.07692307692307%;
     background-size: 4288.888888888889% 4433.333333333334%;
     width: 18px;
@@ -285,7 +285,7 @@
 }
 
 .ico-chevron-double-white {
-    background-image: url(/insolindia/assets/css/images/sprite.png);
+    background-image: url('/assets/css/images/sprite.png');
     background-position: 83.81962864721486% 45.07692307692307%;
     background-size: 4288.888888888889% 4433.333333333334%;
     width: 18px;
@@ -296,7 +296,7 @@
 }
 
 .ico-chevron-double {
-    background-image: url(/insolindia/assets/css/images/sprite.png);
+    background-image: url('/assets/css/images/sprite.png');
     background-position: 80.90185676392572% 45.07692307692307%;
     background-size: 4288.888888888889% 4433.333333333334%;
     width: 18px;
@@ -307,7 +307,7 @@
 }
 
 .ico-chevron-down {
-    background-image: url(/insolindia/assets/css/images/sprite.png);
+    background-image: url('/assets/css/images/sprite.png');
     background-position: 91.8097754293263% 44.801223241590215%;
     background-size: 5146.666666666667% 6045.454545454545%;
     width: 15px;
@@ -318,7 +318,7 @@
 }
 
 .ico-chevron-gray {
-    background-image: url(/insolindia/assets/css/images/sprite.png);
+    background-image: url('/assets/css/images/sprite.png');
     background-position: 76.74113009198423% 52.307692307692314%;
     background-size: 7018.181818181819% 4433.333333333334%;
     width: 11px;
@@ -329,7 +329,7 @@
 }
 
 .ico-chevron-light-blue {
-    background-image: url(/insolindia/assets/css/images/sprite.png);
+    background-image: url('/assets/css/images/sprite.png');
     background-position: 97.65013054830287% 44.596651445966515%;
     background-size: 12866.666666666666% 8312.5%;
     width: 6px;
@@ -340,7 +340,7 @@
 }
 
 .ico-chevron-red-big {
-    background-image: url(/insolindia/assets/css/images/sprite.png);
+    background-image: url('/assets/css/images/sprite.png');
     background-position: 77.92553191489363% 46.069182389937104%;
     background-size: 3860% 2293.103448275862%;
     width: 20px;
@@ -351,7 +351,7 @@
 }
 
 .ico-chevron-red {
-    background-image: url(/insolindia/assets/css/images/sprite.png);
+    background-image: url('/assets/css/images/sprite.png');
     background-position: 95.03916449086162% 44.66463414634146%;
     background-size: 12866.666666666666% 7388.888888888889%;
     width: 6px;
@@ -362,7 +362,7 @@
 }
 
 .ico-chevron-red-1 {
-    background-image: url(/insolindia/assets/css/images/sprite.png);
+    background-image: url('/assets/css/images/sprite.png');
     background-position: 80.6833114323259% 52.307692307692314%;
     background-size: 7018.181818181819% 4433.333333333334%;
     width: 11px;
@@ -373,7 +373,7 @@
 }
 
 .ico-chevron {
-    background-image: url(/insolindia/assets/css/images/sprite.png);
+    background-image: url('/assets/css/images/sprite.png');
     background-position: 78.71222076215506% 52.307692307692314%;
     background-size: 7018.181818181819% 4433.333333333334%;
     width: 11px;
@@ -384,7 +384,7 @@
 }
 
 .ico-pdf {
-    background-image: url(/insolindia/assets/css/images/sprite.png);
+    background-image: url('/assets/css/images/sprite.png');
     background-position: 73.86519944979368% 47.10610932475884%;
     background-size: 1715.5555555555554% 1546.5116279069769%;
     width: 45px;
@@ -395,7 +395,7 @@
 }
 
 .ico-word {
-    background-image: url(/insolindia/assets/css/images/sprite.png);
+    background-image: url('/assets/css/images/sprite.png');
     background-position: 73.66255144032921% 54.750402576489535%;
     background-size: 1795.3488372093022% 1511.3636363636363%;
     width: 43px;
@@ -700,61 +700,61 @@ blockquote:last-child {
 
 @font-face {
     font-family: "Gotham";
-    src: url("/insolindia/assets/css/fonts/Gotham_700_normal_1497352658.eot");
-    src: url("/insolindia/assets/css/fonts/Gotham_700_normal_1497352658.eot#iefix") format("embedded-opentype"),
-    url("/insolindia/assets/css/fonts/Gotham_700_normal_1497352658.svg#Gotham") format("svg"), 
-    url("/insolindia/assets/css/fonts/Gotham_700_normal_1497352658.woff") format("woff"), 
-    url("/insolindia/assets/css/fonts/Gotham_700_normal_1497352658.ttf") format("truetype");
+    src: url("/assets/css/fonts/Gotham_700_normal_1497352658.eot");
+    src: url("/assets/css/fonts/Gotham_700_normal_1497352658.eot#iefix") format("embedded-opentype"),
+    url("/assets/css/fonts/Gotham_700_normal_1497352658.svg#Gotham") format("svg"), 
+    url("/assets/css/fonts/Gotham_700_normal_1497352658.woff") format("woff"), 
+    url("/assets/css/fonts/Gotham_700_normal_1497352658.ttf") format("truetype");
     font-weight: 700;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Gotham';
-    src: url('/insolindia/assets/css/fonts/Gotham-Medium.eot');
-    src: url('/insolindia/assets/css/fonts/Gotham-Medium.eot#iefix') format('embedded-opentype'), 
-	url('/insolindia/assets/css/fonts/Gotham-Medium.woff') format('woff'), 
-	url('/insolindia/assets/css/fonts/Gotham-Medium.ttf') format('truetype');
+    src: url('/assets/css/fonts/Gotham-Medium.eot');
+    src: url('/assets/css/fonts/Gotham-Medium.eot#iefix') format('embedded-opentype'), 
+	url('/assets/css/fonts/Gotham-Medium.woff') format('woff'), 
+	url('/assets/css/fonts/Gotham-Medium.ttf') format('truetype');
     font-weight: 500;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Gotham';
-    src: url('/insolindia/assets/css/fonts/Gotham-Light.eot');
-    src: url('/insolindia/assets/css/fonts/Gotham-Light.eot#iefix') format('embedded-opentype'), 
-	url('/insolindia/assets/css/fonts/Gotham-Light.woff') format('woff'), 
-	url('/insolindia/assets/css/fonts/Gotham-Light.ttf') format('truetype');
+    src: url('/assets/css/fonts/Gotham-Light.eot');
+    src: url('/assets/css/fonts/Gotham-Light.eot#iefix') format('embedded-opentype'), 
+	url('/assets/css/fonts/Gotham-Light.woff') format('woff'), 
+	url('/assets/css/fonts/Gotham-Light.ttf') format('truetype');
     font-weight: 300;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Gotham';
-    src: url('/insolindia/assets/css/fonts/Gotham-Black.eot');
-    src: url('/insolindia/assets/css/fonts/Gotham-Black.eot#iefix') format('embedded-opentype'), 
-	url('/insolindia/assets/css/fonts/Gotham-Black.woff') format('woff'), 
-	url('/insolindia/assets/css/fonts/Gotham-Black.ttf') format('truetype');
+    src: url('/assets/css/fonts/Gotham-Black.eot');
+    src: url('/assets/css/fonts/Gotham-Black.eot#iefix') format('embedded-opentype'), 
+	url('/assets/css/fonts/Gotham-Black.woff') format('woff'), 
+	url('/assets/css/fonts/Gotham-Black.ttf') format('truetype');
     font-weight: 900;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Gotham';
-    src: url('/insolindia/assets/css/fonts/Gotham-Book.eot');
-    src: url('/insolindia/assets/css/fonts/Gotham-Book.eot#iefix') format('embedded-opentype'), 
-	url('/insolindia/assets/css/fonts/Gotham-Book.woff') format('woff'), 
-	url('/insolindia/assets/css/fonts/Gotham-Book.ttf') format('truetype');
+    src: url('/assets/css/fonts/Gotham-Book.eot');
+    src: url('/assets/css/fonts/Gotham-Book.eot#iefix') format('embedded-opentype'), 
+	url('/assets/css/fonts/Gotham-Book.woff') format('woff'), 
+	url('/assets/css/fonts/Gotham-Book.ttf') format('truetype');
     font-weight: 400;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Proxima Nova';
-    src: url('/insolindia/assets/css/fonts/ProximaNova-Regular.eot');
-    src: url('/insolindia/assets/css/fonts/ProximaNova-Regular.eot#iefix') format('embedded-opentype'), 
-	url('/insolindia/assets/css/fonts/ProximaNova-Regular.woff') format('woff'), 
-	url('/insolindia/assets/css/fonts/ProximaNova-Regular.ttf') format('truetype');
+    src: url('/assets/css/fonts/ProximaNova-Regular.eot');
+    src: url('/assets/css/fonts/ProximaNova-Regular.eot#iefix') format('embedded-opentype'), 
+	url('/assets/css/fonts/ProximaNova-Regular.woff') format('woff'), 
+	url('/assets/css/fonts/ProximaNova-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -1709,7 +1709,7 @@ div.header__bar.extranav {
     /* padding-bottom: 280px; */
     overflow: hidden;
     position: relative;
-    background: url(/insolindia/assets/css/images/temp/lines-blue-edge.png) no-repeat top -325px right 0;
+    background: url('/assets/css/images/temp/lines-blue-edge.png') no-repeat top -325px right 0;
     background-size: 778px 436px;
     z-index: 99;
     background-color: #fff;
@@ -1730,12 +1730,12 @@ div.header__bar.extranav {
 }
 
 .main:after {
-    background-image: url(/insolindia/assets/css/images/temp/line-blue.png);
+    background-image: url('/assets/css/images/temp/line-blue.png');
     bottom: -7px;
 }
 
 .main:before {
-    background-image: url(/insolindia/assets/css/images/temp/line-red.png);
+    background-image: url('/assets/css/images/temp/line-red.png');
     height: 170px;
 }
 
@@ -2243,7 +2243,7 @@ a.moreevents:hover {
     position: absolute;
     top: 1px;
     left: -3px;
-    background: url(/insolindia/assets/css/images/temp/ico-chevron-gray.png) no-repeat 0 0;
+    background: url('/assets/css/images/temp/ico-chevron-gray.png') no-repeat 0 0;
     width: 11px;
     height: 15px;
 }
@@ -2366,7 +2366,7 @@ a.moreevents:hover {
     position: absolute;
     top: 1px;
     left: -3px;
-    background: url(/insolindia/assets/css/images/temp/ico-chevron-gray.png) no-repeat 0 0;
+    background: url('/assets/css/images/temp/ico-chevron-gray.png') no-repeat 0 0;
     width: 11px;
     height: 15px;
 }
@@ -3148,12 +3148,13 @@ a.moreevents:hover {
 /*  Feature Blue  */
 
 .feature--blue {
-    background: #0e74b8 url('/insolindia/assets/css/images/temp/lines-blue-small.png') bottom left;
+    background: #0e74b8 url('/assets/css/images/temp/lines-blue-small.png') bottom left;
     background-size: 100% 120px;
     background-repeat: no-repeat;
     position: relative;
     color: #fff;
     padding: 20px 10px;
+    overflow: auto;
 }
 
 .feature--blue .feature__head {
@@ -3278,7 +3279,7 @@ a.moreevents:hover {
 \* ------------------------------------------------------------ */
 
 .feature-members {
-    background: url(/insolindia/assets/css/images/temp/glass.png) no-repeat 0 0;
+    background: url('/assets/css/images/temp/glass.png') no-repeat 0 0;
     background-size: 100%;
     color: #fff;
     text-transform: uppercase;
@@ -5100,7 +5101,7 @@ input:-webkit-autofill {
 
 .logo {
     display: inline-block;
-    background: url(/insolindia/assets/css/images/temp/logo.png) no-repeat 0 0;
+    background: url('/assets/css/images/temp/logo.png') no-repeat 0 0;
     width: 277px;
     height: 67px;
     background-size: 100% 100%;
@@ -5108,7 +5109,7 @@ input:-webkit-autofill {
 
 .logo-slider {
     display: inline-block;
-    background: url(/insolindia/assets/css/images/headers/logo-slider.png) no-repeat 0 0;
+    background: url('/assets/css/images/headers/logo-slider.png') no-repeat 0 0;
     width: 318px;
     height: 335px;
     background-size: 100% 100%;
@@ -5116,7 +5117,7 @@ input:-webkit-autofill {
 
 .logo-g36 {
     display: inline-block;
-    background: url(/insolindia/assets/css/images/temp/G362.jpg) no-repeat 0 0;
+    background: url('/assets/css/images/temp/G362.jpg') no-repeat 0 0;
     width: 192px;
     height: 41px;
     background-size: 60% 60%;
@@ -5609,7 +5610,7 @@ input:-webkit-autofill {
 .section .section__content {}
 
 .section .section__callout {
-    background: url(/insolindia/assets/css/images/temp/arrow-smaller.png) rgba(227, 4, 32, 0.46) no-repeat top -20px right -1px;
+    background: url('/assets/css/images/temp/arrow-smaller.png') rgba(227, 4, 32, 0.46) no-repeat top -20px right -1px;
     margin: 33px 0px 25px 0;
     letter-spacing: -0.02em;
     color: #fff;
@@ -5798,7 +5799,7 @@ input:-webkit-autofill {
     bottom: -111px;
     left: 0;
     width: 100%;
-    background-image: url(/insolindia/assets/css/images/temp/line-red.png);
+    background-image: url('/assets/css/images/temp/line-red.png');
     height: 170px;
     ackground-position: 0 0;
     background-repeat: no-repeat;
@@ -6229,7 +6230,7 @@ input:-webkit-autofill {
         margin: -1px 0 0;
     }
     .section-features .section__content-white {
-        padding: 16px 0 0;
+        /* padding: 16px 0 0; */
     }
     .section-features .section__inner--first {
         margin-right: auto;
