@@ -54,7 +54,6 @@ if (isset($_SESSION['UID_INSOL']) && intval($_SESSION['UID_INSOL']) > intval(0))
     <link rel="stylesheet" href="<?php echo SITE_ROOT ?>css_insol/bootstrap.min.css" />
     <link rel="stylesheet" href="<?php echo SITE_ROOT ?>assets/css/style.css?ver=3" type="text/css" />
     <link rel="stylesheet" href="<?php echo SITE_ROOT ?>assets/css/insol-v2.css?ver=1" type="text/css" />
-    <link rel="stylesheet" href="<?php echo SITE_ROOT ?>assets/css/formstyle.css" type="text/css" />
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css"
         type="text/css">

@@ -2356,3 +2356,8 @@ ul.sponsorsLogo li img{}
     margin-left: 46%;
     margin-top: -52px;
 }    
+
+#frmReg div h4 {
+    font-size: 18px;
+    margin: 10px 0;
+}
