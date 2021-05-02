@@ -197,7 +197,7 @@ if (isset($_SESSION['UID_INSOL']) && intval($_SESSION['UID_INSOL']) > intval(0))
                                 <nav class="nav" style=" margin-left: 70px; z-index: 1000;">
                                     <ul id="mainMenu">
                                         <li
-                                            class="<?php if (strpos($_SERVER['REQUEST_URI'], "") !== false) {echo "active";}?>">
+                                            class="<?php if ($_SERVER['REQUEST_URI'] === '/' || $_SERVER['REQUEST_URI'] === '/insolindia/') {echo "active";}?>">
                                             <a href="<?php echo SITE_ROOT ?>">HOME</a>
                                         </li>
                                         <li
