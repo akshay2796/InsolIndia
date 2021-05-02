@@ -16,7 +16,7 @@ $news->closeCursor();
 ?>
 <div class="clearfix home_banner">
 
-    <img class="homebanner" src="https://www.insolindia.com/images_insol/banner.jpg">
+    <img class="homebanner" src="<?php echo SITE_ROOT ?>images_insol/banner.jpg">
     <div class="clearfix home_slider">
         <h2>News</h2>
         <div class="single-item-rtl" style="display: none;">
@@ -97,7 +97,7 @@ if (count($rowRCat) >= intval(7)) {
     <div class="container">
         <div class="col-md-8 col-sm-12 col-xs-12 index_about_left">
             <div class="index_about_left_img">
-                <img src="https://www.insolindia.com/images_insol/about_insol.jpg" alt="About INSOL">
+                <img src="<?php echo SITE_ROOT ?>images_insol/about_insol.jpg" alt="About INSOL">
             </div>
             <div class="index_about_left_cp">
                 <h2>About INSOL India</h2>

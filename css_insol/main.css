@@ -542,6 +542,7 @@ a{
 	position:relative;
 	display:block;
 	overflow:hidden;
+    color: white;
 }
 .in_project_sec a::before {
 	position: absolute;
@@ -1759,7 +1760,7 @@ a{
 .home_slider {
     width: 410px;
     padding: 0px;
-    top: 100px;
+    top: 30px;
     position: absolute;
     left: 6.8%;
     text-align: left;
