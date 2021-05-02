@@ -1,5 +1,7 @@
 <!-- insolindia.com Version 1.0 -->
-<?php include 'header.php';?>
+<?php include 'header.php';
+$identifier = "Home";
+?>
 
 <div class="intro__bar" style="display: none;">
     <div class="shell">
@@ -75,65 +77,6 @@
             </div><!-- /.shell -->
         </div><!-- /.header__body -->
 
-        <div class="header__bar extranav">
-            <div class="shell">
-                <div class="header__bar__inner">
-                    <nav class="nav">
-                        <ul>
-                            <li class="active">
-                                <a href="<?php echo SITE_ROOT ?>">HOME</a>
-                            </li>
-                            <li>
-                                <a href="<?php echo SITE_ROOT ?>governance.php">GOVERNANCE</a>
-                            </li>
-
-                            <li>
-                                <a href="<?php echo SITE_ROOT ?>#">PROJECTS</a>
-                            </li>
-
-                            <li>
-                                <a href="<?php echo SITE_ROOT ?>sipi.php">SIPI</a>
-                            </li>
-
-                            <li>
-                                <a href="<?php echo SITE_ROOT ?>insol-international.php">INSOL
-                                    International</a>
-                            </li>
-
-                            <li class="">
-                                <a href="<?php echo SITE_ROOT . urlRewrite('sig24.php'); ?>">SIG 24</a>
-                            </li>
-
-                            <li>
-                                <a href="<?php echo SITE_ROOT ?>become-member.php">Membership</a>
-                            </li>
-
-                            <li>
-                                <a href="<?php echo SITE_ROOT ?>resource-list.php">Resources</a>
-                            </li>
-
-                            <li>
-                                <a href="<?php echo SITE_ROOT ?>gallery">GALLERY</a>
-                            </li>
-
-                            <li>
-                                <a href="<?php echo SITE_ROOT ?>events">Events
-                                    &amp; Webinars</a>
-                            </li>
-                            <ul>
-
-                                <li>
-                                    <a href="<?php echo SITE_ROOT ?>login">Login</a>
-                                </li>
-                                <li>
-                                    <a href="<?php echo SITE_ROOT ?>become-member.php">Register
-                                    </a>
-                                </li>
-                            </ul>
-                    </nav>
-                </div>
-            </div>
-        </div><!-- /.header__body -->
 
         <!--<a href="#" class="btn-help header__btn">
                 Need <br>
@@ -666,8 +609,7 @@ $countEVENT = count($rs_events);
 </footer><!-- /.footer -->
 </div><!-- /.wrapper -->
 
+<?php include 'footer.php';?>
 </body>
 
 </html>
-
-<?php include 'footer.php';?>

@@ -59,8 +59,8 @@ $(document).ready(function() {
     $('.profileH').responsiveEqualHeightGrid();
 });
         </script>
-        <script src="<?php echo SITE_ROOT ?>js_insol/script.js"></script>
-
+        <script type="text/javascript" src="<?php echo SITE_ROOT ?>js_insol/script.js"></script>
+        <script type="text/javascript" src="<?php echo SITE_ROOT . MODULE_CMS_INCLUDE; ?>js/script.js"></script>
         <!--script src="<?php //echo SITE_JS; ?>jQuery.paginate.js"></script>
 <script>
 	$(document).ready(function() {

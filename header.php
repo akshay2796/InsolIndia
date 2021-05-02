@@ -62,7 +62,6 @@ if (isset($_SESSION['UID_INSOL']) && intval($_SESSION['UID_INSOL']) > intval(0))
     <link rel="stylesheet" href="<?php echo SITE_ROOT ?>css_insol/lightgallery.css" />
     <link rel="stylesheet" href="<?php echo SITE_ROOT ?>css_insol/main.css" />
     <link rel="stylesheet" href="<?php echo SITE_ROOT ?>css_insol/responsive.css" />
-
     <meta name="generatedon" content="2021-03-25 05:11:01">
     <script src="https://code.jquery.com/jquery-3.5.1.js"
         integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
@@ -196,45 +195,55 @@ if (isset($_SESSION['UID_INSOL']) && intval($_SESSION['UID_INSOL']) > intval(0))
                             <div class="header__bar__inner">
 
                                 <nav class="nav" style=" margin-left: 70px; z-index: 1000;">
-                                    <ul>
-                                        <li class="active">
+                                    <ul id="mainMenu">
+                                        <li
+                                            class="<?php if (strpos($_SERVER['REQUEST_URI'], "") !== false) {echo "active";}?>">
                                             <a href="<?php echo SITE_ROOT ?>">HOME</a>
                                         </li>
-                                        <li>
+                                        <li
+                                            class="<?php if (strpos($_SERVER['REQUEST_URI'], "governance.php") !== false) {echo "active";}?>">
                                             <a href="<?php echo SITE_ROOT ?>governance.php">GOVERNANCE</a>
                                         </li>
 
-                                        <li>
+                                        <li
+                                            class="<?php if (strpos($_SERVER['REQUEST_URI'], "projects") !== false) {echo "active";}?>">
                                             <a
                                                 href="<?php echo SITE_ROOT ?>projects/moot-competition-with-national-law-university-delhi">PROJECTS</a>
                                         </li>
 
-                                        <li>
+                                        <li
+                                            class="<?php if (strpos($_SERVER['REQUEST_URI'], "sipi.php") !== false) {echo "active";}?>">
                                             <a href="<?php echo SITE_ROOT ?>sipi.php">SIPI</a>
                                         </li>
 
-                                        <li>
+                                        <li
+                                            class="<?php if (strpos($_SERVER['REQUEST_URI'], "insol-international.php") !== false) {echo "active";}?>">
                                             <a href="<?php echo SITE_ROOT ?>insol-international.php">INSOL
                                                 International</a>
                                         </li>
 
-                                        <li class="">
+                                        <li class="<?php if (strpos($_SERVER['REQUEST_URI'], "SIG24") !== false) {echo "active";}?>"
+                                            class="">
                                             <a href="<?php echo SITE_ROOT . urlRewrite('sig24.php'); ?>">SIG 24</a>
                                         </li>
 
-                                        <li>
-                                            <a href="<?php echo SITE_ROOT ?>become-member.php">Membership</a>
+                                        <li
+                                            class="<?php if (strpos($_SERVER['REQUEST_URI'], "benefits.php") !== false) {echo "active";}?>">
+                                            <a href="<?php echo SITE_ROOT ?>benefits.php">Membership</a>
                                         </li>
 
-                                        <li>
+                                        <li
+                                            class="<?php if (strpos($_SERVER['REQUEST_URI'], "resource-list.php") !== false) {echo "active";}?>">
                                             <a href="<?php echo SITE_ROOT ?>resource-list.php">Resources</a>
                                         </li>
 
-                                        <li>
+                                        <li
+                                            class="<?php if (strpos($_SERVER['REQUEST_URI'], "gallery") !== false) {echo "active";}?>">
                                             <a href="<?php echo SITE_ROOT ?>gallery">GALLERY</a>
                                         </li>
 
-                                        <li>
+                                        <li
+                                            class="<?php if (strpos($_SERVER['REQUEST_URI'], "events") !== false) {echo "active";}?>">
                                             <a href="<?php echo SITE_ROOT ?>events">Events
                                                 &amp; Webinars</a>
                                         </li>
@@ -243,10 +252,12 @@ if (isset($_SESSION['UID_INSOL']) && intval($_SESSION['UID_INSOL']) > intval(0))
 
                                     <ul>
 
-                                        <li>
+                                        <li
+                                            class="<?php if (strpos($_SERVER['REQUEST_URI'], "login") !== false) {echo "active";}?>">
                                             <a href="<?php echo SITE_ROOT ?>login">Login</a>
                                         </li>
-                                        <li>
+                                        <li
+                                            class="<?php if (strpos($_SERVER['REQUEST_URI'], "become-member.php") !== false) {echo "active";}?>">
                                             <a href="<?php echo SITE_ROOT ?>become-member.php">Register
                                             </a>
                                         </li>

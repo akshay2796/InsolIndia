@@ -1816,7 +1816,7 @@ div.header__bar.extranav {
 
 @media (max-width: 1200px) {
     .main {
-        padding-bottom: 178px;
+        /* padding-bottom: 178px; */
         background-size: 707px 396px;
     }
     .main:after {
@@ -1847,7 +1847,7 @@ div.header__bar.extranav {
 
 @media (max-width: 1023px) {
     .main {
-        padding-bottom: 130px;
+        /* padding-bottom: 130px; */
         background-size: 401.71px 225px;
         background-position: top -171px right 0;
     }
@@ -4018,9 +4018,9 @@ input:-webkit-autofill {
 \* ------------------------------------------------------------ */
 
 .intro {
-    color: #fff;
+    /* color: #fff; */
     /* text-transform: uppercase; */
-    letter-spacing: -0.05em;
+    /* letter-spacing: -0.05em; */
     position: relative;
     /* padding-left: calc((100% - 1250px) / 2); */
     /* background-color: #1d2644 */
@@ -4069,7 +4069,7 @@ input:-webkit-autofill {
 }
 
 .intro .intro__inner {
-    pointer-events: none;
+    /* pointer-events: none; */
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
@@ -4182,7 +4182,7 @@ input:-webkit-autofill {
 }
 
 .intro .intro__body {
-    pointer-events: none;
+    /* pointer-events: none; */
     position: relative;
     z-index: 8;
     -webkit-flex: 0 1 100%;
