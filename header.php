@@ -198,7 +198,7 @@ if (isset($_SESSION['UID_INSOL']) && intval($_SESSION['UID_INSOL']) > intval(0))
                                 <nav class="nav" style=" margin-left: 70px; z-index: 1000;">
                                     <ul>
                                         <li class="active">
-                                            <a href="<?php echo SITE_ROOT ?>">INSOL INDIA</a>
+                                            <a href="<?php echo SITE_ROOT ?>">HOME</a>
                                         </li>
                                         <li>
                                             <a href="<?php echo SITE_ROOT ?>governance.php">GOVERNANCE</a>
