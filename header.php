@@ -380,3 +380,4 @@ if (isset($_SESSION['UID_INSOL']) && intval($_SESSION['UID_INSOL']) > intval(0))
                             <i class="ico-chevron-double-white"></i>
                         </a>
                     </header><!-- /.header -->
+                </div>
