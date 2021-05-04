@@ -196,53 +196,134 @@ if (isset($_SESSION['UID_INSOL']) && intval($_SESSION['UID_INSOL']) > intval(0))
                                 <nav class="nav" style=" margin-left: 70px; z-index: 1000;">
                                     <ul id="mainMenu">
                                         <li
-                                            class="<?php if ($_SERVER['REQUEST_URI'] === '/' || $_SERVER['REQUEST_URI'] === '/insolindia/') {echo "active";}?>">
+                                            class="main_menu <?php if ($_SERVER['REQUEST_URI'] === '/' || $_SERVER['REQUEST_URI'] === '/insolindia/') {echo "active";}?>">
                                             <a href="<?php echo SITE_ROOT ?>">HOME</a>
+                                            <ul class="menu_dropdown">
+                                                <li>
+                                                    <a href="<?php echo SITE_ROOT ?>history.php">History &amp;
+                                                        Restructuring</a>
+                                                </li>
+                                                <li>
+                                                    <a href="<?php echo SITE_ROOT ?>vision-mission.php">Vision &amp;
+                                                        Mission</a>
+                                                </li>
+                                                <li>
+                                                    <a href="<?php echo SITE_ROOT; ?>goals.php">Goals</a>
+                                                </li>
+                                                <li>
+                                                    <a href="<?php echo SITE_ROOT; ?>strenghts.php">Strengths</a>
+                                                </li>
+                                                <li>
+                                                    <a href="<?php echo SITE_ROOT ?>legal-status.php">Legal Status</a>
+                                                </li>
+                                            </ul>
                                         </li>
                                         <li
-                                            class="<?php if (strpos($_SERVER['REQUEST_URI'], "governance.php") !== false) {echo "active";}?>">
+                                            class="main_menu <?php if (strpos($_SERVER['REQUEST_URI'], "governance.php") !== false) {echo "active";}?>">
                                             <a href="<?php echo SITE_ROOT ?>governance.php">GOVERNANCE</a>
+                                            <?php
+$SQL1 = "";
+$SQL1 .= " SELECT * FROM " . GOVERNANCE_TYPE_TBL . " as G ";
+$SQL1 .= " WHERE status = 'ACTIVE' order by position ASC  ";
+$stmt1 = $dCON->prepare($SQL1);
+$stmt1->execute();
+$dsTYPE = $stmt1->fetchAll();
+$numTYPE = count($dsTYPE);
+?>
+                                            <ul class="menu_dropdown">
+                                                <?php
+if ($numTYPE > intval(0)) {
+    foreach ($dsTYPE as $mLIST) {
+        $typeID = (stripslashes($mLIST['type_id']));
+        $typeURLKEY = (stripslashes($mLIST['url_key']));
+        $typeNAME = (stripslashes($mLIST['type_name']));
+
+        $rsSUBTYPE = getDetails(GOVERNANCE_SUBTYPE_TBL, '*', "status~~~type_id", "ACTIVE~~~$typeID", '=~~~=~~~=', '', '', "");
+        $countSUBTYPE = "";
+        $countSUBTYPE = count($rsSUBTYPE);
+
+        if ($countSUBTYPE == intval(0)) {
+            $masterURL = SITE_ROOT . urlRewrite("governance_list.php", array("url_key" => $typeURLKEY));
+        }
+
+        ?>
+
+                                                <li
+                                                    <?php if ($countSUBTYPE > intval(0)) {echo 'class="menu_sub_item"';}?>>
+                                                    <a
+                                                        href="<?php if ($countSUBTYPE == intval(0)) {echo $masterURL;} else {echo '#';}?>"><?php echo $typeNAME; ?></a>
+                                                    <?php
+if ($countSUBTYPE > intval(0)) {
+            ?>
+                                                    <ul class="menu_sub_dropdown">
+                                                        <?php
+foreach ($rsSUBTYPE as $sbLIST) {
+                $subtypeNAME = htmlentities((stripslashes($sbLIST['subtype_name'])));
+                $subURLKEY = (stripslashes($sbLIST['url_key']));
+                $masterURL = SITE_ROOT . urlRewrite("governance_sub_list.php", array("master_url" => $typeURLKEY, "url_key" => $subURLKEY));
+                ?>
+                                                        <li>
+                                                            <a
+                                                                href="<?php echo $masterURL; ?>"><?php echo $subtypeNAME; ?></a>
+                                                        </li>
+                                                        <?php
+}
+            ?>
+                                                    </ul>
+                                                    <?php
+}
+
+        ?>
+                                                </li>
+                                                <?php
+}
+
+}
+
+?>
+
+                                            </ul>
                                         </li>
 
                                         <li
-                                            class="<?php if (strpos($_SERVER['REQUEST_URI'], "projects") !== false) {echo "active";}?>">
+                                            class="main_menu <?php if (strpos($_SERVER['REQUEST_URI'], "projects") !== false) {echo "active";}?>">
                                             <a
                                                 href="<?php echo SITE_ROOT ?>projects/moot-competition-with-national-law-university-delhi">PROJECTS</a>
                                         </li>
 
                                         <li
-                                            class="<?php if (strpos($_SERVER['REQUEST_URI'], "sipi.php") !== false) {echo "active";}?>">
+                                            class="main_menu <?php if (strpos($_SERVER['REQUEST_URI'], "sipi.php") !== false) {echo "active";}?>">
                                             <a href="<?php echo SITE_ROOT ?>sipi.php">SIPI</a>
                                         </li>
 
                                         <li
-                                            class="<?php if (strpos($_SERVER['REQUEST_URI'], "insol-international.php") !== false) {echo "active";}?>">
+                                            class="main_menu <?php if (strpos($_SERVER['REQUEST_URI'], "insol-international.php") !== false) {echo "active";}?>">
                                             <a href="<?php echo SITE_ROOT ?>insol-international.php">INSOL
                                                 International</a>
                                         </li>
 
-                                        <li class="<?php if (strpos($_SERVER['REQUEST_URI'], "SIG24") !== false) {echo "active";}?>"
+                                        <li class="main_menu <?php if (strpos($_SERVER['REQUEST_URI'], "SIG24") !== false) {echo "active";}?>"
                                             class="">
                                             <a href="<?php echo SITE_ROOT . urlRewrite('sig24.php'); ?>">SIG 24</a>
                                         </li>
 
                                         <li
-                                            class="<?php if (strpos($_SERVER['REQUEST_URI'], "benefits.php") !== false) {echo "active";}?>">
+                                            class="main_menu <?php if (strpos($_SERVER['REQUEST_URI'], "benefits.php") !== false) {echo "active";}?>">
                                             <a href="<?php echo SITE_ROOT ?>benefits.php">Membership</a>
                                         </li>
 
                                         <li
-                                            class="<?php if (strpos($_SERVER['REQUEST_URI'], "resource-list.php") !== false) {echo "active";}?>">
+                                            class="main_menu <?php if (strpos($_SERVER['REQUEST_URI'], "resource-list.php") !== false) {echo "active";}?>">
                                             <a href="<?php echo SITE_ROOT ?>resource-list.php">Resources</a>
                                         </li>
 
                                         <li
-                                            class="<?php if (strpos($_SERVER['REQUEST_URI'], "gallery") !== false) {echo "active";}?>">
+                                            class="main_menu <?php if (strpos($_SERVER['REQUEST_URI'], "gallery") !== false) {echo "active";}?>">
                                             <a href="<?php echo SITE_ROOT ?>gallery">GALLERY</a>
                                         </li>
 
                                         <li
-                                            class="<?php if (strpos($_SERVER['REQUEST_URI'], "events") !== false) {echo "active";}?>">
+                                            class="main_menu <?php if (strpos($_SERVER['REQUEST_URI'], "events") !== false) {echo "active";}?>">
                                             <a href="<?php echo SITE_ROOT ?>events">Events
                                                 &amp; Webinars</a>
                                         </li>
@@ -252,11 +333,11 @@ if (isset($_SESSION['UID_INSOL']) && intval($_SESSION['UID_INSOL']) > intval(0))
                                     <ul>
 
                                         <li
-                                            class="<?php if (strpos($_SERVER['REQUEST_URI'], "login") !== false) {echo "active";}?>">
+                                            class="main_menu <?php if (strpos($_SERVER['REQUEST_URI'], "login") !== false) {echo "active";}?>">
                                             <a href="<?php echo SITE_ROOT ?>login">Login</a>
                                         </li>
                                         <li
-                                            class="<?php if (strpos($_SERVER['REQUEST_URI'], "become-member.php") !== false) {echo "active";}?>">
+                                            class="main_menu <?php if (strpos($_SERVER['REQUEST_URI'], "become-member.php") !== false) {echo "active";}?>">
                                             <a href="<?php echo SITE_ROOT ?>become-member.php">Register
                                             </a>
                                         </li>

@@ -1,4 +1,4 @@
-<?php include 'header.php';?>
+<?php include 'header_old.php';?>
 <div style="position: fixed; top: 180px; left: 0; z-index: 9999;"><a
         href="<?php echo SITE_ROOT . urlRewrite("draft_best_practices.php"); ?>"><img
             src="images_insol/draft-best-practices.png" alt="" /></a></div>

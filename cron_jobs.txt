@@ -1,0 +1,3 @@
+curl http://sabsoftzone.in/demo/insolindia/cron_insol_member.php -o /home1/sabsoin/logs/cron_insol_member.txt
+
+curl http://sabsoftzone.in/demo/insolindia/cron_payment_reminder_mail.php -o /home1/sabsoin/logs/cron_payment_reminder.txt
