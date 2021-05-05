@@ -1818,7 +1818,7 @@ a{
     position: absolute;
     top: -45px;
     background-image: url(../images_insol/arrow_right.png);
-    z-index: 99;
+    /* z-index: 99; */
     background-color: rgba(0, 0, 0, 0);
     width: 11px;
     height: 22px;
