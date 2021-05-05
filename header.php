@@ -289,6 +289,52 @@ foreach ($rsSUBTYPE as $sbLIST) {
                                             class="main_menu <?php if (strpos($_SERVER['REQUEST_URI'], "projects") !== false) {echo "active";}?>">
                                             <a
                                                 href="<?php echo SITE_ROOT ?>projects/moot-competition-with-national-law-university-delhi">PROJECTS</a>
+                                            <?php
+$SQLp = "";
+$SQLp .= " SELECT * FROM " . PROJECTS_TBL . " as P ";
+$SQLp .= " WHERE status = 'ACTIVE' and projects_title !='' order by position ASC ";
+
+$stmt1 = $dCON->prepare($SQLp);
+$stmt1->execute();
+$rsLIST = $stmt1->fetchAll();
+$dA = count($rsLIST);
+$stmt1->closeCursor();
+?>
+                                            <ul class="menu_dropdown">
+                                                <?php
+if ($dA > intval(0)) {
+    foreach ($rsLIST as $rLIST) {
+        $masterID = "";
+        $masterTITLE = "";
+        $url_key = "";
+        $masterID = intval($rLIST['projects_id']);
+        $masterTITLE = htmlentities(stripslashes($rLIST['projects_title']));
+        $url_key = stripslashes($rLIST['url_key']);
+        $masterURL = SITE_ROOT . urlRewrite("projects_detail.php", array("url_key" => $url_key));
+        ?>
+                                                <li>
+                                                    <a href="<?php echo $masterURL; ?>"><?php echo $masterTITLE; ?></a>
+                                                </li>
+                                                <?php
+}
+}
+?>
+                                                <!-- <li>
+                                        	<a href="<?php echo SITE_ROOT ?>IBC-implementation-report.php">IBC Implementation Report</a>
+                                        </li>
+
+                                        <li>
+                                        	<a href="<?php echo SITE_ROOT ?>designing-insolvency-courses-for-law-schools.php">Seminar Course for Law Schools</a>
+                                        </li>
+                                        <li>
+                                        	<a href="<?php echo SITE_ROOT ?>best-practices-task-force-with-sipi.php">Best Practices Task Force with SIPI</a>
+                                        </li>
+                                        <li>
+                                        	<a href="<?php echo SITE_ROOT ?>advocacy.php">Advocacy</a>
+                                        </li> -->
+
+
+                                            </ul>
                                         </li>
 
                                         <li
@@ -310,11 +356,70 @@ foreach ($rsSUBTYPE as $sbLIST) {
                                         <li
                                             class="main_menu <?php if (strpos($_SERVER['REQUEST_URI'], "benefits.php") !== false) {echo "active";}?>">
                                             <a href="<?php echo SITE_ROOT ?>benefits.php">Membership</a>
+                                            <ul class="menu_dropdown">
+                                                <li>
+                                                    <a href="<?php echo SITE_ROOT ?>criteria.php">Criteria</a>
+                                                </li>
+                                                <li>
+                                                    <a href="<?php echo SITE_ROOT ?>benefits.php">Benefits</a>
+                                                </li>
+                                                <li>
+                                                    <a href="<?php echo SITE_ROOT ?>become-member.php">Become a
+                                                        Member</a>
+                                                </li>
+                                                <li>
+                                                    <?php
+if (LOGGED_IN == "YES") {
+    ?>
+                                                    <!--a href="<?php echo SITE_ROOT . "members.php"; ?>"-->
+                                                    <a href="<?php echo SITE_ROOT . urlRewrite("members.php") ?>">
+                                                        <?php
+} else {
+    ?>
+                                                        <a
+                                                            href="<?php echo SITE_ROOT . urlRewrite("login.php") . $_SESSION['INCLUDE_QMARK'] . "ref=members"; ?>">
+                                                            <?php
+}
+?>
+                                                            Membership Directory</a>
+                                                </li>
+                                            </ul>
                                         </li>
 
                                         <li
                                             class="main_menu <?php if (strpos($_SERVER['REQUEST_URI'], "resource-list.php") !== false) {echo "active";}?>">
                                             <a href="<?php echo SITE_ROOT ?>resource-list.php">Resources</a>
+                                            <ul class="menu_dropdown" style="right: 0 ">
+                                                <li>
+                                                    <a href="<?php echo SITE_ROOT ?>newsletter">Newsletter</a>
+                                                </li>
+                                                <?php
+$SQL_CAT = "";
+$SQL_CAT .= " SELECT * FROM " . RESOURCES_CATEGORY_TBL . " AS TC WHERE `status` = 'ACTIVE' ";
+$SQL_CAT .= " ORDER BY position ASC ";
+$stmtL_Cat = $dCON->prepare($SQL_CAT);
+$stmtL_Cat->execute();
+$rowCat = $stmtL_Cat->fetchAll();
+$stmtL_Cat->closeCursor();
+//echo count($rowCat);
+if (intval(count($rowCat)) > intval(0)) {
+    foreach ($rowCat as $rsCat) {
+        $R_cat_id = "";
+        $R_cat_name = "";
+        $R_cat_url_key = "";
+
+        $R_cat_id = intval($rsCat['category_id']);
+        $R_cat_name = stripslashes($rsCat['category_name']);
+        $R_cat_url_key = stripslashes($rsCat['url_key']);
+        $R_cat_url = SITE_ROOT . urlRewrite("resources.php", array("cat_url_key" => $R_cat_url_key));?>
+                                                <li>
+                                                    <a href="<?php echo $R_cat_url; ?>"><?php echo $R_cat_name; ?></a>
+                                                </li>
+                                                <?php
+}
+}
+?>
+                                            </ul>
                                         </li>
 
                                         <li
