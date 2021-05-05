@@ -1,7 +1,9 @@
 <!-- insolindia.com Version 1.0 -->
-<?php include 'header.php';
-$identifier = "Home";
-?>
+<?php include 'header.php';?>
+
+<div style="position: fixed; top: 120px; left: 0; z-index: 9999;"><a
+        href="<?php echo SITE_ROOT . urlRewrite("draft_best_practices.php"); ?>"><img
+            src="images_insol/draft-best-practices.png" alt="" /></a></div>
 
 <div class="intro__bar" style="display: none;">
     <div class="shell">
