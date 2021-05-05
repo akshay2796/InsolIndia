@@ -100,8 +100,6 @@
     <!-- /.slider__bar -->
 </div>
 <div class="clearfix home_banner" style="background-color: #23408C;">
-
-
     <img class="homebanner" src="<?php echo SITE_ROOT ?>images_insol/banner.jpg">
     <div class="clearfix home_slider">
         <h2>News</h2>

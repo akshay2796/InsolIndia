@@ -319,20 +319,6 @@ if ($dA > intval(0)) {
 }
 }
 ?>
-                                                <!-- <li>
-                                        	<a href="<?php echo SITE_ROOT ?>IBC-implementation-report.php">IBC Implementation Report</a>
-                                        </li>
-
-                                        <li>
-                                        	<a href="<?php echo SITE_ROOT ?>designing-insolvency-courses-for-law-schools.php">Seminar Course for Law Schools</a>
-                                        </li>
-                                        <li>
-                                        	<a href="<?php echo SITE_ROOT ?>best-practices-task-force-with-sipi.php">Best Practices Task Force with SIPI</a>
-                                        </li>
-                                        <li>
-                                        	<a href="<?php echo SITE_ROOT ?>advocacy.php">Advocacy</a>
-                                        </li> -->
-
 
                                             </ul>
                                         </li>
@@ -392,6 +378,9 @@ if (LOGGED_IN == "YES") {
                                             <ul class="menu_dropdown" style="right: 0 ">
                                                 <li>
                                                     <a href="<?php echo SITE_ROOT ?>newsletter">Newsletter</a>
+                                                </li>
+                                                <li>
+                                                    <a href="<?php echo SITE_ROOT ?>videos.php">Videos</a>
                                                 </li>
                                                 <?php
 $SQL_CAT = "";

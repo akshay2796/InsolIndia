@@ -2445,3 +2445,12 @@ ul.menu_dropdown li a {
     opacity: 1;
     top: 0;
 }
+
+div.container.mt-2.mb-2 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+div.videos-page h4, div.row.series_carosel h4 {
+    font-size: 18px;
+}
