@@ -157,6 +157,19 @@ if (isset($_SESSION['UID_INSOL']) && intval($_SESSION['UID_INSOL']) > intval(0))
     <!-- App JS -->
     <div class="wrapper">
 
+        <!-- Draft Best Practises -->
+        <div style="position: fixed; top: 120px; left: 0; z-index: 9999;"><a
+                href="<?php echo SITE_ROOT . urlRewrite("draft_best_practices.php"); ?>"><img
+                    src="images_insol/draft-best-practices.png" alt="" /></a></div>
+
+        <!-- Feedback Button -->
+        <a href="<?php echo SITE_ROOT ?>help" class="btn-help header__btn fixed-help-btn">
+            <div>
+                <span style="color: white; font-weight: bold;">Feedback</span>
+                <i class="ico-chevron-double-white"></i>
+            </div>
+        </a>
+
         <div class="intro">
             <ul class="arrows intro__arrows" style="display:none;">
                 <li data-top="295" data-top-desktop="345"
@@ -174,6 +187,18 @@ if (isset($_SESSION['UID_INSOL']) && intval($_SESSION['UID_INSOL']) > intval(0))
 
             <div class="intro__body">
                 <header class="header">
+                    <a href="<?php echo SITE_ROOT ?>" class="custom-logo">
+                        <img src="./images/favicon.png" style="height: 50px;width: 50px;" />
+                        <span style="margin-left: 10px; color: white; font-size: 16px; font-weight: bold;">INSOL
+                            INDIA</span>
+                    </a>
+                    <!-- Below only text as logo -->
+                    <a href="<?php echo SITE_ROOT ?>"
+                        style="color: white; z-index: 160; position: absolute; left: 0; height: 70px; width: 150px; display: flex; align-items: center; justify-content: center;display:none;">
+
+                        <span style="margin-left: 10px; color: white; font-size: 16px; font-weight: bold;">INSOL
+                            INDIA</span>
+                    </a>
                     <a href="#" class="btn-burger">
                         <span></span>
 
@@ -456,21 +481,12 @@ if (intval(count($rowCat)) > intval(0)) {
                             </div><!-- /.header__bar__inner -->
                         </div><!-- /.shell -->
                     </div><!-- /.header__body -->
-
-                    <a href="<?php echo SITE_ROOT ?>help" class="btn-help header__btn">
-                        <br>Feedback<br>
-                        <i class="ico-chevron-double-white"></i>
-                    </a>
                 </header><!-- /.header -->
 
                 <div class="clearfix home_banner" style="padding-top: 70px; background-color: #23408C;">
                     <header class="header" style="display:none;">
+                        <a href="<?php echo SITE_ROOT ?>" class="logo intro__logo"></a>
                         <a href="#" class="btn-burger">
-                            <span></span>
-
-                            <span></span>
-
-                            <span></span>
                         </a>
 
                         <div class="header__body">
