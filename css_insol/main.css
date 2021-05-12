@@ -2137,8 +2137,8 @@ span.error{border: 0px !important; color: #ee0000; font-size:12px;}
 .hrline{border-top: 5px solid #B71D21; height: 20px; margin: 19px 15px 0 15px; clear: both;}
 .bluetxt{color: #2B3584;}.redtxt{color:#B71D21;}.blacktxt{color: #000;}
 
-.governanceList{list-style-type:none; margin:0; padding: 0;}
-.governanceList li{width: 28%; margin: 0 3% 3% 0; float: left;}
+.governanceList{list-style-type:none; margin:0; padding: 0;display: flex;align-items: center;justify-content: space-evenly;flex-wrap: wrap;}
+.governanceList li{width: 30%; margin: 0 3% 3% 0; float: left;}
 .governanceList li a{display:block; border: 8px solid #efefef; padding: 25px 25px; text-align: center; transition: 0.3s ease all;}
 .governanceList li a:hover{text-decoration: none; background: #fff; border:8px solid #B71D21;}
 

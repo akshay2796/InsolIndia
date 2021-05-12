@@ -87,7 +87,7 @@ border-color: transparent #0e74b8 transparent transparent;}*/
         width: 100%;
         float: left;
         background: #b72027CC;
-        padding: 20px 30px;
+        padding: 20px 0px;
     }
 
     a.btnWrapBlue {
@@ -138,11 +138,18 @@ border-color: transparent #0e74b8 transparent transparent;}*/
 
     @media (max-width: 600px) {
         .eventsWrap {
-            width: 100%;
+            width: 90%;
             margin-bottom: 20px;
             float: left;
             margin-right: 0px;
             box-shadow: 9px 0 14px 0 rgba(0, 0, 0, .3);
+        }
+
+        .resultsWrap>div#results {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
         }
     }
 
@@ -217,7 +224,7 @@ if ($current_event == 'upcoming') {
         <div class="section__inner">
             <!-- /.section__aside -->
 
-            <div style="width 100%">
+            <div style="width: 100%;">
                 <section class="section-events">
 
                     <div class="resultsWrap">
