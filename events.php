@@ -87,7 +87,7 @@ border-color: transparent #0e74b8 transparent transparent;}*/
         width: 100%;
         float: left;
         background: #b72027CC;
-        padding: 20px 0px;
+        padding: 20px 15px;
     }
 
     a.btnWrapBlue {
