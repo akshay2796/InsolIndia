@@ -121,12 +121,20 @@ border-color: transparent #0e74b8 transparent transparent;}*/
 
     @media (max-width: 1000px) {
         .eventsWrap {
-            width: 48%;
+            width: 45%;
             margin-bottom: 20px;
             float: left;
             margin-right: 1%;
             margin-left: 1%;
             box-shadow: 9px 0 14px 0 rgba(0, 0, 0, .3);
+        }
+
+        div#results {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
         }
 
         .section__media img {
