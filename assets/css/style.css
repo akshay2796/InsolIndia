@@ -1187,6 +1187,20 @@ blockquote:last-child {
 	}
 }
 
+@media (min-width: 992px) {
+	.d-flex-column {
+		display: flex;
+		align-items: flex-end;
+	}
+}
+
+@media (min-width: 1450px) {
+	.container {
+		max-width: 1200px;
+		width: 100%;
+	}
+}
+
 @media (max-width: 1200px) {
 	.footer h2 {
 		font-size: 32px;
@@ -1633,7 +1647,7 @@ div.header__bar.extranav {
 		right: 0;
 		position: absolute;
 		top: 0;
-		padding: 150px 20px 20px;
+		padding: 80px 20px 20px;
 		transition: -webkit-transform 0.4s;
 		transition: transform 0.4s;
 		transition: transform 0.4s, -webkit-transform 0.4s;
@@ -2683,7 +2697,7 @@ a.moreevents:hover {
 
 .fixed-help-btn {
 	position: fixed;
-	bottom: 20%;
+	bottom: 100px;
 	right: 20px;
 	z-index: 9999;
 	display: flex;
@@ -2788,6 +2802,15 @@ a.moreevents:hover {
 	}
 	.intro .intro__logo {
 		margin-bottom: 0px;
+	}
+	.overflow-hidden-mobile {
+		overflow: hidden;
+	}
+}
+
+@media (max-width: 895px) {
+	.mobile_hidden {
+		display: none;
 	}
 }
 
@@ -8904,4 +8927,8 @@ input:-webkit-autofill {
 
 .intro .slider-main .slide-button.red:hover {
 	background: rgba(227, 5, 32, 0.7);
+}
+
+.d-none {
+	display: none;
 }

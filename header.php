@@ -158,9 +158,11 @@ if (isset($_SESSION['UID_INSOL']) && intval($_SESSION['UID_INSOL']) > intval(0))
     <div class="wrapper">
 
         <!-- Draft Best Practises -->
-        <div style="position: fixed; top: 120px; left: 0; z-index: 9999;"><a
-                href="<?php echo SITE_ROOT . urlRewrite("draft_best_practices.php"); ?>"><img
-                    src="images_insol/draft-best-practices.png" alt="" /></a></div>
+        <div style="position: fixed; top: 120px; left: 0; z-index: 9999;"
+            class="mobile_hidden <?php if (!($_SERVER['REQUEST_URI'] === '/' || $_SERVER['REQUEST_URI'] === '/insolindia/')) {echo "d-none";}?>">
+            <a href="<?php echo SITE_ROOT . urlRewrite("draft_best_practices.php"); ?>"><img
+                    src="images_insol/draft-best-practices.png" alt="" /></a>
+        </div>
 
         <!-- Feedback Button -->
         <a href="<?php echo SITE_ROOT ?>help" class="btn-help header__btn fixed-help-btn">
@@ -214,7 +216,7 @@ if (isset($_SESSION['UID_INSOL']) && intval($_SESSION['UID_INSOL']) > intval(0))
                     </div><!-- /.header__body -->
 
                     <!-- <div class="header__bar fixed">-->
-                    <div class="header__bar">
+                    <div class="header__bar overflow-hidden-mobile">
                         <div class="shell">
                             <div class="header__bar__inner">
 

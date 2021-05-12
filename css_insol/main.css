@@ -2372,8 +2372,10 @@ ul.menu_dropdown, ul.menu_sub_dropdown {
     background-color: rgb(14, 116, 184);
     opacity: 0;
     transition: all 0.2s ease-in;
-    padding: 0px 5px 0px 10px;
-    width: 180px;
+    padding: 0 15px;
+    width: max-content;
+    width: fit-content;
+    width: -moz-fit-content;
     z-index: 100;
 }
 
@@ -2410,11 +2412,14 @@ ul.menu_dropdown, ul.menu_sub_dropdown {
     color: #1d2644 !important;
 }
 
-ul#mainMenu > li:hover > ul.menu_dropdown {
-    visibility: visible;
-    opacity: 1;
-    top: 120%;
+@media (min-width: 1025px) {
+    ul#mainMenu > li:hover > ul.menu_dropdown {
+        visibility: visible;
+        opacity: 1;
+        top: 120%;
+    }
 }
+
 
 ul.menu_dropdown, ul.menu_sub_dropdown li a {
     text-align: left;

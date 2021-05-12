@@ -714,10 +714,10 @@ $capRES = intval(intval($capVAL1) + intval($capVAL2));
                                             I am Insolvency Professional registered with <span>*</span>
                                         </h4>
                                     </label>
-                                    <div class="row">
+                                    <div class="row d-flex-column">
                                         <div class="clr"></div>
                                         <div class="col-md-6">
-                                            <label>please specify the name of Insolvency Professional
+                                            <label>Please specify the name of Insolvency Professional
                                                 Agency</label><input type="text" class="form-control"
                                                 name="insolvency_professional_agency"
                                                 id="insolvency_professional_agency" placeholder="">
@@ -816,7 +816,8 @@ foreach ($rsGET as $sVAL) {
                                 <div class="form-group">
                                     <label>
                                         <h4 class="bluetxt">I am interested in becoming a member of INSOL India because
-                                            <span>*</span></h4>
+                                            <span>*</span>
+                                        </h4>
                                     </label>
                                     <div class="row">
                                         <div class="clr"></div>
