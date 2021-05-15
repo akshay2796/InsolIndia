@@ -512,6 +512,14 @@ function saveData()
 
                 }
 
+                //Send mailFormatte -> member_register
+
+                sendMailformate('member_register', $RTNID, "ADMIN");
+
+                if (strtoupper($register_status) === 'APPROVED') {
+                    sendMailformate('approved', $RTNID, "ADMIN");
+                }
+
                 if (strtoupper($payment_status) == 'SUCCESSFUL') {
                     sendMailformate('PAYMENT_MAIL', $RTNID, "ADMIN");
                 }
@@ -852,6 +860,10 @@ function saveData()
 
                 }
 
+                if (strtoupper($register_status) === "APPROVED" && strtoupper($old_register_status) !== "APPROVED") {
+                    sendMailformate('member_register', $RTNID, "ADMIN");
+                }
+
                 if (strtoupper($payment_status) == 'SUCCESSFUL' && strtoupper($old_payment_status) != 'SUCCESSFUL') {
                     sendMailformate('PAYMENT_MAIL', $RTNID, "ADMIN");
                 }
@@ -884,7 +896,7 @@ function editData()
 
     $member_id = intval($_REQUEST['id']);
 
-    $connect = mysqli_connect("localhost", "ryanearf_akshay", "Friendship.101", "ryanearf_insolindia");
+    $connect = mysqli_connect("localhost", "root", "root", "insolindia");
     $sql = "SELECT * FROM tbl_become_member WHERE member_id='$member_id'";
     $result = mysqli_query($connect, $sql);
     $row2 = mysqli_fetch_array($result);
@@ -1414,8 +1426,13 @@ function editData()
 
         }
 
-        if (strtolower($register_status) == 'approved' && (strtolower($old_register_status) != 'expired' && strtolower($old_register_status) != 'approved')) {
+        if (strtolower($register_status) == 'approved' && (strtolower($old_register_status) != 'approved')) {
             if ($sig_member == intval(0)) {
+
+                //Send Approved Mail
+                sendMailformate('member_register', $member_id, "ADMIN");
+
+                //Send Payment Mail
                 sendMailformate('approved', $member_id, "ADMIN");
             }
         }
@@ -1548,7 +1565,7 @@ function editData()
 
     }
 
-    $connection = mysqli_connect("localhost", "ryanearf_akshay", "Friendship.101", "ryanearf_insolindia");
+    $connection = mysqli_connect("localhost", "root", "root", "insolindia");
 
     $query_id = "SELECT * FROM renew_member_detail where p_id = $member_id";
     $result_id = mysqli_query($connection, $query_id);
@@ -2211,7 +2228,7 @@ $CK_COUNTER = 0;
                         </td>
 
                         <td>
-                            <?php echo $fullname; //ucwords(strtolower($first_name.' '.$last_name));                                       ?>
+                            <?php echo $fullname; //ucwords(strtolower($first_name.' '.$last_name));                                                 ?>
                         </td>
                         <td>
                             <?php echo $email; ?>

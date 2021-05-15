@@ -2,7 +2,11 @@
 function MailObject($TO=array(), $FROM="", $CC=array(), $BCC=array(), $SUBJECT="", $BODY="", $ATTACHMENTS = array(),$REPLYTO="",$ics=array())
 {
     
-    $mail = new phpmailer; 
+    $mail = new phpmailer;
+
+    //Setting custom from value
+    $FROM = "info@sabsoftzone.in";
+    
     if ( $_SERVER["HTTP_HOST"] == "idsweb" )
     {       
         $mail->IsSMTP();  // telling the class to use SMTP<br>

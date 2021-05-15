@@ -144,10 +144,10 @@ if (isset($_POST['submit'])) {
 
     if ($mailSent):
         echo '<div class="alert alert-success" role="alert">
-				   <div class="container">
-				  Mail has been sent successfully
-				  </div>
-				</div>';
+						   <div class="container">
+						  Mail has been sent successfully
+						  </div>
+						</div>';
     else:
         echo "Sorry cannot process your request.";
     endif;
@@ -225,7 +225,7 @@ if (isset($_POST['submit'])) {
     					<div class="col-xs-6"></div>
     					<div class="clr height15"></div>
     					<div class="col-md-12">
-                            <div style="color:#B71D21">Please fill the form as per requirements and irrelevant sections may be filled as not applicable or N/A. </div>
+                            <div style="color:#23408C">Please fill the form as per requirements and irrelevant sections may be filled as not applicable or N/A. </div>
                         </div>
                         <div class="clr height15"></div>
                         <div class="col-md-6">
