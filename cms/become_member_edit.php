@@ -1383,14 +1383,14 @@ if (trim($register_status) == "expired" || trim($register_status) == "renewal") 
 echo $membership_start_date;
 if (trim($register_status) == "pending" || $sig_member == intval(1)) {
     $member_id = $_REQUEST['id'];
-    $connection = mysqli_connect("localhost", "ryanearf_akshay", "Friendship.101", "ryanearf_insolindia") or die(mysqli_error($mysqli));
+    $connection = mysqli_connect("localhost", "root", "root", "insolindia") or die(mysqli_error($mysqli));
     $query = "SELECT * FROM tbl_become_member WHERE member_id = $member_id";
     $result = mysqli_query($connection, $query);
     $show = mysqli_fetch_array($result);
     $membership_start_date = $show['membership_start_date'];
     // $title =  $show['title'];
     // echo $membership_start_date;
-     ?>
+    ?>
                 <!--        <div class="width2" id="showMEMDATE" ?> -->
                 <!--	<label class="mainLabel">Membership Start Date <span>*</span> <?php if ($member_since_date != '') {?> <span style="font-size: 9px;">[SIG Member Since <?php echo $member_since_date; ?>] </span><?php }?></label> -->
                 <!--    <div class="txt2Box">-->
@@ -1601,7 +1601,7 @@ if ($membership_expired_date != "" || trim($register_status) == "expired") {
                 </div>
             </div>
             <?php
-$connection = mysqli_connect("localhost", "ryanearf_akshay", "Friendship.101", "ryanearf_insolindia") or die(mysqli_error($mysqli));
+$connection = mysqli_connect("localhost", "root", "root", "insolindia") or die(mysqli_error($mysqli));
 $query3 = "SELECT * FROM renew_member_detail where p_id = $member_id ORDER BY id DESC LIMIT 1";
 $result3 = mysqli_query($connection, $query3);
 //  while($show = mysqli_fetch_array($result3)){
@@ -1682,23 +1682,24 @@ $membership_expired_date = '';
 /*
 </style> */
 
-// <?php
+//
+<?php
 //  $ui_id = $_GET['id'];
 // $connection = mysqli_connect("localhost","ryanearf_akshay","Friendship.101","ryanearf_insolindia");
 // if(isset($_POST['renew'])){
 //             $pay_text = $_POST['pay_text'];
 //             $query = "INSERT INTO tbl_renew_payment(member_id, payment_details, data) VALUES ('$ui_id', '$pay_text', CURDATE())";
 //             $result = mysqli_query($connection, $query);
-//                 echo "<meta http-equiv=\"refresh\" content=\"0;URL=https://www.insolindia.com/cms/become_member_list.php\">";
-//         }
-//     ;
+//                 echo "<meta http-equiv=\"refresh\" content=\"0;URL=<?php echo SITE_ROOT ?>cms/become_member_list.php\">";
+// }
+// ;
 // ?>
 
 
 <?php
 
 $u_id = $_GET['id'];
-$connect = mysqli_connect("localhost", "ryanearf_akshay", "Friendship.101", "ryanearf_insolindia");
+$connect = mysqli_connect("localhost", "root", "root", "insolindia");
 $sql = "SELECT * FROM tbl_become_member WHERE member_id='$u_id'";
 
 $result = mysqli_query($connect, $sql);
@@ -1713,7 +1714,7 @@ if ($show2['register_status'] == 'Expired' || $show2['register_status'] == 'Rene
 
     <?php
 $u_id = $_GET['id'];
-    $connect = mysqli_connect("localhost", "ryanearf_akshay", "Friendship.101", "ryanearf_insolindia");
+    $connect = mysqli_connect("localhost", "root", "root", "insolindia");
     $sql = "SELECT * FROM renew_member_detail WHERE p_id='$u_id'";
     $result = mysqli_query($connect, $sql);
     ?>
@@ -1740,7 +1741,7 @@ $u_id = $_GET['id'];
 
     <?php
 $u_id = $_GET['id'];
-    $connect = mysqli_connect("localhost", "ryanearf_akshay", "Friendship.101", "ryanearf_insolindia");
+    $connect = mysqli_connect("localhost", "root", "root", "insolindia");
     $sql = "SELECT * FROM renew_member_detail WHERE p_id='$u_id'";
     $result = mysqli_query($connect, $sql);
     ?>
@@ -1971,23 +1972,31 @@ if (isset($_POST['saveren'])) {
     //$mail->Username = "noreply@acecabs.in";
     //$mail->Password = "Newpass@0112";
 
-    $mail->Host = "103.21.58.112";
-//$mail->Username = "noreply@acecabs.in";
-    //$mail->Password = "dOvb15^8";
-    $mail->Username = "noreply@insolindia.com";
-    $mail->Password = "f2B7~w)C[5d4";
+//     $mail->Host = "103.21.58.112";
+// //$mail->Username = "noreply@acecabs.in";
+//     //$mail->Password = "dOvb15^8";
+//     $mail->Username = "noreply@insolindia.com";
+//     $mail->Password = "f2B7~w)C[5d4";
+// $mail->Port = 25;
+// $mail->SMTPAuth = true;
+// $mail->SMTPDebug = true;
 
-    $mail->Port = 25;
+    //Sabsoft
+
+    $mail->Host = "mail.sabsoftzone.in"; // SMTP server
+    $mail->Username = "info@sabsoftzone.in";
+    $mail->Password = "q[BhD01vcX7&";
+    $mail->Port = 587;
     $mail->SMTPAuth = true;
     $mail->SMTPDebug = true;
 
-    $mail->From = "contact@insolindia.com";
+    // $mail->From = "contact@insolindia.com";
 
     $mail->FromName = "insolindia";
     $mail->ContentType = "text/html";
 
     $to = $email;
-    $mail->Subject = "Your Insol India Membership Has Been Renew";
+    $mail->Subject = "Your Insol India Membership Has Been Renewed";
 
     $mail->AddAddress("$email");
     $mail->Body = "$MAIL_BODY";
