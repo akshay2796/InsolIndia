@@ -18,7 +18,7 @@ if (isset($_POST['renew'])) {
 
     $updateQuery = "UPDATE tbl_become_member SET membership_expired_date = '$ren_expiry', register_status = '$reg_status' WHERE member_id = '$ui_id'";
     mysqli_query($connection, $updateQuery);
-    echo "<meta http-equiv=\"refresh\" content=\"0;URL=https://www.insolindia.com/cms/become_member_edit.php?con=modify&id=$ui_id\">";
+    echo "<meta http-equiv=\"refresh\" content=\"0;URL=<?php echo SITE_ROOT ?>cms/become_member_edit.php?con=modify&id=$ui_id\">";
 }
 echo $ren_expiry;
 ?>

@@ -896,7 +896,7 @@ function editData()
 
     $member_id = intval($_REQUEST['id']);
 
-    $connect = mysqli_connect("localhost", "root", "root", "insolindia");
+    $connect = mysqli_connect("localhost", "ryanearf_akshay", "Friendship.101", "ryanearf_insolindia");
     $sql = "SELECT * FROM tbl_become_member WHERE member_id='$member_id'";
     $result = mysqli_query($connect, $sql);
     $row2 = mysqli_fetch_array($result);
@@ -1565,7 +1565,7 @@ function editData()
 
     }
 
-    $connection = mysqli_connect("localhost", "root", "root", "insolindia");
+    $connection = mysqli_connect("localhost", "ryanearf_akshay", "Friendship.101", "ryanearf_insolindia");
 
     $query_id = "SELECT * FROM renew_member_detail where p_id = $member_id";
     $result_id = mysqli_query($connection, $query_id);
