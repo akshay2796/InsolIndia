@@ -1180,7 +1180,7 @@ if ($reg_number_text != '') {
                             <label>
                                 <input type="checkbox" value="Acedemic" name="i_am[]" id="i_am[]" class='i_am'
                                     <?php if (in_array('Acedemic', explode(", ", $i_am))) {echo " checked ";}?> />
-                                Acedemic
+                                Academic
                             </label>
                         </div>
                         <div class="col-md-3">
@@ -1674,32 +1674,10 @@ $membership_expired_date = '';
 
 </div>
 
-/*<style>
-*/
-/*    .renewBtn{*/
-
-/*    }*/
-/*
-</style> */
-
-//
-<?php
-//  $ui_id = $_GET['id'];
-// $connection = mysqli_connect("localhost","ryanearf_akshay","Friendship.101","ryanearf_insolindia");
-// if(isset($_POST['renew'])){
-//             $pay_text = $_POST['pay_text'];
-//             $query = "INSERT INTO tbl_renew_payment(member_id, payment_details, data) VALUES ('$ui_id', '$pay_text', CURDATE())";
-//             $result = mysqli_query($connection, $query);
-//                 echo "<meta http-equiv=\"refresh\" content=\"0;URL=<?php echo SITE_ROOT ?>cms/become_member_list.php\">";
-// }
-// ;
-// ?>
-
-
 <?php
 
 $u_id = $_GET['id'];
-$connect = mysqli_connect("localhost", "ryanearf_akshay", "Friendship.101", "ryanearf_insolindia");
+$connect = mysqli_connect("localhost", "root", "root", "insolindia");
 $sql = "SELECT * FROM tbl_become_member WHERE member_id='$u_id'";
 
 $result = mysqli_query($connect, $sql);
