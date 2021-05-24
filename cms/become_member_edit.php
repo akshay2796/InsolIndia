@@ -1682,8 +1682,7 @@ $sql = "SELECT * FROM tbl_become_member WHERE member_id='$u_id'";
 
 $result = mysqli_query($connect, $sql);
 $show2 = mysqli_fetch_array($result);
-if ($show2['register_status'] == 'Expired' || $show2['register_status'] == 'Renewal') {
-    ?>
+?>
 <div class="containerPad container mainWrapper">
     <div class="fullDivider">
         <div class="sml_heading">Renewal Information <span></span> </div>
@@ -1747,8 +1746,6 @@ for ($i = array_keys($renewal_array)[count($renewal_array) - 1]; $i <= array_key
         </div>
     </div>
 </div>
-
-<?php }?>
 
 <script>
 function setPaymentDetail(selectField) {
