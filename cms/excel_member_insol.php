@@ -154,7 +154,7 @@ $objPHPExcel->getDefaultStyle()->getFont()->setSize(11);
 
 $ROW = 2;
 
-$MAXCOL = "AO";
+$MAXCOL = "AP";
 
 $STATIC_COL = 40;
 // BOLD ALL COLUMN HEADS ====================
@@ -168,7 +168,7 @@ $objPHPExcel->getActiveSheet()->getStyle('D' . $ROW . ':' . $MAXCOL . $ROW)->get
 
 //$objPHPExcel->getActiveSheet()->getStyle('A1:I1')->getFill()->applyFromArray(array('type' => PHPExcel_Style_Fill::FILL_SOLID,'startcolor' => array('rgb' => "ffffff")));
 $objPHPExcel->getActiveSheet()
-    ->getStyle('A1:AO1')
+    ->getStyle('A1:AP1')
     ->getAlignment()
     ->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
 
@@ -213,6 +213,9 @@ $objPHPExcel->getActiveSheet()->getStyle('AL2:AM2')->applyFromArray($styleArray)
 $objPHPExcel->getActiveSheet()->getStyle('AN1:AO1')->applyFromArray($styleArray);
 $objPHPExcel->getActiveSheet()->getStyle('AN2:AO2')->applyFromArray($styleArray);
 
+$objPHPExcel->getActiveSheet()->getStyle('AP1:AP1')->applyFromArray($styleArray);
+$objPHPExcel->getActiveSheet()->getStyle('AP2:AP2')->applyFromArray($styleArray);
+
 $objPHPExcel->setActiveSheetIndex(0)->mergeCells('A1:J1');
 $objPHPExcel->getActiveSheet()
     ->getCell('A1')
@@ -238,102 +241,79 @@ $objPHPExcel->getActiveSheet()
     ->getCell('AB1')
     ->setValue('PROFESSIONAL  DETAILS');
 
-$objPHPExcel->getActiveSheet()->setAutoFilter('A2:AO2');
+$objPHPExcel->setActiveSheetIndex(0)->mergeCells('AL1:AM1');
+$objPHPExcel->getActiveSheet()
+    ->getCell('AL1')
+    ->setValue('MEMBERSHIP  DETAILS');
 
-$objPHPExcel->setActiveSheetIndex(0)
-    ->setCellValue('A' . $ROW, "Serial No.")
-    ->setCellValue('B' . $ROW, "REGD ID")
-    ->setCellValue('C' . $ROW, "TITLE")
-    ->setCellValue('D' . $ROW, "FIRST")
-    ->setCellValue('E' . $ROW, "MIDDLE")
-    ->setCellValue('F' . $ROW, "LASTNAME")
-    ->setCellValue('G' . $ROW, "SUFFIX")
-    ->setCellValue('H' . $ROW, "FULL Name")
-    ->setCellValue('I' . $ROW, "FIRM")
-    ->setCellValue('J' . $ROW, "GST NO.")
-    ->setCellValue('K' . $ROW, "ADDRESS1") // coreespondence
-    ->setCellValue('L' . $ROW, "ADDRESS2")
-    ->setCellValue('M' . $ROW, "CITY")
-    ->setCellValue('N' . $ROW, "STATE")
-    ->setCellValue('O' . $ROW, "ZIP")
-    ->setCellValue('P' . $ROW, "COUNTRY")
-    ->setCellValue('Q' . $ROW, "ADDRESS1") // permanent
-    ->setCellValue('R' . $ROW, "ADDRESS2")
-    ->setCellValue('S' . $ROW, "CITY")
-    ->setCellValue('T' . $ROW, "STATE")
-    ->setCellValue('U' . $ROW, "ZIP")
-    ->setCellValue('V' . $ROW, "COUNTRY")
-    ->setCellValue('W' . $ROW, "CORRESPONDENCE LANDLINE")
-    ->setCellValue('X' . $ROW, "RESIDENCE LANDLINE")
-    ->setCellValue('Y' . $ROW, "MOBILE")
-    ->setCellValue('Z' . $ROW, "FAX")
-    ->setCellValue('AA' . $ROW, "EMAIL") /////////
-    ->setCellValue('AB' . $ROW, "I AM")
-//->setCellValue('AB'.$ROW,"I AM INSOLVENCY PROFESSIONAL REGISTERED WITH ")
-    ->setCellValue('AC' . $ROW, "NAME OF INSOLVENCY PROFESSIONAL AGENCY")
-    ->setCellValue('AD' . $ROW, "REGISTERATION NO. OF THE INSOLVENCY PROFESSIONAL AGENCY")
+$objPHPExcel->setActiveSheetIndex(0)->mergeCells('AN1:AO1');
+$objPHPExcel->getActiveSheet()
+    ->getCell('AN1')
+    ->setValue('PAYMENT  DETAILS');
 
-    ->setCellValue('AE' . $ROW, "IBBI MEMBER (Y/N)")
-    ->setCellValue('AF' . $ROW, "IBBI REGISTERATION NO ")
+$objPHPExcel->getActiveSheet()->setAutoFilter('A2:AP2');
 
-    ->setCellValue('AG' . $ROW, "I AM A YOUNG PRACTITIONER (Y/N)")
-    ->setCellValue('AH' . $ROW, "YOUNG PRACTITIONER - DATE OF ENROLMENT WITH MY PROFESSIONAL BODY IS")
-    ->setCellValue('AI' . $ROW, "I AM AN SIG 24 Member (Y/N)")
-    ->setCellValue('AJ' . $ROW, "SIG COMPANY NAME ")
-    ->setCellValue('AK' . $ROW, "I AM INTERESTED IN BECOMING A MEMBER OF INSOL INDIA BECAUSE")
-    ->setCellValue('AL' . $ROW, "Membership Start Date")
-    ->setCellValue('AM' . $ROW, "Membership Expiry Date")
-    ->setCellValue('AN' . $ROW, "Payment Status")
-    ->setCellValue('AO' . $ROW, "Register Date");
-// ->setCellValue('AB'.$ROW,"EMAIL");
+    $EXCEL_HEADERS = [
+            "Serial No.",
+            "REGD ID",
+            "TITLE",
+            "FIRST",
+            "MIDDLE",
+            "LASTNAME",
+            "SUFFIX",
+            "FULL Name",
+            "FIRM",
+            "GST NO.",
+            "ADDRESS1",
+            "ADDRESS2",
+            "CITY",
+            "STATE",
+            "ZIP",
+            "COUNTRY",
+            "ADDRESS1",
+            "ADDRESS2",
+            "CITY",
+            "STATE",
+            "ZIP",
+            "COUNTRY",
+            "CORRESPONDENCE LANDLINE",
+            "RESIDENCE LANDLINE",
+            "MOBILE",
+            "FAX",
+            "EMAIL",
+            "I AM",
+            "NAME OF INSOLVENCY PROFESSIONAL AGENCY",
+            "REGISTERATION NO. OF THE INSOLVENCY PROFESSIONAL AGENCY",
+            "IBBI MEMBER (Y/N)",
+            "IBBI REGISTERATION NO",
+            "I AM A YOUNG PRACTITIONER (Y/N)",
+            "YOUNG PRACTITIONER - DATE OF ENROLMENT WITH MY PROFESSIONAL BODY IS",
+            "I AM AN SIG 24 Member (Y/N)",
+            "SIG COMPANY NAME",
+            "I AM INTERESTED IN BECOMING A MEMBER OF INSOL INDIA BECAUSE",
+            "Membership Start Date",
+            "Membership Expiry Date",
+            "Payment Status",
+            "Payment Information",
+            "Register Date"
+        ];
 
 $objPHPExcel->getActiveSheet()->getStyle('A' . $ROW . ':' . $MAXCOL . $ROW)->getFont()->setBold(true);
 $objPHPExcel->getActiveSheet()->getStyle('A' . $ROW . ':' . $MAXCOL . $ROW)->getFill()->applyFromArray(array('type' => PHPExcel_Style_Fill::FILL_SOLID, 'startcolor' => array('rgb' => "d9e1e7")));
 
-$objPHPExcel->getActiveSheet()->getColumnDimension("A")->setAutoSize(true);
-$objPHPExcel->getActiveSheet()->getColumnDimension("B")->setAutoSize(true);
-$objPHPExcel->getActiveSheet()->getColumnDimension("C")->setAutoSize(true);
-$objPHPExcel->getActiveSheet()->getColumnDimension("D")->setAutoSize(true);
-$objPHPExcel->getActiveSheet()->getColumnDimension("E")->setAutoSize(true);
-$objPHPExcel->getActiveSheet()->getColumnDimension("F")->setAutoSize(true);
-$objPHPExcel->getActiveSheet()->getColumnDimension("G")->setAutoSize(true);
-$objPHPExcel->getActiveSheet()->getColumnDimension("H")->setAutoSize(true);
-$objPHPExcel->getActiveSheet()->getColumnDimension("I")->setAutoSize(true);
+//Set min and max columns
+$fromCol = "A";
+$toCol = "AQ";
 
-$objPHPExcel->getActiveSheet()->getColumnDimension("J")->setAutoSize(true);
-$objPHPExcel->getActiveSheet()->getColumnDimension("K")->setAutoSize(true);
-$objPHPExcel->getActiveSheet()->getColumnDimension("L")->setAutoSize(true);
-$objPHPExcel->getActiveSheet()->getColumnDimension("M")->setAutoSize(true);
-$objPHPExcel->getActiveSheet()->getColumnDimension("N")->setAutoSize(true);
+for($i = $fromCol, $j = 0; $i !== $toCol; $i++, $j++) {
+    
+    // Setting rows to autosize
+    $objPHPExcel->getActiveSheet()->getColumnDimension($i)->setAutoSize(true);
+    
+    // Setting excel headers
+    $objPHPExcel->setActiveSheetIndex(0)->setCellValue($i. $ROW, $EXCEL_HEADERS[$j]);
 
-$objPHPExcel->getActiveSheet()->getColumnDimension("O")->setAutoSize(true);
-$objPHPExcel->getActiveSheet()->getColumnDimension("P")->setAutoSize(true);
-$objPHPExcel->getActiveSheet()->getColumnDimension("Q")->setAutoSize(true);
-$objPHPExcel->getActiveSheet()->getColumnDimension("R")->setAutoSize(true);
-$objPHPExcel->getActiveSheet()->getColumnDimension("S")->setAutoSize(true);
-$objPHPExcel->getActiveSheet()->getColumnDimension("T")->setAutoSize(true);
-$objPHPExcel->getActiveSheet()->getColumnDimension("U")->setAutoSize(true);
-$objPHPExcel->getActiveSheet()->getColumnDimension("V")->setAutoSize(true);
-$objPHPExcel->getActiveSheet()->getColumnDimension("W")->setAutoSize(true);
-$objPHPExcel->getActiveSheet()->getColumnDimension("X")->setAutoSize(true);
-$objPHPExcel->getActiveSheet()->getColumnDimension("Y")->setAutoSize(true);
-$objPHPExcel->getActiveSheet()->getColumnDimension("Z")->setAutoSize(true);
-
-$objPHPExcel->getActiveSheet()->getColumnDimension("AA")->setAutoSize(true);
-$objPHPExcel->getActiveSheet()->getColumnDimension("AB")->setAutoSize(true);
-$objPHPExcel->getActiveSheet()->getColumnDimension("AC")->setAutoSize(true);
-$objPHPExcel->getActiveSheet()->getColumnDimension("AD")->setAutoSize(true);
-$objPHPExcel->getActiveSheet()->getColumnDimension("AE")->setAutoSize(true);
-$objPHPExcel->getActiveSheet()->getColumnDimension("AF")->setAutoSize(true);
-$objPHPExcel->getActiveSheet()->getColumnDimension("AG")->setAutoSize(true);
-$objPHPExcel->getActiveSheet()->getColumnDimension("AH")->setAutoSize(true);
-$objPHPExcel->getActiveSheet()->getColumnDimension("AI")->setAutoSize(true);
-$objPHPExcel->getActiveSheet()->getColumnDimension("AJ")->setAutoSize(true);
-$objPHPExcel->getActiveSheet()->getColumnDimension("AK")->setAutoSize(true);
-$objPHPExcel->getActiveSheet()->getColumnDimension("AL")->setAutoSize(true);
-$objPHPExcel->getActiveSheet()->getColumnDimension("AM")->setAutoSize(true);
-$objPHPExcel->getActiveSheet()->getColumnDimension("AN")->setAutoSize(true);
-$objPHPExcel->getActiveSheet()->getColumnDimension("AO")->setAutoSize(true);
+}
 
 $ROW++;
 $ALL_TOTAL = 0;
@@ -544,7 +524,8 @@ foreach ($row as $rs) {
         ->setCellValue('AL' . $ROW, $membership_start_date)
         ->setCellValue('AM' . $ROW, $membership_expired_date)
         ->setCellValue('AN' . $ROW, $payment_status)
-        ->setCellValue('AO' . $ROW, $add_time);
+        ->setCellValue('AO' . $ROW, $payment_text)
+        ->setCellValue('AP' . $ROW, $add_time);
 
     $ROW++;
 }
