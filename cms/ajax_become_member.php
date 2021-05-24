@@ -245,7 +245,12 @@ function saveData()
         if (intval($CHK) == intval(0)) {
 
             $MAX_ID = getMaxId(BECOME_MEMBER_TBL, "member_id");
-            $register_status = 'Approved';
+
+            if ($sig_member == intval(1) || strtoupper($payment_status) === 'SUCCESSFUL') {
+                $register_status = 'Approved';
+            } else {
+                $register_status = 'Pending';
+            }
 
             if ($image != "") {
 
