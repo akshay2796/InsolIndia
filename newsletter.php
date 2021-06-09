@@ -6,7 +6,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <?php include 'header.php';
-$connection = mysqli_connect("localhost", "ryanearf_akshay", "Friendship.101", "ryanearf_insolindia") or die(mysqli_error($mysqli));
+$connection = mysqli_connect("localhost", "sabsoin_ins_user", "Yrs[aidZ&8gA", "sabsoin_insol_india") or die(mysqli_error($mysqli));
 $query = "SELECT * FROM tbl_newsletter WHERE status = 'ACTIVE' and newsletter_subject != 'INSOL India Newsletter Test 2' and newsletter_subject != 'Insol Newsletter Testing'  order by newsletter_id desc";
 $result = mysqli_query($connection, $query);
 

@@ -3,7 +3,7 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 $ui_id = $_GET['id'];
-$connection = mysqli_connect("localhost", "ryanearf_akshay", "Friendship.101", "ryanearf_insolindia");
+$connection = mysqli_connect("localhost", "sabsoin_ins_user", "Yrs[aidZ&8gA", "sabsoin_insol_india");
 if (isset($_POST['renew'])) {
     $reg_status = $_POST['ren_register_status'];
     $pay_status = $_POST['ren_payment_status'];

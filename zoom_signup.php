@@ -57,7 +57,7 @@ if (isset($_POST['submit'])) {
     $mob = $_POST['mob'];
     $prof = $_POST['prof'];
 
-    $connection = mysqli_connect("localhost", "ryanearf_akshay", "Friendship.101", "ryanearf_insolindia") or die(mysqli_error($mysqli));
+    $connection = mysqli_connect("localhost", "sabsoin_ins_user", "Yrs[aidZ&8gA", "sabsoin_insol_india") or die(mysqli_error($mysqli));
     $query = "INSERT INTO zoom(name, email, mob, profession) VALUES ('$name', '$email', '$mob', '$prof')";
     $result = mysqli_query($connection, $query);
 

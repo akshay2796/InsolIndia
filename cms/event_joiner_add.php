@@ -606,7 +606,7 @@ if (trim($register_status) == "approved" || trim($register_status) == "expired")
 </form>
 
 <?php
-$connect = mysqli_connect("localhost", "ryanearf_akshay", "Friendship.101", "ryanearf_insolindia");
+$connect = mysqli_connect("localhost", "sabsoin_ins_user", "Yrs[aidZ&8gA", "sabsoin_insol_india");
 if (isset($_POST['save'])) {
     $title = $_POST['title'];
     $fname = $_POST['fname'];
