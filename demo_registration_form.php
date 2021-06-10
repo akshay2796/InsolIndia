@@ -1,4 +1,4 @@
-<?php error_reporting(E_ALL);
+<?php error_reporting(0);
 include('header.php'); 
 ?>
 

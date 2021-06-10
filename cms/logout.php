@@ -1,5 +1,5 @@
 <?php 
-error_reporting(E_ALL);
+error_reporting(0);
 ob_start();
 session_start();
 include("../library_varrsha/class.pdo.php");

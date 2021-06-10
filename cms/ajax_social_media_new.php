@@ -1,6 +1,6 @@
 <?php
 ob_start();
-error_reporting(E_ALL);
+error_reporting(0);
 include "ajax_include.php";
 
 include "../library_insol/class.imageresizer.php";

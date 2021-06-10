@@ -1,5 +1,5 @@
 <?php 
-error_reporting(E_ALL);
+error_reporting(0);
 include("header.php");
 
 define("PAGE_MAIN","young_members_committee.php");	

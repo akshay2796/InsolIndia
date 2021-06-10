@@ -1,6 +1,6 @@
 <?php 
 ob_start();
-error_reporting(E_ALL);
+error_reporting(0);
 include("header.php");
 
 define("PAGE_MAIN","event_joiner_edit.php");

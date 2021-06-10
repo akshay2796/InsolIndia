@@ -1,6 +1,6 @@
 <?php
 session_start();
-error_reporting(E_ALL);
+error_reporting(0);
 include "ajax_include.php";
 
 define("PAGE_MAIN", "member_type.php");

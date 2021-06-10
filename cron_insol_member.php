@@ -2,7 +2,7 @@
 
 <?php
 ini_set("max_execution_time", 600);
-error_reporting(E_ALL);
+error_reporting(0);
 
 include "library_insol/class.pdo.php";
 include "library_insol/class.inputfilter.php";
