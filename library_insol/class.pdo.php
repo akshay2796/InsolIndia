@@ -153,7 +153,7 @@ if (($_SERVER["HTTP_HOST"] == "localhost") || ($_SERVER["HTTP_HOST"] == "localho
     define("MODULE_FILE_FOLDER", "/" . FOLDERNAME . "/uploads_insol/");
 
 } else {
-    define("SITE_ROOT", "/demo/insolindia/");
+    define("SITE_ROOT", "/");
     define("SITE_URL", "http://" . $_SERVER['HTTP_HOST'] . "/");
     define("SITE_IMAGES", "http://" . $_SERVER['HTTP_HOST'] . "/images_insol/");
     define("SITE_JS", "http://" . $_SERVER['HTTP_HOST'] . "/js_insol/");
