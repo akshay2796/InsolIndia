@@ -316,7 +316,7 @@ RewriteRule ^SIG24/([a-zA-Z0-9_-]+)$ sig24_detail.php?url_key=$1 [L,NC,QSA]
 
 # php -- BEGIN cPanel-generated handler, do not edit
 # Set the “ea-php56” package as the default “PHP” programming language.
-<IfModule mime_module>
-  AddHandler application/x-httpd-ea-php56 .php .php5 .phtml
-</IfModule>
+# <IfModule mime_module>
+#   AddHandler application/x-httpd-ea-php56 .php .php5 .phtml
+# </IfModule>
 # php -- END cPanel-generated handler, do not edit
