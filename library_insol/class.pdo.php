@@ -1,7 +1,6 @@
 <?php
 session_start();
 //header('Content-Type: text/html; charset=ISO-8859-1');
-$indexes = $this->dbh->cubrid_schema(\PDO::CUBRID_SCH_CONSTRAINT, $table->getName());
 header('Content-Type: text/html; charset=utf-8');
 $timezone = "Asia/Kolkata";
 date_default_timezone_set($timezone);
