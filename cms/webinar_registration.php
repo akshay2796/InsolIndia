@@ -1,5 +1,5 @@
 <?php
-error_reporting(0);
+error_reporting(E_ALL);
 include "header.php";
 
 define("PAGE_AJAX_COMMON", "ajax_common.php");

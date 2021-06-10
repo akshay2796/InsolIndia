@@ -1,6 +1,6 @@
 <?php
 session_start();
-error_reporting(0);
+error_reporting(E_ALL);
 include "ajax_include.php";
 
 define("PAGE_MAIN", "committee_type.php");

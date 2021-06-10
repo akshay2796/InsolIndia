@@ -2,7 +2,7 @@
 session_start();
 ini_set("display_errors",0);
 //ini_set("max_input_vars",10000); 
-error_reporting(0); 
+error_reporting(E_ALL); 
 include("library_insol/all_include.php");
 include("global_functions.php");
 define("PAGE_COMMON", "ajax_common.php");

@@ -1,5 +1,5 @@
 <?php 
-error_reporting(0);
+error_reporting(E_ALL);
 include("header.php");	
 define("PAGE_AJAX","ajax_event_joiner.php");
 define("PAGE_LIST","event_joiner_list.php");

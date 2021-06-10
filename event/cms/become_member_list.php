@@ -1,5 +1,5 @@
 <?php 
-error_reporting(0);
+error_reporting(E_ALL);
 include("header.php");	
 define("PAGE_AJAX","ajax_become_member.php");
 define("PAGE_LIST","become_member_list.php");

@@ -1,5 +1,5 @@
 <?php
-error_reporting(0);
+error_reporting(E_ALL);
 session_start();
 include("library_insol/all_include.php");
 include("global_functions.php"); 

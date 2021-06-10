@@ -1,7 +1,7 @@
 <?php 
 
 ob_start();
-error_reporting(0);
+error_reporting(E_ALL);
 session_start(); 
 include("../library_insol/class.pdo.php");
 include("../library_insol/class.inputfilter.php");

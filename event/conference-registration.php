@@ -168,7 +168,7 @@ var google_remarketing_only = false;
 </noscript>
 
 
-<?php error_reporting(0);
+<?php error_reporting(E_ALL);
 include('header.php'); 
 ?>
 <head>

@@ -1,4 +1,4 @@
-<?php error_reporting(0);
+<?php error_reporting(E_ALL);
 include('header.php'); ?>
 
 <script src="<?php echo SITE_ROOT;?>js_insol/jquery.min.js"></script>

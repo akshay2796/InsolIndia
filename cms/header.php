@@ -1,6 +1,6 @@
 <?php
 ob_start();
-error_reporting(0);
+error_reporting(E_ALL);
 session_start();
 
 $PAGENAME = strtolower(basename($_SERVER['PHP_SELF']));

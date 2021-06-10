@@ -1,6 +1,6 @@
 <?php 
 ob_start();
-error_reporting(0);
+error_reporting(E_ALL);
 include("../library_insol/class.pdo.php");
 include("../global_functions.php");
 ?>
