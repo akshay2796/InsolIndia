@@ -84,12 +84,12 @@ $_SESSION["MYNAME"] = $MYNAME[3];
 /*============== Define Database Connection ===================*/
 if (($_SERVER["HTTP_HOST"] == "idsweb") || ($_SERVER["HTTP_HOST"] == "localhost") || ($_SERVER["HTTP_HOST"] == "localhost:82") || ($_SERVER['HTTP_HOST'] == "122.160.48.232") || (trim($_SERVER['HTTP_HOST']) == "192.168.1.111")) {
     define("FOLDERNAME", "insolindia");
-    $dCON = new \PDO("mysql:host=localhost;port=3306;dbname=insolindia", "root", "root");
+    $dCON = new PDO("mysql:host=localhost;port=3306;dbname=insolindia", "root", "root");
     $dCON->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
     $dCON->setAttribute(PDO::MYSQL_ATTR_USE_BUFFERED_QUERY, true);
     //$dCON->exec('set NAMES  utf8 collate utf8_bin');
 } else {
-    $dCON = new \PDO("mysql:host=localhost;dbname=sabsoin_insol_india","sabsoin_ins_user","Yrs[aidZ&8gA");
+    $dCON = new PDO("mysql:host=localhost;dbname=sabsoin_insol_india","sabsoin_ins_user","Yrs[aidZ&8gA");
     $dCON->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
     $dCON->setAttribute(PDO::MYSQL_ATTR_USE_BUFFERED_QUERY, true);
     //$dCON->exec('set NAMES  utf8 collate utf8_bin');
