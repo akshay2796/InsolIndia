@@ -89,7 +89,8 @@ if (($_SERVER["HTTP_HOST"] == "idsweb") || ($_SERVER["HTTP_HOST"] == "localhost"
     $dCON->setAttribute(PDO::MYSQL_ATTR_USE_BUFFERED_QUERY, true);
     //$dCON->exec('set NAMES  utf8 collate utf8_bin');
 } else {
-    $dCON = new PDO("mysql:host=localhost;dbname=sabsoin_insol_india","sabsoin_ins_user","Yrs[aidZ&8gA");
+    // "localhost","sabsofti_user","Yrs[aidZ&8gA","sabsofti_insol_india" -- for sabsoftzone.info
+    $dCON = new PDO("mysql:host=localhost;dbname=sabsofti_insol_india","sabsofti_user","Yrs[aidZ&8gA");
     $dCON->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
     $dCON->setAttribute(PDO::MYSQL_ATTR_USE_BUFFERED_QUERY, true);
     //$dCON->exec('set NAMES  utf8 collate utf8_bin');
