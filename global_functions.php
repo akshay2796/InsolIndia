@@ -2377,7 +2377,7 @@ function sendMailformate($TYP,$ID,$via="")
 																																														<tr>
 																																															<td valign="top" style="padding:7.5pt 7.5pt 7.5pt 7.5pt">
 																																																<div>
-																																																	<p style="margin:0cm;word-break:break-word"><b><span style="font-size:18.0pt;font-family:Helvetica;color:white">INSOL International</span></b><span style="font-size:10.5pt;font-family:Helvetica;color:#333333"><u></u><u></u></span></p>
+																																																	<p style="margin:0cm;word-break:break-word"><b><span style="font-size:18.0pt;font-family:Helvetica;color:white">INSOL INDIA</span></b><span style="font-size:10.5pt;font-family:Helvetica;color:#333333"><u></u><u></u></span></p>
 																																																</div>
 																																															</td>
 																																														</tr>
