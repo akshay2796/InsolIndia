@@ -1,7 +1,7 @@
 <?php
 session_start();
 error_reporting(1);
-ini_set("memory_limit", "512M");
+ini_set("memory_limit", "-1");
 include "../library_insol/class.pdo.php";
 include "../library_insol/class.inputfilter.php";
 include "../library_insol/function.php";
@@ -305,14 +305,24 @@ $objPHPExcel->getActiveSheet()->getStyle('A' . $ROW . ':' . $MAXCOL . $ROW)->get
 $fromCol = "A";
 $toCol = "AQ";
 
+$toRow = $objPHPExcel->setActiveSheetIndex(0)->getHighestDataRow();
+
 for($i = $fromCol, $j = 0; $i !== $toCol; $i++, $j++) {
     
     // Setting rows to autosize
     $objPHPExcel->getActiveSheet()->getColumnDimension($i)->setAutoSize(true);
     
+    // $objPHPExcel->getActiveSheet()->getStyle($i. $ROW)->getAlignment()->setIndent(1);
+    
     // Setting excel headers
     $objPHPExcel->setActiveSheetIndex(0)->setCellValue($i. $ROW, $EXCEL_HEADERS[$j]);
 
+}
+
+for($cellRow = 2;$cellRow <= $toRow; $cellRow++) {
+    for($i = $fromCol; $i !== $toCol; $i++) {
+        $objPHPExcel->getActiveSheet()->getStyle($i. $cellRow)->getAlignment()->setIndent(1);
+    }
 }
 
 $ROW++;

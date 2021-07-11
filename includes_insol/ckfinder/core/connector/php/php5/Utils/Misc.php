@@ -190,6 +190,7 @@ class CKFinder_Connector_Utils_Misc
      */
     public static function returnBytes($val) {
         $val = trim($val);
+        $val = substr($val, 0, strlen($val) - 2);
         if (!$val) {
             return 0;
         }

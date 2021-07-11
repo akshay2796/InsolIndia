@@ -214,6 +214,158 @@ if (count($rowRCat) >= intval(7)) {
                 <li style="border-color: transparent #e9ebec transparent transparent;"></li>
             </ul><!-- /.arrows -->
 
+            <div>
+                <section class="picks-n-projects section--padding">
+                    <header class="section__header">
+                        <div class="container-projects">
+                            <h1>Our Projects</h1>
+                            <div class="section__header-row">
+                            </div>
+                        </div>
+                    </header>
+                    <div class="container-projects">
+                        <div class="picks grid grid--four">
+                            <?php
+
+                                $SQLp = "";
+                                $SQLp .= " SELECT * FROM " . PROJECTS_TBL . " as P ";
+                                $SQLp .= " WHERE status = 'ACTIVE' and projects_title !='' order by position ASC ";
+
+                                $stmt1 = $dCON->prepare($SQLp);
+                                $stmt1->execute();
+                                $rsLIST = $stmt1->fetchAll();
+                                $dA = count($rsLIST);
+                                $stmt1->closeCursor();
+                                if ($dA > intval(0)) {
+                                    foreach ($rsLIST as $rLIST) {
+                                        $masterID = "";
+                                        $masterTITLE = "";
+                                        $masterDescription = "";
+                                        $url_key = "";
+                                        $imgHOME = "";
+
+                                        $masterID = intval($rLIST['projects_id']);
+                                        $masterTITLE = htmlentities(stripslashes($rLIST['projects_title']));
+                                        $masterDescription = htmlentities(stripslashes(strip_tags($rLIST['projects_description'])));
+                                        $imgHOME = (stripslashes($rLIST['homepage_image']));
+
+                                        $imgEXIST = "";
+                                        $imgEXIST = chkImageExists(MODULE_UPLOADIFY_ROOT . FLD_PROJECTS . "/" . FLD_HOMEPAGE_IMAGE . "/R500-" . $imgHOME);
+
+                                        $showIMG = "";
+                                        if (intval($imgEXIST) == intval(1)) {
+                                            $showIMG = MODULE_FILE_FOLDER . FLD_PROJECTS . "/" . FLD_HOMEPAGE_IMAGE . "/R500-" . $imgHOME;
+                                        } else {
+                                            $showIMG = "";
+                                        }
+
+                                        $url_key = stripslashes($rLIST['url_key']);
+                                        $masterURL = SITE_ROOT . urlRewrite("projects_detail.php", array("url_key" => $url_key));
+                            ?>
+                            <article class="card card--pick">
+                                <div class="card__image">
+                                    <img src="<?php echo $showIMG; ?>" alt="<?php echo $masterTITLE; ?>">
+                                </div>
+                                <div class="card__info">
+                                    <span class="card__type"><?php echo $masterTITLE; ?></span>
+                                    <h1 class="card__title"><?php echo $masterDescription; ?></h1>
+                                </div>
+                                <a class="card__coverer coverer" href="<?php echo $masterURL; ?>">Read more</a>
+                            </article>
+
+                            <?php
+                                    }
+                                }
+                            ?>
+
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Events Section -->
+
+                <?php
+                    $SQL = "";
+                    $SQL = "SELECT * FROM " . EVENT_TBL . " WHERE STATUS = 'ACTIVE' AND show_in_current = 1 AND event_from_date > current_date() ORDER BY POSITION DESC LIMIT 0,2";
+                    $events = $dCON->prepare($SQL);
+                    $events->execute();
+                    $rs_events = $events->fetchAll();
+                    $events->closeCursor();
+                    $countEVENT = count($rs_events);
+                ?>
+                <section class="events section--padding background--grey"
+                    style="position: relative;<?php echo (intval($countEVENT) === 0 ? "display: none;" : ""); ?>">
+                    <header class="section__header">
+                        <div class="container-projects">
+                            <div class="section__header-row">
+                                <h1>Upcoming events</h1>
+                                <a href="/events" class="capsule">See all events</a>
+                            </div>
+                        </div>
+                    </header>
+                    <div class="container-projects">
+                        <div class="grid grid--four">
+                            <?php foreach ($rs_events as $ev_val) {
+                                $event_id = stripslashes($ev_val['event_id']);
+                                $event_link = stripslashes($ev_val['event_link']);
+                                $date = strtotime($ev_val['event_from_date']);
+                                $url_key = stripslashes($ev_val['url_key']);
+                                $masterURL = SITE_ROOT . urlRewrite("event-detail.php", array("url_key" => $url_key));
+
+                                // to display image in list
+
+                                $iSQL = "";
+                                $iSQL = "SELECT image_name FROM " . EVENT_IMAGES_TBL . " WHERE STATUS = 'ACTIVE'";
+                                $iSQL .= " AND default_image = 'YES'";
+                                $iSQL .= " AND master_id = :event_id";
+                                $iRes = $dCON->prepare($iSQL);
+                                $iRes->bindParam(":event_id", $event_id);
+                                $iRes->execute();
+                                $iNAME = $iRes->fetch();
+                                $iRes->closeCursor();
+                                $masterIMG = $iNAME['image_name'];
+
+                                $DISPLAY_IMG = "";
+                                $R200_IMG_EXIST = "";
+
+                                $R200_IMG_EXIST = chkImageExists(MODULE_UPLOADIFY_ROOT . FLD_EVENT . "/" . FLD_EVENT_IMG . "/R200-" . $masterIMG);
+
+                                if (intval($R200_IMG_EXIST) == intval(1)) {
+                                    $DISPLAY_IMG = MODULE_FILE_FOLDER . FLD_EVENT . "/" . FLD_EVENT_IMG . "/R200-" . $masterIMG;
+                                } else {
+                                    $DISPLAY_IMG = MODULE_FILE_FOLDER . FLD_EVENT . "/" . FLD_EVENT_IMG . "/no_images.jpg";
+                                }
+
+                            ?>
+                            <article class="card card--event">
+                                <div class="card__image">
+                                    <img src="<?php echo $DISPLAY_IMG; ?>" alt="<?php echo $ev_val['event_name']; ?>">
+                                </div>
+                                <div class="card__info">
+                                    <span class="card__date"><?php echo date('d F Y', $date); ?>
+                                    </span>
+                                    <h1 class="card__title"><?php echo $ev_val['event_name']; ?></h1>
+                                    <div class="card__actions">
+                                        <a href="<?php echo SITE_ROOT ?>become-member.php" ; ?>"
+                                            aria-label="<?php echo $ev_val['event_name']; ?>"
+                                            class="button button--inverted">Registration</a>
+                                    </div>
+                                </div>
+                            </article>
+                            <?php
+                                }
+                            ?>
+                        </div>
+                    </div>
+                    <div class="section__image">
+                        <div class="image-background">
+                            <img src="https://insol.org/getmedia/90ed9200-0f4b-49cf-8651-4065b3e4a1be/lines-bg1.svg"
+                                alt="">
+                        </div>
+                    </div>
+                </section>
+            </div>
+
             <div class="cols section__cols">
 
 
@@ -298,39 +450,39 @@ if (count($rowRCat) >= intval(7)) {
 
                                         <?php
 
-$SQLp = "";
-$SQLp .= " SELECT * FROM " . PROJECTS_TBL . " as P ";
-$SQLp .= " WHERE status = 'ACTIVE' and projects_title !='' order by position ASC ";
+                                            $SQLp = "";
+                                            $SQLp .= " SELECT * FROM " . PROJECTS_TBL . " as P ";
+                                            $SQLp .= " WHERE status = 'ACTIVE' and projects_title !='' order by position ASC ";
 
-$stmt1 = $dCON->prepare($SQLp);
-$stmt1->execute();
-$rsLIST = $stmt1->fetchAll();
-$dA = count($rsLIST);
-$stmt1->closeCursor();
-if ($dA > intval(0)) {
-    foreach ($rsLIST as $rLIST) {
-        $masterID = "";
-        $masterTITLE = "";
-        $url_key = "";
-        $imgHOME = "";
+                                            $stmt1 = $dCON->prepare($SQLp);
+                                            $stmt1->execute();
+                                            $rsLIST = $stmt1->fetchAll();
+                                            $dA = count($rsLIST);
+                                            $stmt1->closeCursor();
+                                            if ($dA > intval(0)) {
+                                                foreach ($rsLIST as $rLIST) {
+                                                    $masterID = "";
+                                                    $masterTITLE = "";
+                                                    $url_key = "";
+                                                    $imgHOME = "";
 
-        $masterID = intval($rLIST['projects_id']);
-        $masterTITLE = htmlentities(stripslashes($rLIST['projects_title']));
-        $imgHOME = (stripslashes($rLIST['homepage_image']));
+                                                    $masterID = intval($rLIST['projects_id']);
+                                                    $masterTITLE = htmlentities(stripslashes($rLIST['projects_title']));
+                                                    $imgHOME = (stripslashes($rLIST['homepage_image']));
 
-        $imgEXIST = "";
-        $imgEXIST = chkImageExists(MODULE_UPLOADIFY_ROOT . FLD_PROJECTS . "/" . FLD_HOMEPAGE_IMAGE . "/R500-" . $imgHOME);
+                                                    $imgEXIST = "";
+                                                    $imgEXIST = chkImageExists(MODULE_UPLOADIFY_ROOT . FLD_PROJECTS . "/" . FLD_HOMEPAGE_IMAGE . "/R500-" . $imgHOME);
 
-        $showIMG = "";
-        if (intval($imgEXIST) == intval(1)) {
-            $showIMG = MODULE_FILE_FOLDER . FLD_PROJECTS . "/" . FLD_HOMEPAGE_IMAGE . "/R500-" . $imgHOME;
-        } else {
-            $showIMG = "";
-        }
+                                                    $showIMG = "";
+                                                    if (intval($imgEXIST) == intval(1)) {
+                                                        $showIMG = MODULE_FILE_FOLDER . FLD_PROJECTS . "/" . FLD_HOMEPAGE_IMAGE . "/R500-" . $imgHOME;
+                                                    } else {
+                                                        $showIMG = "";
+                                                    }
 
-        $url_key = stripslashes($rLIST['url_key']);
-        $masterURL = SITE_ROOT . urlRewrite("projects_detail.php", array("url_key" => $url_key));
-        ?>
+                                                    $url_key = stripslashes($rLIST['url_key']);
+                                                    $masterURL = SITE_ROOT . urlRewrite("projects_detail.php", array("url_key" => $url_key));
+                                        ?>
                                         <div class="col-md-12 col-sm-12 in_project_sec">
                                             <a href="<?php echo $masterURL; ?>">
                                                 <img src="<?php echo $showIMG; ?>" style="object-fit: contain;">
@@ -340,9 +492,9 @@ if ($dA > intval(0)) {
                                             </span>
                                         </div>
                                         <?php
-}
-}
-?>
+                                                }
+                                            }
+                                        ?>
 
 
                                     </div>

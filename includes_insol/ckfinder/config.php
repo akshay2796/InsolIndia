@@ -66,7 +66,17 @@ Examples:
 
 ATTENTION: The trailing slash is required.
 */
-echo $baseUrl = 'http://insolindia.com/userfiles/';
+// echo $baseUrl = 'http://localhost/insolindia/userfiles/';
+
+if (strpos($_SERVER[HTTP_HOST], 'localhost') !== false || strpos($_SERVER[HTTP_HOST], '::1') !== false) {
+    $baseUrl = "http://" . $_SERVER[HTTP_HOST] . '/insolindia';
+} else {
+	$baseUrl = "https://" . $_SERVER[HTTP_HOST];
+}
+
+$baseUrl = $baseUrl . '/userfiles/';
+
+echo $baseUrl;
 
 /*
 $baseDir : the path to the local directory (in the server) which points to the

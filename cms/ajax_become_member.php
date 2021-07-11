@@ -1688,7 +1688,8 @@ function listData()
 
     $search_from_membership_date = trustme($_REQUEST['search_from_membership_date']);
     $search_to_membership_date = trustme($_REQUEST['search_to_membership_date']);
-
+    
+    
     if (trim($search_from_membership_date) != "") {
         //$search_from_date_membership_time = date('Y-d-m', strtotime($search_from_membership_date));
         $search_from_membership_date_arr = explode("-", $search_from_membership_date);
@@ -1696,15 +1697,38 @@ function listData()
     } else {
         $search_from_date_membership_time = "";
     }
-
+    
     if ($search_to_membership_date != "") {
         //$search_to_date_membership_time = date('Y-d-m', strtotime($search_to_membership_date));
-
+        
         $search_to_membership_date_arr = explode("-", $search_to_membership_date);
         $search_to_date_membership_time = $search_to_membership_date_arr[2] . "-" . $search_to_membership_date_arr[1] . "-" . $search_to_membership_date_arr[0];
     } else {
         $search_to_date_membership_time = "";
     }
+    
+    // Expiry Filter
+    $search_from_expiry_date = trustme($_REQUEST['search_from_expiry_date']);
+    $search_to_expiry_date = trustme($_REQUEST['search_to_expiry_date']);
+
+    if (trim($search_from_expiry_date) != "") {
+        //$search_from_date_expiry_time = date('Y-d-m', strtotime($search_from_expiry_date));
+        $search_from_expiry_date_arr = explode("-", $search_from_expiry_date);
+        $search_from_date_expiry_time = $search_from_expiry_date_arr[2] . "-" . $search_from_expiry_date_arr[1] . "-" . $search_from_expiry_date_arr[0];
+    } else {
+        $search_from_date_expiry_time = "";
+    }
+    
+    if ($search_to_expiry_date != "") {
+        //$search_to_date_expiry_time = date('Y-d-m', strtotime($search_to_expiry_date));
+
+        $search_to_expiry_date_arr = explode("-", $search_to_expiry_date);
+        $search_to_date_expiry_time = $search_to_expiry_date_arr[2] . "-" . $search_to_expiry_date_arr[1] . "-" . $search_to_expiry_date_arr[0];
+    } else {
+        $search_to_date_expiry_time = "";
+    }
+
+    //Renewal Filter
 
     if (trim($search_from_renewal) != "") {
         $search_from_renewal_arr = explode("-", $search_from_renewal);
@@ -1749,6 +1773,15 @@ function listData()
 
     } else if ((trim($search_from_date_membership_time) != "") && (trim($search_to_date_membership_time) == "")) {
         $search .= " AND membership_start_date = '$search_from_date_membership_time' ";
+    }
+
+    /////////////////////////////////////////////////////
+
+    if ((trim($search_from_date_expiry_time) != "") && (trim($search_to_date_expiry_time) != "")) {
+        $search .= " AND membership_expired_date between '$search_from_date_expiry_time' AND '$search_to_date_expiry_time'  ";
+
+    } else if ((trim($search_from_date_expiry_time) != "") && (trim($search_to_date_expiry_time) == "")) {
+        $search .= " AND membership_expired_date = '$search_from_date_expiry_time' ";
     }
 
     /////////////////////////////////////////////////////
@@ -1909,6 +1942,14 @@ function listData()
                                                 align="absmiddle" /> Export to Excel
                                         </a>
                                     </td>
+                                    <td align="center" style="padding-right:10px;">
+                                        <a href="javascript:void(0);" id="getPdfLatest" class=""
+                                            style="color:#D9414D;font-weight: bold;">
+                                            <img src="<?php echo CMS_INCLUDES_ICON_RELATIVE_PATH; ?>excel_icon.png"
+                                                border="0" title="Export to PDF" alt="Export to PDF"
+                                                align="absmiddle" /> Export to PDF
+                                        </a>
+                                    </td>
 
 
                                     <td align="right" style="padding-right:10px;">
@@ -1953,6 +1994,14 @@ if (intval($dA) > intval(0)) {
                     var formvalue = $("#frm").serialize();
                     //alert(formvalue);
                     location.href = "excel_member_insol.php?" + formvalue;
+                });
+            });
+
+            $(document).ready(function() {
+                $("#getPdfLatest").click(function() {
+                    var formvalue = $("#frm").serialize();
+                    //alert(formvalue);
+                    location.href = "pdf_member_insol.php?" + formvalue;
                 });
             });
 

@@ -1,7 +1,7 @@
 <?php 
 session_start();
 error_reporting(1);
-ini_set("memory_limit","512M");
+ini_set("memory_limit","-1");
 include("../library_insol/class.pdo.php"); 
 include("../library_insol/class.inputfilter.php");
 include("../library_insol/function.php");  
@@ -644,7 +644,7 @@ $objPHPExcel->getActiveSheet()->setTitle($_SESSION["COMPANY_NAME"] . ' - Insol M
 $objPHPExcel->setActiveSheetIndex(0);
 
 $filename = $_SESSION['COMPANY_NAME']. ' : Insol Member - ' . date('YmdHis') . ".xls"; 
-// Redirect output to a client’s web browser (Excel5)
+// Redirect output to a clientï¿½s web browser (Excel5)
 header('Content-Type: application/vnd.ms-excel');
 header('Content-Disposition: attachment;filename="'.$filename.'"');
 header('Cache-Control: max-age=0');

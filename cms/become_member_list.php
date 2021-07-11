@@ -70,6 +70,9 @@ $(document).ready(function() {
         var search_from_membership_date = queryString['search_from_membership_date'] || "";
         var search_to_membership_date = queryString['search_to_membership_date'] || "";
 
+        var search_from_expiry_date = queryString['search_from_expiry_date'] || "";
+        var search_to_expiry_date = queryString['search_to_expiry_date'] || "";
+
         var search_from_renewal = queryString['search_from_renewal'] || "";
         var search_to_renewal = queryString['search_to_renewal'] || "";
 
@@ -86,6 +89,9 @@ $(document).ready(function() {
 
         search_val = search_val + "&search_from_membership_date=" + search_from_membership_date;
         search_val = search_val + "&search_to_membership_date=" + search_to_membership_date;
+
+        search_val = search_val + "&search_from_expiry_date=" + search_from_expiry_date;
+        search_val = search_val + "&search_to_expiry_date=" + search_to_expiry_date;
 
         search_val = search_val + "&search_from_renewal=" + search_from_renewal;
         search_val = search_val + "&search_to_renewal=" + search_to_renewal;
@@ -123,6 +129,9 @@ $(document).ready(function() {
             var search_from_membership_date = queryString['search_from_membership_date'] || "";
             var search_to_membership_date = queryString['search_to_membership_date'] || "";
 
+            var search_from_expiry_date = queryString['search_from_expiry_date'] || "";
+            var search_to_expiry_date = queryString['search_to_expiry_date'] || "";
+
             var search_from_renewal = queryString['search_from_renewal'] || "";
             var search_to_renewal = queryString['search_to_renewal'] || "";
 
@@ -140,6 +149,9 @@ $(document).ready(function() {
 
             search_val = search_val + "&search_from_membership_date=" + search_from_membership_date;
             search_val = search_val + "&search_to_membership_date=" + search_to_membership_date;
+
+            search_val = search_val + "&search_from_expiry_date=" + search_from_expiry_date;
+            search_val = search_val + "&search_to_expiry_date=" + search_to_expiry_date;
 
             search_val = search_val + "&search_from_renewal=" + search_from_renewal;
             search_val = search_val + "&search_to_renewal=" + search_to_renewal;
@@ -280,6 +292,9 @@ $(document).ready(function() {
         $("#search_from_membership_date").val("");
         $("#search_to_membership_date").val("");
 
+        $("#search_from_expiry_date").val("");
+        $("#search_to_expiry_date").val("");
+
 
         $("#search_sig_member").val("");
         $("#search_register_status").val("");
@@ -332,6 +347,16 @@ $(function() {
     });
 
     $('#search_to_membership_date').datepick({
+        dateFormat: 'dd-mm-yyyy',
+        yearRange: '2014:<?php echo date("Y") + 4; ?>'
+    });
+
+    $('#search_from_expiry_date').datepick({
+        dateFormat: 'dd-mm-yyyy',
+        yearRange: '2014:<?php echo date("Y") + 4; ?>'
+    });
+
+    $('#search_to_expiry_date').datepick({
         dateFormat: 'dd-mm-yyyy',
         yearRange: '2014:<?php echo date("Y") + 4; ?>'
     });
@@ -464,6 +489,16 @@ $(document).ready(function() {
                             value="" placeholder="From" />
                         &nbsp;/&nbsp;<input type="text" class="txtBox hw" name="search_to_renewal"
                             id="search_to_renewal" value="" placeholder="To" />
+                    </div>
+                </div>
+
+                <div class="width3">
+                    <label class="mainLabel">Expiry Date <small>From - To </small></label>
+                    <div class="txt2Box">
+                        <input type="text" class="txtBox hw" id="search_from_expiry_date" name="search_from_expiry_date"
+                            value="" placeholder="From" />
+                        &nbsp;/&nbsp;<input type="text" class="txtBox hw" name="search_to_expiry_date"
+                            id="search_to_expiry_date" value="" placeholder="To" />
                     </div>
                 </div>
 

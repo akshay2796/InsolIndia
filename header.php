@@ -1,5 +1,6 @@
 <?php
-error_reporting(0);
+error_reporting(1);
+ini_set("memory_limit","-1");
 session_start();
 include "library_insol/class.pdo.php";
 include "library_insol/class.pagination_refresh_based.php";

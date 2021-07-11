@@ -1,7 +1,7 @@
 <?php 
 session_start();
 error_reporting(1);
-ini_set("memory_limit","512M");
+ini_set("memory_limit","-1");
 include("../library_insol/class.pdo.php"); 
 include("../library_insol/class.inputfilter.php");
 include("../library_insol/function.php");  
