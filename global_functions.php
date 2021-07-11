@@ -3459,9 +3459,9 @@ function generaluploadFormat($ID,$p_name)
     $status = htmlentities(stripslashes($rsGET[0]['status']));   
     $mMAIL = "";    
     $mMAIL .= "
-    <style type='text/css' media='screen'>
-        .newletterContent img{width:100% !important; height:auto !important;}
-    </style>
+    // <style type='text/css' media='screen'>
+    //     .newletterContent img{width:100% !important; height:auto !important;}
+    // </style>
     <table width='100%' border='0' cellspacing='0' cellpadding='0' style='background: #eaeaea'>
         <tbody>
             <tr>
