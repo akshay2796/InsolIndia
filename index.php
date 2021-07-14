@@ -366,7 +366,7 @@ if (count($rowRCat) >= intval(7)) {
                 </section>
             </div>
 
-            <div class="cols section__cols">
+            <div class="cols section__cols" style="display: none;">
 
 
                 <div class="col--size1">
