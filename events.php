@@ -329,12 +329,7 @@ if (count($rs_upcoming) > intval(0)) {
                                 </div>
                             </section>
                             <?php
-// }
-
-} else {
-    echo "Under Formation...";
 }
-
 ?>
 
                             <!-- Past Events -->
@@ -419,14 +414,9 @@ if ($dA_past > intval(0)) {
                                 </div>
                             </section>
                             <?php
-// }
-
-} else {
-    echo "Under Formation...";
 }
 
 ?>
-
 
 
                             <!-----Our Sponsors   ----------->
