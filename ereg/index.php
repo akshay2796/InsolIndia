@@ -454,7 +454,7 @@ include "../global_functions.php";
     <meta property="og:title"
         content="INSOL Focus Webinar: Forum shopping and challenges in the recognition of insolvency proceedings: Some views from the bench"
         class="notranslate" />
-    <meta property="og:image" content="<?php echo SITE_ROOT; ?>/insolindia/ereg/file_uploads/webinaroption2thinlogo.jpg"
+    <meta property="og:image" content="<?php echo SITE_ROOT; ?>/ereg/file_uploads/webinaroption2thinlogo.jpg"
         class="notranslate" />
     <link type="text/css" rel="stylesheet" href="/ereg/include/pickadate/themes/default.css" />
     <link type="text/css" rel="stylesheet" href="/ereg/include/pickadate/themes/default.date.css" />
@@ -1972,7 +1972,7 @@ include "../global_functions.php";
         background-origin: initial;
         background-clip: initial;
         font-family: Arial, sans-serif;
-        background-image: url(/insolindia/ereg/include/img/bkg-06.jpg)
+        background-image: url(/ereg/include/img/bkg-06.jpg)
     }
 
     html body {
@@ -3230,8 +3230,8 @@ include "../global_functions.php";
                     <div class="logo-img-container"
                         style="display: block; position:relative;width:1000px;height:400px;">
 
-                        <a target="_blank" href="http://"><img
-                                src="/insolindia/ereg/file_uploads/webinaroption2thinlogo.jpg" border="0"
+                        <a target="_blank" href="http://"><img src="/ereg/file_uploads/webinaroption2thinlogo.jpg"
+                                border="0"
                                 alt="INSOL Focus Webinar: Forum shopping and challenges in the recognition of insolvency proceedings: Some views from the bench" /></a>
                     </div>
                 </h1>

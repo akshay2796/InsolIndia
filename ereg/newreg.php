@@ -32,7 +32,7 @@ include "../global_functions.php";
     <!--[if lt IE 7.]>
 <script defer type="text/javascript" src="/include/scripts/pngfix.js"></script>
 <![endif]-->
-    <script type="text/javascript" src="/insolindia/ereg/include/scripts.js"></script>
+    <script type="text/javascript" src="<?php echo SITE_ROOT; ?>ereg/include/scripts.js"></script>
     <link rel="P3Pv1" href="/w3c/p3p.xml" />
 
     <link type="text/css" rel="stylesheet" href="/themes/global/fonts.css" />
@@ -66,7 +66,8 @@ include "../global_functions.php";
     }
     </style>
     <link type="text/css" rel="stylesheet" href="/themes/global/custom_fonts/fonts.css" />
-    <link type="text/css" rel="stylesheet" href="/insolindia/ereg/include/datepicker/css/jquery.dateselect.css" />
+    <link type="text/css" rel="stylesheet"
+        href="<?php echo SITE_ROOT; ?>ereg/include/datepicker/css/jquery.dateselect.css" />
     <script type="text/javascript" src="https://staticcdn.eventscloud.com/libs/js/jquery/3.4.1/jquery-3.4.1.min.js">
     </script>
     <script src="https://code.jquery.com/jquery-migrate-3.0.1.min.js"></script>
@@ -466,10 +467,13 @@ include "../global_functions.php";
     }
     </style>
     <meta property="og:title" content="<?php echo $event_data; ?>" class="notranslate" />
-    <meta property="og:image" content="/insolindia/ereg/file_uploads/webinaroption2thinlogo.jpg" class="notranslate" />
-    <link type="text/css" rel="stylesheet" href="/insolindia/ereg/include/pickadate/themes/default.css" />
-    <link type="text/css" rel="stylesheet" href="/insolindia/ereg/include/pickadate/themes/default.date.css" />
-    <link type="text/css" rel="stylesheet" href="/insolindia/ereg/include/pickadate/themes/default.time.css" />
+    <meta property="og:image" content="<?php echo SITE_ROOT; ?>ereg/file_uploads/webinaroption2thinlogo.jpg"
+        class="notranslate" />
+    <link type="text/css" rel="stylesheet" href="<?php echo SITE_ROOT; ?>ereg/include/pickadate/themes/default.css" />
+    <link type="text/css" rel="stylesheet"
+        href="<?php echo SITE_ROOT; ?>ereg/include/pickadate/themes/default.date.css" />
+    <link type="text/css" rel="stylesheet"
+        href="<?php echo SITE_ROOT; ?>ereg/include/pickadate/themes/default.time.css" />
     <link rel="stylesheet" href="/include/fonts/font-awesome-4.7.0/css/font-awesome.min.css" />
     <style>
     /* set spinner color to menu background color */
@@ -1983,7 +1987,7 @@ include "../global_functions.php";
         background-origin: initial;
         background-clip: initial;
         font-family: Arial, sans-serif;
-        background-image: url(/insolindia/ereg/include/img/bkg-06.jpg)
+        background-image: url(<?php echo SITE_ROOT; ?>ereg/include/img/bkg-06.jpg)
     }
 
     html body {
@@ -2289,7 +2293,7 @@ include "../global_functions.php";
             border: 0 solid rgba(0, 0, 0, .2);
             border-bottom-width: 1px;
             border-radius: 0;
-            background: ivory url(/insolindia/ereg/include/img/select-arw.png) 98% 50% no-repeat;
+            background: ivory url(<?php echo SITE_ROOT; ?>ereg/include/img/select-arw.png) 98% 50% no-repeat;
             color: #2f2f2f;
             font-size: 12px;
             font-weight: 400;
@@ -3144,7 +3148,7 @@ include "../global_functions.php";
         }
 
         .reg-header-container td.language-selector-container select {
-            background: ivory url(/insolindia/ereg/include/img/select-arw.png) 97% 50% no-repeat
+            background: ivory url(<?php echo SITE_ROOT; ?>ereg/include/img/select-arw.png) 97% 50% no-repeat
         }
     }
 
@@ -3242,7 +3246,7 @@ include "../global_functions.php";
                         style="display: block; position:relative;width:1000px;height:400px;">
 
                         <a target="_blank" href="http://"><img
-                                src="/insolindia/ereg/file_uploads/webinaroption2thinlogo.jpg" border="0"
+                                src="<?php echo SITE_ROOT; ?>ereg/file_uploads/webinaroption2thinlogo.jpg" border="0"
                                 alt="<?php echo $event_data; ?>" /></a>
                     </div>
                 </h1>
@@ -3310,14 +3314,14 @@ include "../global_functions.php";
                             aria-expanded="false" class="r-count"><span
                                 class="r-crumb-trigger fa fa-bars"></span></span>
                         <li class="previous-step"><a class="menu_standard" id="Welcome"
-                                href="/insolindia/ereg/index.php?eventid=200225862&">Welcome</a></li>
+                                href="<?php echo SITE_ROOT; ?>ereg/index.php?eventid=200225862&">Welcome</a></li>
                         <li class="off" aria-disabled="true"><a href="#" tabindex="-1">Attendee Information</a></li>
                         <li class="off" aria-disabled="true"><a href="#" tabindex="-1">Registration Record</a></li>
                 </div>
                 <table width="100%" cellspacing="0" cellpadding="2" id="orig-nav" class="r-desktop" role="navigation">
                     <tr>
                         <td align="center" width="33%" class="previous-step"><a class="menu_standard" id="Welcome"
-                                href="/insolindia/ereg/index.php?eventid=200225862&">Welcome</a></td>
+                                href="<?php echo SITE_ROOT; ?>ereg/index.php?eventid=200225862&">Welcome</a></td>
                         <td align="center"><img src="/images/arrow.png" border="0" width="13" height="10"
                                 alt="arrow pointing to the right" /></td>
                         <td align="center" width="33%" class="off">Attendee Information</td>
@@ -3667,18 +3671,18 @@ clip: rect(1px, 1px, 1px, 1px);">Email Address</label><input aria-required="true
     }
     </script>
 
-    <script type="text/javascript" src="/insolindia/ereg/include/pickadate/picker.js"></script>
-    <script type="text/javascript" src="/insolindia/ereg/include/pickadate/picker.date.js"></script>
-    <script type="text/javascript" src="/insolindia/ereg/include/pickadate/picker.time.js"></script>
-    <script type="text/javascript" src="/insolindia/ereg/include/pickadate/legacy.js"></script>
+    <script type="text/javascript" src="<?php echo SITE_ROOT; ?>ereg/include/pickadate/picker.js"></script>
+    <script type="text/javascript" src="<?php echo SITE_ROOT; ?>ereg/include/pickadate/picker.date.js"></script>
+    <script type="text/javascript" src="<?php echo SITE_ROOT; ?>ereg/include/pickadate/picker.time.js"></script>
+    <script type="text/javascript" src="<?php echo SITE_ROOT; ?>ereg/include/pickadate/legacy.js"></script>
 
 
 
     <input type='hidden' name='backbuttonCategory' id='backbuttonCategory' value=''><input type='hidden'
         name='backbuttonResponsive' id='backbuttonResponsive' value='0'><input type='hidden' name='backbtnLink'
-        id='backbtnLink' value='/insolindia/ereg/index.php?eventid=200225862&t='><input type='hidden'
+        id='backbtnLink' value='<?php echo SITE_ROOT; ?>ereg/index.php?eventid=200225862&t='><input type='hidden'
         name='backRegButtonVal' id='backRegButtonVal' value='Back'>
-    <script type="text/javascript" src="/insolindia/ereg/include/scripts/create_back_button.js"></script>
+    <script type="text/javascript" src="<?php echo SITE_ROOT; ?>ereg/include/scripts/create_back_button.js"></script>
 </body>
 
 </html>

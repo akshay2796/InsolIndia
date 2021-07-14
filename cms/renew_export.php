@@ -109,7 +109,7 @@ error_reporting(0);
 $counter = 1;
 $u_id = $_GET['member_id'];
 $add_date = $_GET['add_date'];
-$connect = mysqli_connect("localhost", "root", "root", "insolindia");
+$connect = mysqli_connect("localhost", "sabsofti_user", "Yrs[aidZ&8gA", "sabsofti_insol_india");
 $sql = "SELECT * FROM tbl_become_member WHERE member_id='$u_id'";
 $result = mysqli_query($connect, $sql);
 $row2 = mysqli_fetch_array($result);

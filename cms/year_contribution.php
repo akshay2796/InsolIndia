@@ -81,7 +81,7 @@ $year = $_GET['year'];
     //         echo $year;
     $SQL = "";
     $SQL .= " SELECT MONTHNAME(add_date) as month, MONTH(add_date) as mon, COUNT(*) as cnt FROM renew_member_detail WHERE YEAR(add_date) = $year group by MONTH(add_date) ";
-    $connect = mysqli_connect("localhost", "root", "root", "insolindia");
+    $connect = mysqli_connect("localhost", "sabsofti_user", "Yrs[aidZ&8gA", "sabsofti_insol_india");
     $result2 = mysqli_query($connect, $SQL);
     while ($show3 = mysqli_fetch_array($result2)) {
 
