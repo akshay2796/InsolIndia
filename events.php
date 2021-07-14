@@ -251,7 +251,7 @@ if ($current_event == 'upcoming') {
                     <div class="resultsWrap">
                         <div id="results">
                             <?php
-if ($dA_upcoming > intval(0)) {
+if (count($rs_upcoming) > intval(0)) {
         ?>
 
 
