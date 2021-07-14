@@ -82,7 +82,7 @@ include "../library_insol/class.phpmailernew.php";
 <?php
 
 $member_id = $_REQUEST['member_id'];
-$connection = mysqli_connect("localhost", "sabsofti_user", "Yrs[aidZ&8gA", "sabsofti_insol_india") or die(mysqli_error($mysqli));
+$connection = mysqli_connect("localhost", "root", "root", "insolindia") or die(mysqli_error($mysqli));
 $query = "SELECT * FROM tbl_become_member WHERE member_id = $member_id";
 $result = mysqli_query($connection, $query);
 $show = mysqli_fetch_array($result);

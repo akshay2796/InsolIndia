@@ -2934,3 +2934,7 @@ div.videos-page h4, div.row.series_carosel h4 {
 .events .section--padding {
     position: relative !important;
 }
+
+.card__actions a {
+    
+}

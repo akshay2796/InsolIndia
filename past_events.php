@@ -172,7 +172,6 @@ define("PAGE_MAIN", "event-detail.php");
 define("PAGE_AJAX", "ajax_event.php");
 define("PAGE_LIST", "events.php");
 $current_date = date("Y-m-d");
-$current_event = strtolower($_GET['event']);
 $SQL1 = "";
 $SQL1 .= " SELECT COUNT(*) AS CT FROM " . EVENT_TBL . " as E ";
 $SQL1 .= " WHERE status = 'ACTIVE' and event_name !=''  ";
@@ -181,10 +180,10 @@ $SQL = "";
 $SQL .= " SELECT * ";
 $SQL .= ",(SELECT image_name FROM " . EVENT_IMAGES_TBL . " AS I WHERE I.master_id = E.event_id ORDER BY default_image DESC, position LIMIT 1 ) AS image_name ";
 
-$upcoming_sql = $SQL . " FROM " . EVENT_TBL . " as E WHERE status = 'ACTIVE' and event_name !='' and event_from_date > '$current_date' ";
+// $upcoming_sql = $SQL . " FROM " . EVENT_TBL . " as E WHERE status = 'ACTIVE' and event_name !='' and event_from_date > '$current_date' ";
 $past_sql = $SQL . " FROM " . EVENT_TBL . " as E WHERE status = 'ACTIVE' and event_name !='' and past_event = 1 ";
 
-$upcoming_sql .= " order by event_from_date desc ";
+// $upcoming_sql .= " order by event_from_date desc ";
 $past_sql .= " order by event_from_date desc ";
 
 $stmt1 = $dCON->prepare($SQL1);
@@ -192,21 +191,21 @@ $stmt1 = $dCON->prepare($SQL1);
 $stmt1->execute();
 $noOfRecords_row = $stmt1->fetch();
 $noOfRecords = intval($noOfRecords_row['CT']);
-$rowsPerPage = 6;
+$rowsPerPage = 12;
 
-$pg_query_upcoming = $pg->getPagingQuery($upcoming_sql, $rowsPerPage);
-$upcoming_stmt = $dCON->prepare($pg_query_upcoming[0]);
+// $pg_query_upcoming = $pg->getPagingQuery($upcoming_sql, $rowsPerPage);
+// $upcoming_stmt = $dCON->prepare($pg_query_upcoming[0]);
 
-$upcoming_stmt->bindParam(":offset", $offset, PDO::PARAM_INT);
-$upcoming_stmt->bindParam(":RPP", $RPP, PDO::PARAM_INT);
-$offset = $pg_query_upcoming[1];
-$RPP = $rowsPerPage;
-$paging = $pg->getAjaxPagingLink($noOfRecords, $rowsPerPage);
-$dA_upcoming = $noOfRecords;
+// $upcoming_stmt->bindParam(":offset", $offset, PDO::PARAM_INT);
+// $upcoming_stmt->bindParam(":RPP", $RPP, PDO::PARAM_INT);
+// $offset = $pg_query_upcoming[1];
+// $RPP = $rowsPerPage;
+// $paging = $pg->getAjaxPagingLink($noOfRecords, $rowsPerPage);
+// $dA_upcoming = $noOfRecords;
 
-$upcoming_stmt->execute();
-$rs_upcoming = $upcoming_stmt->fetchAll();
-$upcoming_stmt->closeCursor();
+// $upcoming_stmt->execute();
+// $rs_upcoming = $upcoming_stmt->fetchAll();
+// $upcoming_stmt->closeCursor();
 
 //Past events
 $pg_query_past = $pg->getPagingQuery($past_sql, $rowsPerPage);
@@ -250,92 +249,6 @@ if ($current_event == 'upcoming') {
 
                     <div class="resultsWrap">
                         <div id="results">
-                            <?php
-if ($dA_upcoming > intval(0)) {
-        ?>
-
-
-                            <section class="events section--padding background--grey" style="position: relative;">
-                                <header class="section__header">
-                                    <div class="container-projects">
-                                        <div class="section__header-row">
-                                            <h3 style="font-size: 3rem; margin-bottom: 2rem;">Upcoming events
-                                            </h3>
-                                            <!-- <a href="/events" class="capsule">See all events</a> -->
-                                        </div>
-                                    </div>
-                                </header>
-                                <div class="container-projects">
-                                    <div class="grid grid--four">
-                                        <?php foreach ($rs_upcoming as $ev_val) {
-                                $event_id = stripslashes($ev_val['event_id']);
-                                $event_link = stripslashes($ev_val['event_link']);
-                                $date = strtotime($ev_val['event_from_date']);
-                                $url_key = stripslashes($ev_val['url_key']);
-                                $masterURL = SITE_ROOT . urlRewrite("event-detail.php", array("url_key" => $url_key));
-
-                                // to display image in list
-
-                                $iSQL = "";
-                                $iSQL = "SELECT image_name FROM " . EVENT_IMAGES_TBL . " WHERE STATUS = 'ACTIVE'";
-                                $iSQL .= " AND default_image = 'YES'";
-                                $iSQL .= " AND master_id = :event_id";
-                                $iRes = $dCON->prepare($iSQL);
-                                $iRes->bindParam(":event_id", $event_id);
-                                $iRes->execute();
-                                $iNAME = $iRes->fetch();
-                                $iRes->closeCursor();
-                                $masterIMG = $iNAME['image_name'];
-
-                                $DISPLAY_IMG = "";
-                                $R200_IMG_EXIST = "";
-
-                                $R200_IMG_EXIST = chkImageExists(MODULE_UPLOADIFY_ROOT . FLD_EVENT . "/" . FLD_EVENT_IMG . "/R200-" . $masterIMG);
-
-                                if (intval($R200_IMG_EXIST) == intval(1)) {
-                                    $DISPLAY_IMG = MODULE_FILE_FOLDER . FLD_EVENT . "/" . FLD_EVENT_IMG . "/R200-" . $masterIMG;
-                                } else {
-                                    $DISPLAY_IMG = MODULE_FILE_FOLDER . FLD_EVENT . "/" . FLD_EVENT_IMG . "/no_images.jpg";
-                                }
-
-                            ?>
-                                        <article class="card card--event">
-                                            <div class="card__image">
-                                                <img src="<?php echo $DISPLAY_IMG; ?>"
-                                                    alt="<?php echo $ev_val['event_name']; ?>">
-                                            </div>
-                                            <div class="card__info">
-                                                <span class="card__date"><?php echo date('d F Y', $date); ?>
-                                                </span>
-                                                <h1 class="card__title"><?php echo $ev_val['event_name']; ?></h1>
-                                                <div class="card__actions">
-                                                    <a href="<?php echo SITE_ROOT; ?>ereg/index.php?id=<?php echo $event_id; ?>"
-                                                        target="_blank"
-                                                        aria-label="<?php echo $ev_val['event_name']; ?>"
-                                                        class="button button--inverted">Registration</a>
-                                                </div>
-                                            </div>
-                                        </article>
-                                        <?php
-                                }
-                            ?>
-                                    </div>
-                                </div>
-                                <div class="section__image">
-                                    <div class="image-background">
-                                        <img src="https://insol.org/getmedia/90ed9200-0f4b-49cf-8651-4065b3e4a1be/lines-bg1.svg"
-                                            alt="">
-                                    </div>
-                                </div>
-                            </section>
-                            <?php
-// }
-
-} else {
-    echo "Under Formation...";
-}
-
-?>
 
                             <!-- Past Events -->
                             <?php
@@ -349,9 +262,7 @@ if ($dA_past > intval(0)) {
                                         <div class="section__header-row">
                                             <h3 style="font-size: 3rem; margin-bottom: 2rem;">Past events
                                             </h3>
-                                            <a href="<?php echo SITE_ROOT; ?>past_events.php" class="capsule">See all
-                                                past
-                                                events</a>
+                                            <!-- <a href="/events" class="capsule">See all events</a> -->
                                         </div>
                                     </div>
                                 </header>
@@ -535,7 +446,23 @@ if ($dA_past > intval(0)) {
                             <!--  </div>-->
                             <!--</div>-->
                             <!-----Our Sponsors   ----------->
-
+                            <?php
+                            if(trim($paging[0]) != "")
+                            {
+                            ?>
+                            <div class="clearfix cls"></div>
+                            <div class="clearfix" id="bottomPagging">
+                                <div class="pagingList">
+                                    <label>PAGE</label>
+                                    <ul>
+                                        <?php echo $paging[0];?>
+                                    </ul>
+                                </div>
+                                <div class="clr"></div>
+                            </div>
+                            <?php 
+                }
+                ?>
 
 
 

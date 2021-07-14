@@ -346,8 +346,8 @@ if (count($rowRCat) >= intval(7)) {
                                     </span>
                                     <h1 class="card__title"><?php echo $ev_val['event_name']; ?></h1>
                                     <div class="card__actions">
-                                        <a href="<?php echo SITE_ROOT ?>become-member.php" ; ?>"
-                                            aria-label="<?php echo $ev_val['event_name']; ?>"
+                                        <a href="<?php echo SITE_ROOT; ?>ereg/index.php?id=<?php echo $event_id; ?>"
+                                            target="_blank" aria-label="<?php echo $ev_val['event_name']; ?>"
                                             class="button button--inverted">Registration</a>
                                     </div>
                                 </div>

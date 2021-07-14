@@ -3,7 +3,7 @@
 
 <?php
 
-$connect = mysqli_connect("localhost", "sabsofti_user", "Yrs[aidZ&8gA", "sabsofti_insol_india");
+$connect = mysqli_connect("localhost", "root", "root", "insolindia");
 
 if (isset($_POST['submit'])) {
     $appl = $_POST['appl'];

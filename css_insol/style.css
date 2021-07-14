@@ -3509,7 +3509,7 @@ input:-webkit-autofill {
 	text-transform: uppercase;
 	letter-spacing: -0.05em;
 	position: relative;
-	padding-left: calc((100% - 1250px) / 2);
+	/* padding-left: calc((100% - 1250px) / 2); */
 	background-color: #1d2644;
 }
 .intro .slider-main-nav {
