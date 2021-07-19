@@ -10,7 +10,7 @@
         width: 100%;
         float: left;
         margin-top: -170px;
-        margin-bottom: 100px;
+        /* margin-bottom: 100px; */
     }
 
     .eventsWrap {
@@ -255,7 +255,8 @@ if (count($rs_upcoming) > intval(0)) {
         ?>
 
 
-                            <section class="events section--padding background--grey" style="position: relative;<?php echo count($rs_upcoming) > 0 ? '' : 'display: none;' ?>">
+                            <section class="events section--padding background--grey"
+                                style="position: relative;<?php echo count($rs_upcoming) > 0 ? '' : 'display: none;' ?>">
                                 <header class="section__header">
                                     <div class="container-projects">
                                         <div class="section__header-row">
